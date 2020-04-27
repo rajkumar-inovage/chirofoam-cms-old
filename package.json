@@ -74,7 +74,7 @@
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "start:lambda": "netlify-lambda serve functions",
-    "build:lambda": "gatsby develop build functions"
+    "build:lambda": "netlify-lambda build functions"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",
