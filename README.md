@@ -2,7 +2,7 @@
 <h1 align="center">
   <img alt="Gatsby" src="resources/cf-logo.png" height="60px" />
   <br/>
-  Project Chirofoam Final Repository
+  Final Repository
 </h1>
 
 ## 💎 Features
