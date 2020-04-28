@@ -1,9 +1,3 @@
-const path = require('path')
-
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-})
-
 module.exports = {
   siteMetadata: {
     title: `Chirofoam™ Memory Foam Mattress`,
@@ -33,12 +27,6 @@ module.exports = {
         display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
-    },
-    {
-      resolve: 'gatsby-plugin-express',
-      options: {
-        output: 'config/gatsby-express.json',
-      }
     },
   {
     resolve: `gatsby-plugin-sitemap`,
