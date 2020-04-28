@@ -29,7 +29,7 @@ module.exports = {
       options: {
         host: 'https://chirofoam-beeta.netlify.app',
         sitemap: 'https://chirofoam-beeta.netlify.app/sitemap.xml',
-        resolveEnv: () => process.env.GATSBY_ENV,
+        resolveEnv: () => "production",
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
