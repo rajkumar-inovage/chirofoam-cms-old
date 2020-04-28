@@ -5,15 +5,18 @@
 [[headers]]
   for = "/static/*"
   [headers.values]
-    expires  = "31536000"
+	cache-control = '''
+	public,
+	max-age=604800,
+	must-revalidate'''
 [[headers]]
   for = "/*.css"
   [headers.values]
-    expires  = "31536000"
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
 [[headers]]
   for = "/*.js"
   [headers.values]
-    expires  = "31536000"
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
 
 [[headers]]
   for = "/sw.js"
