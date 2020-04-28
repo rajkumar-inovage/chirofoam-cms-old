@@ -18,11 +18,7 @@ const Layout = ({ children }) => {
             }
           }
         `}
-        render={data => (
-          <>
-              {children}
-          </>
-        )}
+        render={data => <>{children}</>}
       />
     </ContextProvider>
   )

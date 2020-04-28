@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Chirofoam™ Memory Foam Mattress`,
     description: `The Chirofoam™ Memory Foam Mattress is designed to get you a more effective and efficient sleep, and helps to relieve back pain. Made in Toronto, ON.`,
+    siteUrl: `https://chirofoam-beeta.netlify.app`,
     author: `@Team-Innovexia`
   },
   proxy: {
@@ -21,6 +22,24 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://chirofoam-beeta.netlify.app',
+        sitemap: 'https://chirofoam-beeta.netlify.app/sitemap.xml',
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,7 +52,6 @@ module.exports = {
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-shopify`,
       options: {
