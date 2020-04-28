@@ -10,11 +10,12 @@ exports.handler = function(event, context, callback) {
     const apiURL = event.queryStringParameters.api
     delete event.queryStringParameters.api
     const queryString = '?' + Object.keys(event.queryStringParameters).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(event.queryStringParameters[key])).join('&')
+    const apiPathURL = apiURL + queryString
     const options = {
       "method": eventMethod,
       "hostname": hostname,
       "port": null,
-      "path": apiURL + queryString,
+      "path": apiPathURL,
       "headers": {
         "X-Shopify-Access-Token": Access_Token,
         "Content-Type": Content_Type
