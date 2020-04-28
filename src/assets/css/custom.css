@@ -200,7 +200,7 @@ p.cta.erbaum.position-absolute {
 	font-size: 34px;
 }
 .home-banner {
-	background-image: url('../img/banner.jpg');
+	background-image: url('../img/new-banner.webp');
 	height:700px;
   background-color: #151e3f;
 }
@@ -218,7 +218,7 @@ p.cta.erbaum.position-absolute {
 	background-position: center center;
 }
 .keys{
-	background-image:url('../img/home4.jpg');
+	background-image:url('../img/home4.webp');
 }
 /*.card-bg1 {
 	background-image: url('../img/feat1.jpg');
@@ -280,14 +280,14 @@ p.cta.erbaum.position-absolute {
 	display:inline-block;
 }
 .max-support-single{
-	background-image:url('../img/results.jpg');
+	background-image:url('../img/results.webp');
 	width:100%;
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
 }
 .max-support {
-	background-image: url('../img/results.jpg');
+	background-image: url('../img/results.webp');
 	/*background-color:#243c6a;*/
 	background-repeat:no-repeat;
 	background-position: center;
@@ -336,7 +336,7 @@ p.cta.erbaum.position-absolute {
 	font-size: 12px;
 }
 .approved {
-	background-image: url('../img/blue-bg2.jpg');
+	background-image: url('../img/blue-bg2.webp');
 }
 .active-style h2 {
 	font-weight: 1000 !important;
@@ -403,7 +403,7 @@ p.cta.erbaum.position-absolute {
 /*shop-chirofoam-page-css-start*/
 
 .card1 {
-	background-image: url('../img/home4.jpg');
+	background-image: url('../img/home4.webp');
 	height: 300px;
 }
 .card2 {
