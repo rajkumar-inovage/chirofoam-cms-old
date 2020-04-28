@@ -8,12 +8,14 @@
     "node": "=> 10.13 < 10.11"
   },
   "dependencies": {
+    "@babel/core": "^7.9.0",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
     "atob": "^2.1.2",
     "axios": "^0.19.2",
     "browser-sync": "^2.26.7",
     "btoa": "^1.2.1",
+    "classnames": "^2.2.6",
     "gatsby": "^2.19.45",
     "gatsby-cli": "^2.10.11",
     "gatsby-image": "^2.2.29",
@@ -32,6 +34,7 @@
     "gatsby-source-multi-api": "^1.0.3",
     "gatsby-source-shopify": "^3.1.1",
     "gatsby-transformer-sharp": "^2.4.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
     "netlify-lambda": "^1.6.3",
