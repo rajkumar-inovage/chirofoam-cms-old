@@ -148,7 +148,7 @@ const ArticlePage = ({data}) => {
           console.error(error)
         })
       }
-      sendComment(`/api-call`)
+      sendComment(`/.netlify/functions/api-call`)
     } else {
       setResponseVisible(true)
       setResponseColor("warning")
@@ -177,14 +177,14 @@ const ArticlePage = ({data}) => {
       }).then((response) => {
         if (response.status === 200) {
           response.json().then((responseJson) => {
-            fetchData(`/api-call${reqLikeData}`)
+            fetchData(`/.netlify/functions/api-call${reqLikeData}`)
           })
         }
       }).catch((error) => {
         console.error(error)
       })
     }
-    sendLike(`/api-call`)
+    sendLike(`/.netlify/functions/api-call`)
   }
   const fetchData = async (URL) => {
     return await fetch(URL, {
@@ -212,8 +212,8 @@ const ArticlePage = ({data}) => {
         }
       })
     }
-    fetchComments(`/api-call${reqData}`)
-    fetchData(`/api-call${reqLikeData}`)
+    fetchComments(`/.netlify/functions/api-call${reqData}`)
+    fetchData(`/.netlify/functions/api-call${reqLikeData}`)
   }, [reqData, reqLikeData])
   return (<> <SEO title = {
     article.title

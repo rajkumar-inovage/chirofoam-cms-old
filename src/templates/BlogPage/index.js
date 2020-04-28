@@ -78,7 +78,7 @@ const BlogPage = ({data}) => {
           console.error(error)
         })
       }
-      fetchData(`/api-call${reqData}`)
+      fetchData(`/.netlify/functions/api-call${reqData}`)
     }
   }
   const postLike = (event, index, articleId, blogId, Ip) => {
@@ -107,7 +107,7 @@ const BlogPage = ({data}) => {
         console.error(error)
       })
     }
-    sendLike(`/api-call`)
+    sendLike(`/.netlify/functions/api-call`)
   }
   useEffect(() => {
     const getIp = async () => {
@@ -241,7 +241,7 @@ const BlogPage = ({data}) => {
                 </PaginationItem>
                 {
                   [...Array(pageInfo.pageCount)].map((page, i) => <PaginationItem active={(i + 1) === currentPage} key={i}>
-                    <button onClick={e => handlePagination(e, (i + 1))} className="page-link btn-custom-primary">
+                    <button onClick={e => handlePagination(e, (i + 1))} className={((i + 1) === currentPage)?"page-link btn-custom-primary text-white":"page-link btn-custom-primary"} disabled={(i + 1) === currentPage}>
                       {i + 1}
                     </button>
                   </PaginationItem>)
