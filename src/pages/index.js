@@ -61,7 +61,7 @@ export default props => {
                   sm="12"
                   className="col-md-6 col-lg-6 col-xl-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-4"
                 >
-                  <img src={active} alt="Active Life Style" width="100%" />
+                  <img src={active} alt="Active Life Style" width="541" height="365" />
                   <ul className="list-unstyled mt-3 extra-link text-center d-block text-lg-right text-xl-right text-md-right extra-link">
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link
@@ -241,7 +241,7 @@ export default props => {
                   className="col-lg-6 col-xl-6 product-border-right pr-0 pr-sm-2 position-relative"
                 >
                   <div className="pr-0 pr-lg-5 pr-xl-5 mr-0 mr-sm-4">
-                    <img src={product1} alt="Product1" width="100%" />
+                    <img src={product1} alt="Product1" width="599" height="326" />
                     <Link to="/product/the-original-chirofoam™-mattress-luxury-firm/">
                       <h3 className="text-left text-sm-left text-lg-right text-xl-right color-primary erbaum-bold pl-0">
                         THE ORIGINAL CHIROFOAM™ MATTRESS - LUXURY FIRM

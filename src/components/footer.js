@@ -70,7 +70,7 @@ const Footer = props => {
                 <img src={payment} alt="Payment Gateway" width="100%" />
               </p>
               <p>
-                <img src={bbb} alt="Payment" width="100%" />
+                <img src={bbb} alt="Payment" width="250" height="94" />
               </p>
             </div>
             <p

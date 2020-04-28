@@ -58,7 +58,8 @@ const HomePageSlider2 = props => {
                 <img
                   src={run}
                   alt="run"
-                  width="75%"
+                  width="297"
+                  height="536"
                   className="mt-sm-3 pl-sm-5 ml-sm-5"
                   useMap="#workmap"
                 />
