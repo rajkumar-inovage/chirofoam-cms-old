@@ -1,4 +1,13 @@
 const path = require('path')
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'https://chirofoam-beeta.netlify.app',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Chirofoam™ Memory Foam Mattress`,
@@ -27,15 +36,20 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://chirofoam-beeta.netlify.app',
-        sitemap: 'https://chirofoam-beeta.netlify.app/sitemap.xml',
-        resolveEnv: () => "production",
+        resolveEnv: () => NETLIFY_ENV,
         env: {
-          development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
-          },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
           }
         }
       }
