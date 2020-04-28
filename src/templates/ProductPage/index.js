@@ -25,7 +25,7 @@ import confidence from '~/assets/img/confidence.png'
 import circle1 from '~/assets/img/circle1.webp'
 import circle2 from '~/assets/img/circle2.webp'
 import circle3 from '~/assets/img/circle3.webp'
-import circle4 from '~/assets/img/circle4.png'
+import circle4 from '~/assets/img/circle4.webp'
 import circle5 from '~/assets/img/circle5.webp'
 
 const ProductPage = ({ data }) => {
