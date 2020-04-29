@@ -18,9 +18,9 @@ export default props => {
       <section className="blue-bg charity">
         <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
           <ScrollAnimation animateIn="fadeInUp">
-            <h2 className="font-weight-bold erbaum-bold text-uppercase pt-md-5 space-2 pt-sm-1">
+            <h1 className="font-weight-bold erbaum-bold text-uppercase pt-md-5 space-2 pt-sm-1">
               Chirofoam™ Memory Foam Mattresses
-            </h2>
+            </h1>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeInUp">
             <p

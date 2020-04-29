@@ -4,10 +4,15 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="Privacy Policy"
+        description="This privacy policy has been compiled to better serve those who are concerned with how their ‘Personally identifiable information’ (PII) is being used online..."
+      />
       <Header />
       <section className="mb-0 privacy-policy py-3 py-sm-5">
         <Container className="our-focus">

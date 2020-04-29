@@ -15,9 +15,9 @@ const cartPage = props => {
         <div className="container-large">
           <Row>
             <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
-              <h2 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
+              <h1 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
                 CART
-              </h2>
+              </h1>
             </Jumbotron>
           </Row>
         </div>

@@ -23,10 +23,15 @@ import ol6 from '../assets/img/ol6.jpg'
 import ol7 from '../assets/img/ol7.jpg'
 import ol8 from '../assets/img/ol8.jpg'
 import ol9 from '../assets/img/ol9.jpg'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="THE ORIGINAL CHIROFOAM™ MATTRESS - LUXURY FIRM"
+        description="The Original Chirofoam Memory Foam Mattress is designed to increase muscle recovery to help keep you performing at your best. Made in Toronto, ON. Upgrade your sleep today!"
+      />
       <Header />
       <section className="mt-4 mb py-5" style={{ backgroundColor: '#fff' }}>
         <Container>

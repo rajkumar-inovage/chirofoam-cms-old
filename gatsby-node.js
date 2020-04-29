@@ -9,6 +9,13 @@ exports.createPages = ({
   } = actions
   return graphql(`
     {
+      allShopifyPage {
+        edges {
+          node {
+            handle
+          }
+        }
+      }
       allShopifyProduct {
         edges {
           node {
@@ -31,6 +38,19 @@ exports.createPages = ({
     }
   `).then(result => {
     const paginate = [...Array(Math.ceil(result.data.allShopifyArticle.totalCount / 10))]
+    result.data.allShopifyPage.edges.forEach(({
+      node
+    }) => {
+      createPage({
+        path: `/page/${node.handle}/`,
+        component: path.resolve(`./src/templates/Page/index.js`),
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          handle: node.handle,
+        },
+      })
+    })
     result.data.allShopifyProduct.edges.forEach(({
       node
     }) => {

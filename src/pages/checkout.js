@@ -14,18 +14,22 @@ import {
 } from 'reactstrap'
 import paypal from '../assets/img/paypal.jpg'
 import cards from '../assets/img/cards.png'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="CHECKOUT"
+      />
       <Header />
       <section>
         <div className="container-large">
           <Row>
             <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
-              <h2 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
+              <h1 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
                 CHECKOUT
-              </h2>
+              </h1>
             </Jumbotron>
           </Row>
         </div>

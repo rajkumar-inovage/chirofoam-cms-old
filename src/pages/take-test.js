@@ -122,9 +122,9 @@ const TAKETEST = props => {
       <section className="mb-0 py-3 pb-lg-5 pb-xl-5" id="start-test">
         <Container className="pb-lg-5 pb-xl-5">
           <Row className="mx-0">
-            <h4 className="text-center color-primary erbaum-bold text-uppercase w-100 pt-2 pt-sm-5 mt-0 mt-sm-5">
+            <h1 className="text-center color-primary erbaum-bold text-uppercase w-100 pt-2 pt-sm-5 mt-0 mt-sm-5">
               See if the Chirofoam mattress is right for you. Take the test!
-            </h4>
+            </h1>
             <p
               className="pt-0 text-center w-100 pt-2 pt-lg-4 pt-xl-4 color-secondary"
               style={{

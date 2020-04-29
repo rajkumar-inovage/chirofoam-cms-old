@@ -16,10 +16,15 @@ import icon1 from '../assets/img/ic1.png'
 import icon2 from '../assets/img/ic2.png'
 import icon3 from '../assets/img/ic3.png'
 import icon4 from '../assets/img/ic4.png'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="THE CHIROFOAM™ XF MATTRESS - EXTRA FIRM"
+        description="Introducing the new Chirofoam<sup>TM</sup> XF Memory Foam mattress. An extra firm mattress designed for maximum support. Made in Toronto, ON."
+      />
       <Header />
       <section className="mt-4 mb py-5" style={{ backgroundColor: '#fff' }}>
         <Container>

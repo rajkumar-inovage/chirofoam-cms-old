@@ -3,18 +3,20 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Link } from 'gatsby'
 import { Jumbotron, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap'
+import SEO from '../components/seo'
 
 export default props => {
   return (
     <>
+      <SEO title="AFFILIATE REGISTRATION" />
       <Header />
       <section>
         <div className="container">
           <Row>
             <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
-              <h2 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
+              <h1 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
                 AFFILIATE REGISTRATION
-              </h2>
+              </h1>
             </Jumbotron>
           </Row>
         </div>

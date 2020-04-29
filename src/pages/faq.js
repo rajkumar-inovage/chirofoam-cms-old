@@ -12,10 +12,15 @@ import {
   UncontrolledCollapse,
 } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 const FaqPage = props => {
   return (
     <>
+      <SEO
+        title="Chirofoam™ Memory Foam Mattresses"
+        description="If you require any more information about the Chirofoam™ mattress, feel free to call or email us."
+      />
       <Header />
       <section className="blue-bg faq height-400">
         <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">

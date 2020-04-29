@@ -5,18 +5,23 @@ import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import logo from '../assets/img/logo2.png'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="Chirofoam™ Vs. Others"
+        description="World-class mattresses, at the best price."
+      />
       <Header />
       <ScrollAnimation animateIn="fadeInUp">
         <section className="mb-0 py-3 py-sm-3 py-md-3 py-lg-5 py-xl-5 position-relative">
           <Container>
             <Row className="mx-0 text-center">
-              <h2 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
+              <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
                 Chirofoam™ Vs. Others
-              </h2>
+              </h1>
               <p
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}

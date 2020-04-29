@@ -4,10 +4,15 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="Terms and Conditions"
+        description="Welcome to the Chirofoam™ website (the “Website” or Site”) maintained and operated by and on behalf of Chirofoam Mattress Company Inc. (“the Company”). This site is maintained as a service to our customers."
+      />
       <Header />
       <section className="mb-0 position-relative">
         <Container className="our-focus">

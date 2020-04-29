@@ -3,12 +3,14 @@ import { Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container } from 'reactstrap'
+import SEO from '../components/seo'
 
 const FourZeroFour = props => {
   return (
     <>
       {' '}
-      <Header />{' '}
+      <SEO title="WHOOPS! 404" description="Sorry! Page not found." />
+      <Header />
       <section className="error-page py-5">
         <Container>
           <div className="four-zero-four text-center">

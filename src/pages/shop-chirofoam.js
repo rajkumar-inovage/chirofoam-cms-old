@@ -15,7 +15,7 @@ import ScrollAnimation from 'react-animate-on-scroll'
 const shopChirofoam = props => {
   return (
     <>
-      <SEO title="SHOP CHIROFOAM™" />
+      <SEO title="SHOP CHIROFOAM™" description="THE COMFORT AND SUPPORT YOU NEED FOR A BETTER SLEEP We have two models to choose from. Whatever your needs are, Chirofoam has your back!" />
       <Header />
       <Banner />
       <section className="mt-4 mb py-4" style={{ backgroundColor: '#fff' }}>

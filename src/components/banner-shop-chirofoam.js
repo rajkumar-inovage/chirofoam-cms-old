@@ -10,9 +10,9 @@ const Banner = props => {
         <Row className="py-sm-5 py-4">
           <Col md="7">
             <span className="erbaum-bold color-primary space-1">SHOP</span>
-            <h2 className="shop-banner-title erbaum-bold color-primary">
+            <h1 className="shop-banner-title erbaum-bold color-primary">
               CHIROFOAM
-            </h2>
+            </h1>
             <p className="cta mt-0 pt-sm-5 pt-lg-5 pt-xl-5">
               <Spybutton
                 activeClass="active"

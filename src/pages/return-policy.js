@@ -4,10 +4,15 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="CHIROFOAM™ MEMORY FOAM MATTRESS"
+        description="100 Night In Home Sleep Trial – Full Money Back Returns"
+      />
       <Header />
       <section className="blue-bg charity">
         <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">

@@ -7,12 +7,16 @@ import amazon from '../assets/img/amazon.jpg'
 import best from '../assets/img/best.png'
 import nm from '../assets/img/nm.png'
 import ScrollAnimation from 'react-animate-on-scroll'
+import SEO from '~/components/seo'
 
 export default props => {
   return (
     <>
+      <SEO
+        title="Locations"
+        description="Chirofoam Mattresses are now available at these locations"
+      />
       <Header />
-
       <section className="blue-bg">
         <ScrollAnimation animateIn="fadeInUp">
           <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">

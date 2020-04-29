@@ -14,15 +14,15 @@ import ScrollAnimation from 'react-animate-on-scroll'
 export default props => {
   return (
     <>
-      <SEO title="5-key-features" />
+      <SEO title="5-key-features" description="Designed by mattress experts with 5 key features that consumers voted most important for a comfortable sleep experience.(Most mattresses don’t succeed in all 5 areas.)" />
       <Header />
       <section className="mb-0 py-3 position-relative">
         <ScrollAnimation animateIn="fadeInUp">
           <Container>
             <Row className="mx-0 text-center">
-              <h2 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
+              <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
                 AN EXTRA FIRM MATTRESS FOR MAXIMUM SUPPORT
-              </h2>
+              </h1>
               <p
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}

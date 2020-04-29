@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
+import SEO from '~/components/seo'
 import confirm from '../assets/img/confirm.png'
 import support from '../assets/img/support.png'
 import alignment from '../assets/img/allignment.png'
@@ -21,13 +22,14 @@ import ScrollAnimation from 'react-animate-on-scroll'
 export default props => {
   return (
     <>
+      <SEO title="Built by the pros" description="The Chirofoam™ mattress is designed to improve posture, and provide incredible pressure relief. Your back will thank you." />
       <Header />
       <section className="blue-bg charity">
         <ScrollAnimation animateIn="fadeInUp">
           <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">
-            <h2 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2">
+            <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2">
               Built by the pros
-            </h2>
+            </h1>
             <p
               className="space-4 proxima-r text-white m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-2 pt-sm-4"
               style={{ width: '90%', fontSize: '20px' }}
