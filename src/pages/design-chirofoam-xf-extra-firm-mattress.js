@@ -260,7 +260,7 @@ export default props => {
               </h5>
               <ul
                 className="filson-pro-reg color-secondary text-1 pb-3"
-                style={{ listStyle: 'inherit', lineHeight: '24px' }}
+                style={{ listStyle: 'inherit' }}
               >
                 <li className="pb-3">
                   <span className="color-primary space-1">
@@ -314,7 +314,7 @@ export default props => {
               <h6 className="erbaum-bold color-primary pb-2">Top Upholstery</h6>
               <ul
                 className="filson-pro-reg color-secondary text-1 pb-3"
-                style={{ listStyle: 'inherit', lineHeight: '24px' }}
+                style={{ listStyle: 'inherit' }}
               >
                 <li>
                   Soft Luxurious and Breathable Removable Cover with Non-Skid
@@ -327,7 +327,7 @@ export default props => {
               <h6 className="erbaum-bold color-primary pb-2">Support System</h6>
               <ul
                 className="filson-pro-reg color-secondary text-1 pb-3"
-                style={{ listStyle: 'inherit', lineHeight: '24px' }}
+                style={{ listStyle: 'inherit' }}
               >
                 <li>Chirofoam™ Lumbar Support</li>
                 <li>7″ Optimal High Density Bio-Foam</li>
@@ -338,7 +338,7 @@ export default props => {
               </h6>
               <ul
                 className="filson-pro-reg color-secondary text-1 pb-3"
-                style={{ listStyle: 'inherit', lineHeight: '24px' }}
+                style={{ listStyle: 'inherit' }}
               >
                 <li>
                   Mattress is suitable to work with any solid box spring
@@ -348,7 +348,7 @@ export default props => {
               <h6 className="erbaum-bold color-primary pb-2">Dimensions</h6>
               <ul
                 className="filson-pro-reg color-secondary text-1 pb-3"
-                style={{ listStyle: 'inherit', lineHeight: '24px' }}
+                style={{ listStyle: 'inherit' }}
               >
                 <li>
                   <span className="color-primary space-1">

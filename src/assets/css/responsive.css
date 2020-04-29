@@ -229,6 +229,11 @@
 		line-height: 28px;
 	}
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+	body .container-large {
+		padding: 0px 20px;
+	}
+}
 @media (min-width: 576px) and (max-width: 1024px) {
 	.manufacture-brand {
 		text-align: center;
@@ -282,9 +287,6 @@
 	}
 	body .mattresses .cta.left-btn.position-absolute {
 		right: 140px;
-	}
-	body .container-large {
-		padding: 0px 20px;
 	}
 	.check-text p {
 		font-size: 14px;

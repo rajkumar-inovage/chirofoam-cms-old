@@ -154,7 +154,7 @@ const BlogPage = ({ data }) => {
       <section className="mb-0 py-5 position-relative">
         <div className="container-large">
           <Row>
-            <Col sm="8" className="align-middle">
+            <Col md="8" className="align-middle">
               {allShopifyArticle.edges ? (
                 allShopifyArticle.edges.map(
                   (
@@ -318,7 +318,7 @@ const BlogPage = ({ data }) => {
                             </span>
                           </button>
                         </Col>
-                        <Col className="pl-2 pl-sm-2 pl-lg-4 pl-xl-4 col-11 blog-content">
+                        <Col className="pl-2 pl-sm-2 pl-lg-4 pl-xl-4 col-11 blog-content text-justify">
                           <p
                             style={{
                               fontSize: '12px',

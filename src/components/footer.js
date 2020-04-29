@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import Stickytest from '../components/Stickytest'
-import payment from '../assets/img/payment.png'
-import bbb from '../assets/img/bbb.png'
+import payment from '../assets/img/payment.webp'
+import bbb from '../assets/img/bbb.webp'
 
 const Footer = props => {
   const disabletest =
@@ -67,10 +67,10 @@ const Footer = props => {
             </ul>
             <div className="payment-gateway">
               <p>
-                <img src={payment} alt="Payment Gateway" width="100%" />
+                <img src={payment} alt="Payment Gateway" width="264" height="40" className="img-fluid" />
               </p>
               <p>
-                <img src={bbb} alt="Payment" width="250" height="94" />
+                <img src={bbb} alt="Payment" width="264" height="100" className="img-fluid" />
               </p>
             </div>
             <p
@@ -92,7 +92,7 @@ const Footer = props => {
             </p>
             <p
               className="filson-pro-reg space-1 m-0 pt-2"
-              style={{ color: '#b2b2b2', fontSize: '11px', lineHeight: '20px' }}
+              style={{ color: '#b2b2b2', fontSize: '11px'}}
             >
               Based on 160 retings and reviews by actual Chirofoam<sup>TM</sup>{' '}
               mattress owners.{' '}
@@ -106,7 +106,6 @@ const Footer = props => {
                 fontSize: '12px',
                 letterSpacing: '1px',
                 margin: '0px',
-                lineHeight: '30px',
               }}
             >
               Have any Inquiries? Give us a call:
@@ -119,7 +118,7 @@ const Footer = props => {
             </strong>
             <p
               className=" filson-pro-reg m-0 pb-0 pb-sm-3 space-1 pt-2"
-              style={{ color: '#b2b2b2', fontSize: '12px', lineHeight: '30px' }}
+              style={{ color: '#b2b2b2', fontSize: '12px'}}
             >
               1 (888)244-7631
             </p>

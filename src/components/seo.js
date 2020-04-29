@@ -2,14 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-function SEO({ description, image, lang, meta, keywords, title }) {
+function SEO({ description, image, imageWidth, imageHeight, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-        const ogImage = image || '../assets/img/logo-home.png'
+        const ogImage = image || null
+        const ogImageWidth = imageWidth || null
+        const ogImageHeight = imageHeight || null
         return (
           <Helmet
             htmlAttributes={{
@@ -24,7 +26,7 @@ function SEO({ description, image, lang, meta, keywords, title }) {
               },
               {
                 property: `og:title`,
-                content: title,
+                content: `${title} | ${data.site.siteMetadata.title}`,
               },
               {
                 property: `og:description`,
@@ -35,8 +37,20 @@ function SEO({ description, image, lang, meta, keywords, title }) {
                 content: ogImage,
               },
               {
+                property: `og:image:width`,
+                content: ogImageWidth,
+              },
+              {
+                property: `og:image:height`,
+                content: ogImageHeight,
+              },
+              {
                 property: `og:type`,
                 content: `website`,
+              },
+              {
+                property: `twitter:image`,
+                content: ogImage,
               },
               {
                 name: `twitter:card`,
@@ -47,8 +61,8 @@ function SEO({ description, image, lang, meta, keywords, title }) {
                 content: data.site.siteMetadata.author,
               },
               {
-                name: `twitter:title`,
-                content: title,
+                property: `twitter:title`,
+                content: `${title} | ${data.site.siteMetadata.title}`,
               },
               {
                 name: `twitter:description`,

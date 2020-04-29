@@ -32,7 +32,6 @@ export default props => {
           <Row className="mx-0">
             <p
               className="text-1 filson-pro-reg color-secondary text-center"
-              style={{ lineHeight: '30px' }}
             >
               See how Chirofoam™ compares with the best memory foam mattresses
               available online today.&nbsp; Chirofoam™ memory foam mattresses

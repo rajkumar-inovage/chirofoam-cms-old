@@ -324,7 +324,7 @@ p.cta.erbaum.position-absolute {
 	padding-bottom: 14px;
 } */
 .mattresses .cta.left-btn.position-absolute {
-	right: 140px;
+	right: 80px;
 }
 .mattresses .cta.right-btn.position-absolute {
 	left: 80px;
@@ -341,9 +341,6 @@ p.cta.erbaum.position-absolute {
 .active-style h2 {
 	font-weight: 1000 !important;
 	letter-spacing: -3px;
-}
-.active-style p {
-	line-height: 14px;
 }
 .btn-cta {
 	position: relative;
@@ -929,12 +926,6 @@ body .navbar {
     -moz-transition: all 350ms ease-in-out;
     -webkit-transition: all 350ms ease-in-out;
     transition: all 350ms ease-in-out;
-}
-.payment-gateway {
-    width: 200px;
-}
-.payment-gateway p img{
-    width:100%;
 }
 .homepage-slider-2 .btn-cta .carousel-control-prev-icon,.homepage-slider-2 .btn-cta .carousel-control-next-icon{
 	display:none;

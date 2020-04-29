@@ -54,7 +54,6 @@ export default props => {
               </ScrollAnimation>
               <p
                 className="filson-pro-reg color-secondary pt-2 text-left text-1"
-                style={{ lineHeight: '25px' }}
               >
                 Chirofoam™ was designed and built to relieve back pain and help
                 you get a better night’s sleep. Our team of chiropractors and
@@ -85,7 +84,6 @@ export default props => {
               </ScrollAnimation>
               <p
                 className="filson-pro-reg color-secondary pt-2 text-left text-1"
-                style={{ lineHeight: '25px' }}
               >
                 Each and every Chirofoam™ mattress is built using the highest
                 quality foams and fabrics which have been sourced from the best
@@ -113,7 +111,6 @@ export default props => {
               </ScrollAnimation>
               <p
                 className="filson-pro-reg color-secondary pt-2 text-left text-1"
-                style={{ lineHeight: '25px' }}
               >
                 Try the Chirofoam™ mattress in the comfort of your home for 100
                 nights and see what a difference it could make in the quality of
@@ -142,7 +139,6 @@ export default props => {
               </ScrollAnimation>
               <p
                 className="filson-pro-reg color-secondary pt-2 text-left text-1"
-                style={{ lineHeight: '25px' }}
               >
                 From the moment your Chirofoam™ mattress arrives at your door,
                 you are covered by our 15 year total warranty protection
@@ -172,7 +168,6 @@ export default props => {
               </ScrollAnimation>
               <p
                 className="filson-pro-reg color-secondary pt-2 text-1 text-left"
-                style={{ lineHeight: '25px' }}
               >
                 At Chirofoam we strongly believe in giving back to the less
                 fortunate people in the world. Many children in underdeveloped

@@ -374,11 +374,10 @@ const ArticlePage = ({ data }) => {
               <Row className="mt-3">
                 <Col sm="12">
                   <div
-                    className="filson-pro-reg single-article-content"
+                    className="filson-pro-reg single-article-content text-justify"
                     style={{
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '13px',
-                      lineHeight: '30px',
                     }}
                     dangerouslySetInnerHTML={{
                       __html: article.contentHtml,

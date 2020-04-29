@@ -71,7 +71,6 @@ export default ({ data }) => {
                     style={{
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '13px',
-                      lineHeight: '30px',
                     }}
                   >
                     Sleep; the blissful seven to eight hours we spend every
@@ -90,7 +89,6 @@ export default ({ data }) => {
                     style={{
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '13px',
-                      lineHeight: '30px',
                     }}
                   >
                     Food is an integral part of a healthy lifestyle and in order
@@ -104,7 +102,6 @@ export default ({ data }) => {
                     style={{
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '13px',
-                      lineHeight: '30px',
                     }}
                   >
                     One of the best ways to include proteins, vitamins, and

@@ -33,7 +33,7 @@ const RecentBlogs = () => {
     `
   )
   return (
-    <Col sm="4">
+    <Col md="4" className="d-none d-md-block">
       <div className="recent-posts">
         <h5 className="filson-pro-reg">Recent Posts</h5>
         <ul className="list-unstyled">

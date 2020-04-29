@@ -268,7 +268,7 @@ const ProductPage = ({ data }) => {
                 </h4>
                 <p
                   className="color-primary proxima-r space-1 text-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   CertiPUR-US® approved foams are made without ozone depleters,
                   made without PBDE flame retardants made without mercury, lead
@@ -283,7 +283,7 @@ const ProductPage = ({ data }) => {
               <Media left middle>
                 <p
                   className="color-primary proxima-r space-1 text-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   Eco institut tested for emission analysis in the test chamber
                   according to ISO 16000. compound analyses for heavy metals.
@@ -300,7 +300,7 @@ const ProductPage = ({ data }) => {
               <Media left middle>
                 <p
                   className="color-primary proxima-r space-1 text-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   Confidence In Textile Oeko-Tex® standard 100 certified provide
                   extensive testing on the fabrics to ensure that no substances
@@ -475,12 +475,12 @@ export const query = graphql`
         }
       }
       images {
-        originalSrc
-        id
         localFile {
           childImageSharp {
             fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              src
+              presentationHeight
+              presentationWidth
             }
           }
         }

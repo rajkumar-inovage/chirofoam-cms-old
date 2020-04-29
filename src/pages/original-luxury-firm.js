@@ -316,7 +316,6 @@ export default props => {
               <p className="cta mt-0 mt-sm-3 pt-sm-4 pt-lg-4 pt-xl-4 mb-sm-2 pl-0 text-right pr-5">
                 <span
                   className="proxima-b color-primary float-left display-5 v-price"
-                  style={{ lineHeight: '30px' }}
                 >
                   CAD $990.00
                 </span>
@@ -437,7 +436,7 @@ export default props => {
                 </h4>
                 <p
                   className="color-primary proxima-r space-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   CertiPUR-US® approved foams are made without ozone depleters,
                   made without PBDE flame retardants made without mercury, lead
@@ -452,7 +451,7 @@ export default props => {
               <Media left middle>
                 <p
                   className="color-primary proxima-r space-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   Eco institut tested for emission analysis in the test chamber
                   according to ISO 16000. compound analyses for heavy metals.
@@ -469,7 +468,7 @@ export default props => {
               <Media left middle>
                 <p
                   className="color-primary proxima-r space-1"
-                  style={{ paddingTop: '30px', lineHeight: '30px' }}
+                  style={{ paddingTop: '30px' }}
                 >
                   Confidence In Textile Oeko-Tex® standard 100 certified provide
                   extensive testing on the fabrics to ensure that no substances

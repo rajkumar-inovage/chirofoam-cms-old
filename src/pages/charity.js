@@ -86,7 +86,7 @@ export default props => {
               </p>
               <ul
                 className="filson-pro-reg color-secondary text-1"
-                style={{ listStyle: 'decimal', lineHeight: '24px' }}
+                style={{ listStyle: 'decimal'}}
               >
                 <li>
                   It is the basic right of every child to have to have a
@@ -134,7 +134,6 @@ export default props => {
               </p>
               <ul
                 className="filson-pro-reg color-secondary text-1"
-                style={{ lineHeight: '24px' }}
               >
                 <li>A mat or mattress/bedding</li>
                 <li>

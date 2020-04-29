@@ -3,7 +3,8 @@ import Banner from '../components/banner'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
-import active from '../assets/img/activelife.jpg'
+import Logo from '../assets/img/logo-home.png'
+import active from '../assets/img/activelife.webp'
 import product1 from '../assets/img/product1.webp'
 import product2 from '../assets/img/product2.webp'
 import circle1 from '../assets/img/circle1.webp'
@@ -19,7 +20,7 @@ import ScrollAnimation from 'react-animate-on-scroll'
 export default props => {
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Home" image={Logo} imageWidth={200} imageHeight={44} />
       <main id="homepage">
         <Banner />
         <section className="py-4 py-sm-4 py-lg-4 py-xl-4 active-style">
@@ -39,7 +40,7 @@ export default props => {
                   <h2 className="erbaum-bold color-primary pt-0 pt-sm-2 pt-lg-2 pt-xl-2 animated fadeInUp slow">
                     ACTIVE LIFESTYLE
                   </h2>
-                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-3 pb-lg-3 pb-xl-3 text-1">
+                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-3 pb-lg-3 pb-xl-3 text-1 text-justify text-md-left">
                     "Chirofoam is a premuim memory foam matttress designed with
                     5 key features consumers voted most important in a new
                     mattress. Created by industry experts, for atheletes and
@@ -47,7 +48,7 @@ export default props => {
                     sleep.
                   </p>
 
-                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-0 pb-lg-0 pb-xl-0 mb-sm-2 mb-lg-2 mb-xl-2 text-1">
+                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-0 pb-lg-0 pb-xl-0 mb-sm-2 mb-lg-2 mb-xl-2 text-1 text-justify text-md-left">
                     Try the world-class rated mattress with free continetal USA
                     and Canada-wide delivery, and a 100-night sleep trial."
                   </p>
@@ -61,7 +62,7 @@ export default props => {
                   sm="12"
                   className="col-md-6 col-lg-6 col-xl-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-4"
                 >
-                  <img src={active} alt="Active Life Style" width="541" height="365" />
+                  <img src={active} alt="Active Life Style" width="541" height="365" className="img-fluid" />
                   <ul className="list-unstyled mt-3 extra-link text-center d-block text-lg-right text-xl-right text-md-right extra-link">
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link
@@ -235,40 +236,37 @@ export default props => {
                 We have two models to choose from. Whatever your needs are,
                 Chirofoam has your back!
               </p>
-              <Row className="no-gutters row-eq-height pb-5 m-0">
+              <Row className="no-gutters row-eq-height pb-5 m-0 px-0 px-sm-2 px-lg-0">
                 <Col
                   sm="12"
                   className="col-lg-6 col-xl-6 product-border-right pr-0 pr-sm-2 position-relative"
                 >
                   <div className="pr-0 pr-lg-5 pr-xl-5 mr-0 mr-sm-4">
-                    <img src={product1} alt="Product1" width="599" height="326" />
+                    <div className="text-center">
+                      <img src={product1} alt="Product1" className="img-fluid" width="524" height="285" />
+                    </div>
                     <Link to="/product/the-original-chirofoam™-mattress-luxury-firm/">
                       <h3 className="text-left text-sm-left text-lg-right text-xl-right color-primary erbaum-bold pl-0">
                         THE ORIGINAL CHIROFOAM™ MATTRESS - LUXURY FIRM
                       </h3>
                     </Link>
-                    <p className="text-left text-sm-left text-lg-right text-xl-right color-primary proxima-eb space-1 pt-1 mb-0 text-1">
+                    <p className="text-justify text-md-left text-lg-right text-xl-right color-primary proxima-eb space-1 pt-1 mb-4 text-1">
                       The Original Chirofoam Memory Foam Mattress is designed to
                       increase muscle recovery to help keep you performing at
                       your best. Made in Toronto, ON.
                     </p>
-                    <br />
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
                       Upgrade your sleep today!
                     </p>
-                    <br />
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
                       Ideal for all sleeping positions.
                     </p>
-                    <br />
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
                       Firmness sacle: 7.5/10-Luxury Firm
                     </p>
-                    <br />
-                    <p className="text-left text-sm-left text-lg-right mb-4 color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left text-sm-left text-lg-right mb-4 color-primary proxima-eb space-1 mb-4 text-1">
                       Profile: 12 inches
                     </p>
-                    <br />
                   </div>
                   <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute left-btn">
                     <Link
@@ -285,36 +283,33 @@ export default props => {
                   className="col-lg-6 col-xl-6 pl-0 pl-sm-0 pl-lg-2 pl-xl-2 position-relative mt-sm-5 mt-lg-0 mt-xl-0"
                 >
                   <div className="pl-0 pl-sm-0 pl-lg-5 pl-xl-5 ml-0 ml-sm-0 ml-lg-4 ml-xl-4">
-                    <img src={product2} alt="Product2" width="100%" />
+                    <div className="text-center">
+                      <img src={product2} alt="Product2" className="img-fluid" width="524" height="270" />
+                    </div>
                     <Link to="/product/the-chirofoam™-xf-mattress-extra-firm/">
                       <h3 className="color-primary erbaum-bold pr-0">
                         THE CHIROFOAM™ XF MATTRESS - EXTRA FIRM
                       </h3>
                     </Link>
-                    <p className="text-left color-primary proxima-eb space-1 pt-1 mb-0 text-1">
+                    <p className="text-justify text-md-left color-primary proxima-eb space-1 pt-1 mb-4 text-1">
                       The Chirofoam XF Memory Foam Mattress is an extra firm
                       mattress designed maximum back support. Developed for
                       individuals and atheletes who suffer from back pain and
                       require the greatest amount of stiffness for efficient
                       recovery.
                     </p>
-                    <br />
-                    <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
                       Upgrade your sleep today!
                     </p>
-                    <br />
-                    <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
                       Ideal for back and stomach sleepers.
                     </p>
-                    <br />
-                    <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
                       Firmness sacle: 10/10-Extra Firm
                     </p>
-                    <br />
-                    <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
+                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
                       Profile: 10 inches
                     </p>
-                    <br />
                   </div>
                   <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute right-btn">
                     <Link

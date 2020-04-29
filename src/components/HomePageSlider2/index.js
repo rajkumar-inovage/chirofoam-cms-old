@@ -60,7 +60,7 @@ const HomePageSlider2 = props => {
                   alt="run"
                   width="297"
                   height="536"
-                  className="mt-sm-3 pl-sm-5 ml-sm-5"
+                  className="mt-sm-3 pl-sm-5 ml-sm-5 img-fluid"
                   useMap="#workmap"
                 />
               </div>
@@ -232,9 +232,6 @@ const HomePageSlider2 = props => {
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
-                      style={{
-                        lineHeight: '30px',
-                      }}
                     >
                       Created by experts after testing it with data by the Sleep
                       To Live Institute whose research is based on profiling
@@ -261,9 +258,6 @@ const HomePageSlider2 = props => {
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
-                      style={{
-                        lineHeight: '30px',
-                      }}
                     >
                       Made with the highest quality materials and designed to
                       help you get a better night’s sleep. Our 97% customer
@@ -288,9 +282,6 @@ const HomePageSlider2 = props => {
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
-                      style={{
-                        lineHeight: '30px',
-                      }}
                     >
                       Designed by mattress experts with 5 key features that
                       consumers voted most important for a comfortable sleep
@@ -315,9 +306,6 @@ const HomePageSlider2 = props => {
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
-                      style={{
-                        lineHeight: '30px',
-                      }}
                     >
                       Delivered to your door free of charge, and you may return
                       it within 100 nights if you are not 100% satisfied with
@@ -347,9 +335,6 @@ const HomePageSlider2 = props => {
                   </h3>
                   <p
                     className="text-white filson-pro-reg text-1 space-1"
-                    style={{
-                      lineHeight: '30px',
-                    }}
                   >
                     CertiPUR-US® approved foams are made without ozone
                     depleters, made without PBDE flame retardants made without
@@ -365,9 +350,6 @@ const HomePageSlider2 = props => {
                 <Media left={true} middle={true}>
                   <p
                     className="text-white filson-pro-reg text-1 space-1 mb-0 pt-2 pt-lg-4 pt-xl-4"
-                    style={{
-                      lineHeight: '30px',
-                    }}
                   >
                     Eco institut tested for emission analysis in the test
                     chamber according to ISO 16000. compound analyses for heavy
@@ -384,9 +366,6 @@ const HomePageSlider2 = props => {
                 <Media left={true} middle={true}>
                   <p
                     className="text-white filson-pro-reg text-1 space-1"
-                    style={{
-                      lineHeight: '30px',
-                    }}
                   >
                     Confidence In Textile Oeko-Tex® standard 100 certified
                     provide extensive testing on the fabrics to ensure that no

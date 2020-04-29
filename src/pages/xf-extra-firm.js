@@ -298,7 +298,6 @@ export default props => {
               <p className="cta mt-0 mt-sm-3 pt-sm-4 pt-lg-4 pt-xl-4 mb-sm-2 pl-0 text-right pr-5">
                 <span
                   className="proxima-b color-primary float-left display-5 v-price"
-                  style={{ lineHeight: '30px' }}
                 >
                   CAD $990.00
                 </span>

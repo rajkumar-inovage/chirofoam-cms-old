@@ -56,7 +56,7 @@ const SlickSlider = () => {
                   PRESSURE RELIEF FOAM
                 </h4>
                 <p
-                  className="proxima-r text-1"
+                  className="proxima-r text-1 text-justify text-md-left"
                   style={{
                     letterSpacing: '1px',
                   }}
@@ -87,7 +87,7 @@ const SlickSlider = () => {
                   PROPPER BACK SUPPORT AND ALIGNMENT
                 </h4>
                 <p
-                  className="proxima-r text-1"
+                  className="proxima-r text-1 text-justify text-md-left"
                   style={{
                     letterSpacing: '1px',
                   }}
@@ -118,7 +118,7 @@ const SlickSlider = () => {
                   BALANCED SLEEP TEMPERATURE
                 </h4>
                 <p
-                  className="proxima-r text-1"
+                  className="proxima-r text-1 text-justify text-md-left"
                   style={{
                     letterSpacing: '1px',
                   }}
@@ -149,7 +149,7 @@ const SlickSlider = () => {
                   Eliminates motion transfer
                 </h4>
                 <p
-                  className="proxima-r text-1"
+                  className="proxima-r text-1 text-justify text-md-left"
                   style={{
                     letterSpacing: '1px',
                   }}
@@ -179,7 +179,7 @@ const SlickSlider = () => {
                   Resists sagging
                 </h4>
                 <p
-                  className="proxima-r text-1"
+                  className="proxima-r text-1 text-justify text-md-left"
                   style={{
                     letterSpacing: '1px',
                   }}
