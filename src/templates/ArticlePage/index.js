@@ -26,6 +26,7 @@ import {
 } from 'react-share'
 import '~/assets/css/bootstrap.min.css'
 import '~/assets/js/custom.js'
+import ReactHtmlParser from 'react-html-parser'
 
 const ArticlePage = ({ data }) => {
   const URL = typeof window !== 'undefined' ? window.location.href : ''
@@ -258,7 +259,14 @@ const ArticlePage = ({ data }) => {
   return (
     <>
       {' '}
-      <SEO title={article.title} description={article.excerpt} /> <Header />
+      <SEO
+      title={article.title}
+      description={article.excerpt}
+        image={article.image.localFile.childImageSharp.fluid.src}
+        imageWidth={article.image.localFile.childImageSharp.fluid.presentationWidth}
+        imageHeight={article.image.localFile.childImageSharp.fluid.presentationHeight}
+      />
+      <Header />
       <section
         className="single-blog py-3 py-sm-3 py-lg-5 py-xl-5"
         style={{
@@ -282,7 +290,7 @@ const ArticlePage = ({ data }) => {
             <Col sm="12" className="align-middle single-article">
               <div className="featured-image position-relative overflow-hidden">
                 <img
-                  src={article.image.src}
+                  src={article.image.localFile.childImageSharp.fluid.src}
                   className="img-fluid"
                   alt={article.image.altText}
                   style={{
@@ -335,7 +343,7 @@ const ArticlePage = ({ data }) => {
                         <TwitterIcon size={25} round={true} />
                       </TwitterShareButton>
                       <PinterestShareButton
-                        media={article.image.src}
+                        media={article.image.localFile.childImageSharp.fluid.src}
                         url={URL}
                         className="p-1"
                       >
@@ -379,10 +387,8 @@ const ArticlePage = ({ data }) => {
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '13px',
                     }}
-                    dangerouslySetInnerHTML={{
-                      __html: article.contentHtml,
-                    }}
-                  />
+                  >{ReactHtmlParser(article.contentHtml)}
+                  </div>
                 </Col>
               </Row>
             </Col>
@@ -456,10 +462,7 @@ const ArticlePage = ({ data }) => {
                 </div>
                 <div
                   className="comment-card p-3 position-relative mt-3 filson-pro-reg text-1 color-secondary"
-                  dangerouslySetInnerHTML={{
-                    __html: comment.body_html,
-                  }}
-                ></div>
+                >{ReactHtmlParser(comment.body_html)}</div>
               </div>
             ))}
           </Container>
@@ -590,8 +593,16 @@ export const query = graphql`
       contentHtml
       excerpt
       image {
-        src
         altText
+        localFile {
+          childImageSharp {
+            fluid {
+              src
+              presentationHeight
+              presentationWidth
+            }
+          }
+        }
       }
       publishedAt(formatString: "MMMM DD, YYYY")
     }

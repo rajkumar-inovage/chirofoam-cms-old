@@ -21,7 +21,15 @@ const RecentPosts = () => {
               }
               publishedAt(formatString: "MMM DD, YYYY")
               image {
-                src
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                      presentationHeight
+                      presentationWidth
+                    }
+                  }
+                }
               }
               author {
                 name
@@ -59,7 +67,7 @@ const RecentPosts = () => {
                   style={{ height: '200px' }}
                 >
                   <img
-                    src={image.src}
+                    src={image.localFile.childImageSharp.fluid.src}
                     alt="Blog"
                     className="position-relative"
                     style={{

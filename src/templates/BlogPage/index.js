@@ -199,7 +199,7 @@ const BlogPage = ({ data }) => {
                           }}
                         >
                           <img
-                            src={image.src}
+                            src={image.localFile.childImageSharp.fluid.src}
                             className="img-fluid"
                             alt="Blog"
                             style={{
@@ -261,7 +261,7 @@ const BlogPage = ({ data }) => {
                                 <TwitterIcon size={25} round={true} />
                               </TwitterShareButton>
                               <PinterestShareButton
-                                media={image.src}
+                                media={image.localFile.childImageSharp.fluid.src}
                                 url={`${URL}/blogs/${blog.url
                                   .split('/')
                                   .pop()}/${url.split('/').pop()}/`}
@@ -482,7 +482,15 @@ export const query = graphql`
           url
           publishedAt(formatString: "MMM DD, YYYY")
           image {
-            src
+            localFile {
+              childImageSharp {
+                fluid {
+                  src
+                  presentationHeight
+                  presentationWidth
+                }
+              }
+            }
           }
           author {
             name

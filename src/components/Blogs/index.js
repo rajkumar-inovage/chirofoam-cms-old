@@ -37,7 +37,15 @@ const Blogs = ({ id }) => {
             url
             publishedAt(formatString: "MMM DD, YYYY")
             image {
-              src
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                    presentationHeight
+                    presentationWidth
+                  }
+                }
+              }
             }
             author {
               name
@@ -203,7 +211,7 @@ const Blogs = ({ id }) => {
                   }}
                 >
                   <img
-                    src={image.src}
+                    src={image.localFile.childImageSharp.fluid.src}
                     className="img-fluid"
                     alt="Blog"
                     style={{
@@ -266,7 +274,7 @@ const Blogs = ({ id }) => {
                         <TwitterIcon size={25} round={true} />
                       </TwitterShareButton>
                       <PinterestShareButton
-                        media={image.src}
+                        media={image.localFile.childImageSharp.fluid.src}
                         url={`${URL}/blogs/${blog.url
                           .split('/')
                           .pop()}/${url.split('/').pop()}/`}

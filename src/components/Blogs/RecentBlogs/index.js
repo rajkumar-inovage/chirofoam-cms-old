@@ -21,7 +21,15 @@ const RecentBlogs = () => {
               }
               publishedAt(formatString: "MMM DD, YYYY")
               image {
-                src
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                      presentationHeight
+                      presentationWidth
+                    }
+                  }
+                }
               }
               author {
                 name
@@ -59,7 +67,7 @@ const RecentBlogs = () => {
                         .pop()}/`}
                     >
                       <img
-                        src={image.src}
+                        src={image.localFile.childImageSharp.fluid.src}
                         className="img-fluid"
                         alt="Blog w-100"
                         style={{ transition: 'all 0.15s ease-in-out' }}

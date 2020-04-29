@@ -27,6 +27,7 @@ import circle2 from '~/assets/img/circle2.webp'
 import circle3 from '~/assets/img/circle3.webp'
 import circle4 from '~/assets/img/circle4.webp'
 import circle5 from '~/assets/img/circle5.webp'
+import ReactHtmlParser from 'react-html-parser'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
@@ -110,7 +111,9 @@ const ProductPage = ({ data }) => {
       <SEO
         title={product.title}
         description={product.description}
-        image={product.images[0].originalSrc}
+        image={product.images[0].localFile.childImageSharp.fluid.src}
+        imageWidth={product.images[0].localFile.childImageSharp.fluid.presentationWidth}
+        imageHeight={product.images[0].localFile.childImageSharp.fluid.presentationHeight}
       />
       <Header />
 
@@ -167,8 +170,7 @@ const ProductPage = ({ data }) => {
               </h3>
               <ProductDescription
                 className="filson-pro-reg space-1 mt-0"
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-              />
+              >{ReactHtmlParser(product.descriptionHtml)}</ProductDescription>
               <ProductForm product={product} />
             </Col>
           </Row>
