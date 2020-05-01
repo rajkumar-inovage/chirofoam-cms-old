@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
@@ -19,23 +20,55 @@ import mobility from '../assets/img/mobility.png'
 import church from '../assets/img/church.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-export default props => {
+const Chiropractor = (data) => {
+     const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 198}) {
+            acf {
+              banner_subtitle
+              banner_title
+              section1_title1
+              section1_description1
+              section1_title2
+              section1_description2
+              section1_title3
+              section1_description3
+              section1_title4
+              section1_description4
+              section1_title5
+              section1_description5
+              section2_main_subtitle
+              section2_main_title
+              section3_title
+              box1_text1
+              box1_text2
+              box2_text1
+              box2_text2
+              box3_text1
+              box3_text2
+              box4_text1
+              box4_text2
+            }
+          }
+      }
+    `
+    )
   return (
     <>
-      <SEO title="Built by the pros" description="The Chirofoam™ mattress is designed to improve posture, and provide incredible pressure relief. Your back will thank you." />
+      <SEO title={wordpressPage.acf.banner_title} description={wordpressPage.acf.banner_subtitle} />
       <Header />
       <section className="blue-bg charity">
         <ScrollAnimation animateIn="fadeInUp">
           <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">
             <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2">
-              Built by the pros
+              {wordpressPage.acf.banner_title}
             </h1>
             <p
               className="space-4 proxima-r text-white m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-2 pt-sm-4"
               style={{ width: '90%', fontSize: '20px' }}
             >
-              The Chirofoam™ mattress is designed to improve posture, and
-              provide incredible pressure relief. Your back will thank you.
+              {wordpressPage.acf.banner_subtitle}
             </p>
           </Jumbotron>
         </ScrollAnimation>
@@ -55,18 +88,11 @@ export default props => {
                   className="erbaum-bold space-3 color-primary pb-2 pb-sm-2 pb-lg-4 pb-xl-4 mb-0 text-uppercase"
                   style={{ fontSize: '1.10rem' }}
                 >
-                  Conformity
+                  {wordpressPage.acf.section1_title1}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                The Chirofoam™ memory foam mattress conforms to your body’s
-                natural curves. Mattresses that are too firm do not conform to
-                your body and create additional pressure points. Chirofoam is
-                designed to take your bodies shape and conform in a way that is
-                supportive and aligns your spine into the optimal position while
-                you rest. The Chirofoam™ mattress conforms to your body to
-                provide back pain relief and increased muscle recovery while you
-                sleep.
+                {ReactHtmlParser(wordpressPage.acf.section1_description1)}
               </p>
             </Col>
             <Col
@@ -81,19 +107,11 @@ export default props => {
                   className="erbaum-bold space-3 color-primary pb-2 pb-sm-2 pb-lg-4 pb-xl-4 mb-0 text-uppercase"
                   style={{ fontSize: '1.10rem' }}
                 >
-                  SUPPORT
+                  {wordpressPage.acf.section1_title2}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Our Chirofoam™ support layer is designed to support the centre
-                third of your body where the majority of weight and pressure
-                accumulate for most people. Mattresses that are too soft conform
-                to your body but do not offer the right support to keep your
-                back straight. This in turns create pressure points in the
-                opposite areas in which a mattress that is too firm would
-                create. With the ideal balance of support and comfort in a
-                Chirofoam™ memory foam mattress you are assured to get the
-                optimal support and back pain relief all night long.
+                {ReactHtmlParser(wordpressPage.acf.section1_description2)}
               </p>
             </Col>
             <Col
@@ -108,18 +126,11 @@ export default props => {
                   className="erbaum-bold space-3 color-primary pb-2 pb-sm-2 pb-lg-4 pb-xl-4 mb-0 text-uppercase"
                   style={{ fontSize: '1.10rem' }}
                 >
-                  alignment
+                  {wordpressPage.acf.section1_title3}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                With the ideal combination of conformity and support, Chirofoam™
-                is designed to keep your spine aligned with its natural curves
-                while you sleep. This is important to relieve pressure which can
-                build up during the day from improper posture, improper lifting,
-                or from sitting for long periods of time. Proper spine alignment
-                while you sleep is a key element to relieving back pain,
-                increased muscle recovery and feeling better in the morning
-                overall.
+               {ReactHtmlParser(wordpressPage.acf.section1_description3)}
               </p>
             </Col>
             <Col
@@ -134,20 +145,11 @@ export default props => {
                   className="erbaum-bold space-3 color-primary pb-2 pb-sm-2 pb-lg-4 pb-xl-4 mb-0 text-uppercase"
                   style={{ fontSize: '1.10rem' }}
                 >
-                  pressure relief
+                  {wordpressPage.acf.section1_title4}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                While placing your spine in proper alignment the Chirofoam™
-                memory foam mattress is simultaneously relieving pressure to
-                repair your muscles and joints for the day ahead. Once again,
-                pressure buildup from sitting for long periods of time without
-                proper back support or posture, improper lifting, or walking
-                with overall improper posture are keys factors which attribute
-                to a built up of pressure on your back throughout the day. The
-                Chirofoam™ mattress is specially designed to relieve this
-                pressure every night so you feel better and healthier to tackle
-                the day ahead.
+               {ReactHtmlParser(wordpressPage.acf.section1_description4)}
               </p>
             </Col>
             <Col
@@ -162,19 +164,11 @@ export default props => {
                   className="erbaum-bold space-3 color-primary pb-2 pb-sm-2 pb-lg-4 pb-xl-4 mb-0 text-uppercase"
                   style={{ fontSize: '1.10rem' }}
                 >
-                  Comfort
+                  {wordpressPage.acf.section1_title5}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                With all the conformity, support, alignment, and pressure relief
-                a Chirofoam™ mattress offers, it is also extremely comfortable
-                and easy for your body to adjust into. You will look forward to
-                an incredibly comfortable nights sleep for many years to come in
-                your new Chirofoam™ memory foam mattress. The majority of
-                Chirofoam™ owners state that the Chirofoam™ mattress is the most
-                comfortable mattress they have ever owned. Try one today with
-                our 100 night risk free trial and see what a difference it can
-                make for you.
+               {ReactHtmlParser(wordpressPage.acf.section1_description5)}
               </p>
             </Col>
           </Row>
@@ -185,12 +179,10 @@ export default props => {
           <Container>
             <Row className="text-center">
               <h4 className="text-center lead-text-font color-primary erbaum-bold w-100 pb-2 pb-sm-5 text-uppercase">
-                Chiropractor Recommended{' '}
+                {wordpressPage.acf.section2_main_title}
               </h4>
               <p className="filson-pro-reg color-secondary w-100 m-auto">
-                Chirofoam™ Memory Foam Mattresses are proudly recommended by the
-                following Chiropractors in the Greater Toronto Area and many
-                more…
+               {wordpressPage.acf.section2_main_subtitle}
               </p>
             </Row>
             <Row className="py-3 py-sm-5">
@@ -287,7 +279,7 @@ export default props => {
           <Container className="py-3 py-sm-5 py-lg-5 py-xl-5">
             <Row>
               <h3 className="text-center lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text color-primary erbaum-bold w-100 pb-2 pb-sm-5 text-uppercase">
-                Chirofoam™ is trusted every night by:{' '}
+                {wordpressPage.acf.section3_title}
               </h3>
             </Row>
             <Row>
@@ -295,29 +287,29 @@ export default props => {
                 sm="3"
                 className="text-center px-2 erbaum text-uppercase check-text proxima-r"
               >
-                <p className="mb-2">✓ Doctors</p>
-                <p>✓ Chiropractors</p>
+                <p className="mb-2">{wordpressPage.acf.box1_text1}</p>
+                <p>{wordpressPage.acf.box1_text2}</p>
               </Col>
               <Col
                 sm="3"
                 className="text-center px-2 erbaum text-uppercase check-text proxima-r"
               >
-                <p className="mb-2">✓ Personal Trainers</p>
-                <p>✓ Fitness Enthusiasts</p>
+                <p className="mb-2">{wordpressPage.acf.box2_text1}</p>
+                <p>{wordpressPage.acf.box2_text2}</p>
               </Col>
               <Col
                 sm="3"
                 className="text-center px-2 erbaum text-uppercase check-text proxima-r"
               >
-                <p className="mb-2">✓ Amateur Athletes</p>
-                <p>✓ Professional Athletes</p>
+                <p className="mb-2">{wordpressPage.acf.box3_text1}</p>
+                <p>{wordpressPage.acf.box3_text2}</p>
               </Col>
               <Col
                 sm="3"
                 className="text-center px-2 erbaum text-uppercase check-text proxima-r"
               >
                 <p className="mb-2">
-                  ✓ Thousands of customers across North America
+                 {wordpressPage.acf.box4_text1}
                 </p>
               </Col>
             </Row>
@@ -401,3 +393,5 @@ export default props => {
     </>
   )
 }
+
+export default Chiropractor

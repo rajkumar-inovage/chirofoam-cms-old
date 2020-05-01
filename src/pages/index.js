@@ -3,6 +3,7 @@ import Banner from '../components/banner'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
+import ReactHtmlParser from 'react-html-parser'
 import Logo from '../assets/img/logo-home.png'
 import active from '../assets/img/activelife.webp'
 import product1 from '../assets/img/product1.webp'
@@ -12,12 +13,49 @@ import circle2 from '../assets/img/circle2.webp'
 import circle3 from '../assets/img/circle3.webp'
 import circle4 from '../assets/img/circle4.webp'
 import circle5 from '../assets/img/circle5.webp'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
 import HomePageSlider2 from '../components/HomePageSlider2'
 import SlickSlider from '../components/FiveKeys'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+            acf {
+                section_1_title_1
+                section_1_title_2
+                section_1_text
+                section_1_button_1
+                section_1_button_2
+                section_1_button_3
+                key_features_title
+                key_features_sub_title
+                key_features_card_1_title
+                key_features_card_1_text
+                key_features_card_2_title
+                key_features_card_2_text
+                key_features_card_3_title
+                key_features_card_3_text
+                key_features_card_4_title
+                key_features_card_4_text
+                key_features_card_5_title
+                key_features_card_5_text
+                max_support_title
+                max_support_text
+                max_support_button
+                product_showcase_title
+                product_showcase_sub_title
+                review_title
+                review_sub_title
+                review_text
+                review_button
+              }
+          }
+      }
+    `
+    )
   return (
     <>
       <SEO title="Home" image={Logo} imageWidth={200} imageHeight={44} />
@@ -35,26 +73,17 @@ export default props => {
                     className="filson-pro-reg color-primary space-4 pl-0 pl-sm-2 pl-lg-2 pl-xl-2"
                     style={{ fontSize: '18px' }}
                   >
-                    DESIGNED FOR YOUR
+                    {wordpressPage.acf.section_1_title_1}
                   </small>
                   <h2 className="erbaum-bold color-primary pt-0 pt-sm-2 pt-lg-2 pt-xl-2 animated fadeInUp slow">
-                    ACTIVE LIFESTYLE
+                    {wordpressPage.acf.section_1_title_2}
                   </h2>
                   <p className="proxima-eb color-primary space-1 pb-0 pb-sm-3 pb-lg-3 pb-xl-3 text-1 text-justify text-md-left">
-                    "Chirofoam is a premuim memory foam matttress designed with
-                    5 key features consumers voted most important in a new
-                    mattress. Created by industry experts, for atheletes and
-                    individuals seeking better performance through a better
-                    sleep.
-                  </p>
-
-                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-0 pb-lg-0 pb-xl-0 mb-sm-2 mb-lg-2 mb-xl-2 text-1 text-justify text-md-left">
-                    Try the world-class rated mattress with free continetal USA
-                    and Canada-wide delivery, and a 100-night sleep trial."
+                   {ReactHtmlParser(wordpressPage.acf.section_1_text)}
                   </p>
                   <p className="cta mt-0 pt-sm-2 pt-lg-2 pt-xl-2 d-none">
                     <button className="btn-cta bg-transparent border-0 color-primary erbaum-bold space-1">
-                      CALL TO ACTION{' '}
+                      CALL TO ACTION
                     </button>
                   </p>
                 </Col>
@@ -66,7 +95,7 @@ export default props => {
                   <ul className="list-unstyled mt-3 extra-link text-center d-block text-lg-right text-xl-right text-md-right extra-link">
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link
-                        to="/our-story/"
+                        to={wordpressPage.acf.section_1_button_1}
                         className="mr-sm-3 mr-lg-3 mr-xl-3 color-primary erbaum-bold position-relative story"
                       >
                         OUR STORY
@@ -74,7 +103,7 @@ export default props => {
                     </li>
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link
-                        to="/locations/"
+                        to={wordpressPage.acf.section_1_button_2}
                         className="mr-sm-3 mr-lg-3 mr-xl-3 color-primary erbaum-bold position-relative location"
                       >
                         LOCATIONS
@@ -82,7 +111,7 @@ export default props => {
                     </li>
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link
-                        to="/shop-chirofoam/"
+                        to={wordpressPage.acf.section_1_button_3}
                         className="mr-sm-3 mr-lg-3 mr-xl-3 color-primary erbaum-bold position-relative online"
                       >
                         BUY ONLINE
@@ -102,12 +131,10 @@ export default props => {
                   className="text-center lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text color-primary erbaum-bold animated fadeInUp slow"
                   style={{ width: '100%' }}
                 >
-                  5 KEY FEATURES IN EVERY CHIROFOAM MATTRESS
+                  {wordpressPage.acf.key_features_title}
                 </h3>
                 <p className="text-center pb-5 pb-sm-4 pt-2 mb-5 color-primary proxima-b m-auto col-12 col-sm-10 col-lg-8 space-1 sub-text sub-sm-text sub-md-text sub-xl-text">
-                  Designed by mattress experts with 5 key features that
-                  consumers voted most important for a comfortable sleep
-                  experience. (Most mattresses don’t succeed in all 5 areas.){' '}
+                  {wordpressPage.acf.key_features_sub_title}
                 </p>
                 <div
                   style={{ margin: '0px auto' }}
@@ -125,19 +152,14 @@ export default props => {
               <Row className="mx-0">
                 <Col className="col-12 col-md-5 col-lg-5 col-xl-5 pt-0 pt-lg-5 pt-xl-5 pb-3 pb-sm-0 pb-md-3 pb-lg-5 pb-xl-5">
                   <h2 className="erbaum-bold text-white ml-3 animated fadeInUp slow">
-                    MAX SUPPORT MAX RESULTS
+                    {wordpressPage.acf.max_support_title}
                   </h2>
                   <div className="text-white proxima-r feat pt-0 pt-sm-1 ml-3 text-1 mb-2">
-                    <ul className="pl-3">
-                      <li>COOL GEL INFUSED MEMORY FOAM</li>
-                      <li>EXTRA FIRM SUPPORT CHIROFOAM</li>
-                      <li>CHIROFOAM LUMBAR SUPPORT</li>
-                      <li>BODY SUPPORT BIO FOAM CORE</li>
-                    </ul>
+                    {ReactHtmlParser(wordpressPage.acf.max_support_text)}
                   </div>
                   <p className="cta mt-0 pt-sm-3 pt-lg-3 pt-xl-3 mb-sm-2 ml-3">
                     <Link
-                      to="/product/the-chirofoam™-xf-mattress-extra-firm/"
+                      to={wordpressPage.acf.max_support_button}
                       className="btn-cta text-white erbaum-bold space-1"
                     >
                       READ MORE
@@ -230,11 +252,10 @@ export default props => {
           <ScrollAnimation animateIn="fadeInUp">
             <div className="pt-0 pt-sm-5 container-large">
               <h3 className="text-center lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text color-primary erbaum-bold display-5 w-100">
-                THE COMFORT AND SUPPORT YOU NEED FOR A BETTER SLEEP
+                {wordpressPage.acf.product_showcase_title}
               </h3>
               <p className="col-12 col-sm-7 text-center pb-4 pb-sm-5 px-0 px-sm-2 pt-1 mb-5 color-primary proxima-b space-1 m-auto sub-text sub-sm-text sub-md-text sub-xl-text">
-                We have two models to choose from. Whatever your needs are,
-                Chirofoam has your back!
+                {wordpressPage.acf.product_showcase_sub_title}
               </p>
               <Row className="no-gutters row-eq-height pb-5 m-0 px-0 px-sm-2 px-lg-0">
                 <Col
@@ -338,21 +359,16 @@ export default props => {
                     style={{ width: '100%', maxWidth: '605px', float: 'right' }}
                   >
                     <h3 className="color-primary erbaum-bold lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text text-uppercase">
-                      See what our customer are saying about the Chirofoam
-                      mattress
+                      {wordpressPage.acf.review_title}
                     </h3>
                     <h5 className="filson-pro-reg color-primary pt-2 text-2">
-                      CUSTOMER REVIEWS
+                      {wordpressPage.acf.review_sub_title}
                     </h5>
                     <p
                       className="text-left proxima-eb space-1 pt-1 mb-0 text-1"
                       style={{ color: '#808080' }}
                     >
-                      <span className="color-primary">
-                        Chirofoam mattresses are designed by Chiropractors
-                      </span>{' '}
-                      to improve posture, and provide incredible pressure
-                      relief. Your back will thank you.
+                     {ReactHtmlParser(wordpressPage.acf.review_text)}
                     </p>
                     <p className="cta mt-3 pt-sm-4 pt-lg-4 pt-xl-4">
                       <Link

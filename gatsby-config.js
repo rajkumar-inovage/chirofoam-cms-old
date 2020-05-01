@@ -109,6 +109,17 @@ module.exports = {
       options: {
         '~': path.join(__dirname, 'src/')
       }
-    }
+    },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "ismass.com/apps/chirofoam-cms",
+        protocol: "http",
+        hostingWPCOM: false,
+        useACF: true,
+        verboseOutput:true,
+        acfOptionPageIds: [],
+      },
+    },
   ],
 }

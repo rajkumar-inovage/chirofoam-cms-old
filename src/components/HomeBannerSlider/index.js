@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -13,10 +13,32 @@ const HomeBannerSlider = () => {
     speed: 1000,
     autoplaySpeed: 5000,
     centerMode: false,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+           acf {
+              banner_1_title_1
+              banner_1_title_2
+              banner_1_title_3
+              banner_2_title_1
+              banner_2_title_2
+              banner_2_title_3
+              banner_3_title_1
+              banner_3_title_2
+              banner_3_title_3
+              banner_2_button
+              banner_3_button
+              banner_1_button
+            }
+          }
+      }
+    `
+    )
   return (
     <div>
       <Slider {...settings}>
@@ -41,7 +63,7 @@ const HomeBannerSlider = () => {
                     }}
                   >
                     <p className="leads filson-pro-reg space-4 pt-2 animated fadeInDown slow text-uppercase">
-                      CHIROFOAM MEMORY FOAM MATTRESS
+                      {wordpressPage.acf.banner_1_title_1}
                     </p>
                     <h2
                       className="erbaum-bold space-4 pl-sm-0 pl-xl-4 pl-lg-4 animated fadeInRight slow"
@@ -49,14 +71,14 @@ const HomeBannerSlider = () => {
                         fontStyle: 'italic',
                       }}
                     >
-                      UPGRADE
+                      {wordpressPage.acf.banner_1_title_2}
                     </h2>
                     <h3 className="erbaum animated fadeInUp slow">
-                      YOUR SLEEP
+                      {wordpressPage.acf.banner_1_title_3}
                     </h3>
                     <p className="cta mt-0 pt-sm-1 pt-lg-1 pt-xl-1 mb-sm-2 pl-0 animated fadeInLeft slow">
                       <Link
-                        to="/product/the-original-chirofoam™-mattress-luxury-firm/"
+                        to={wordpressPage.acf.banner_1_button}
                         className="btn-cta text-white erbaum-bold space-1"
                       >
                         BUY NOW
@@ -89,7 +111,7 @@ const HomeBannerSlider = () => {
                     }}
                   >
                     <p className="leads filson-pro-reg space-4 pt-2 animated fadeInDown slow text-uppercase">
-                      Chirofoam XF Extra Firm Memory Foam Mattress
+                      {wordpressPage.acf.banner_2_title_1}
                     </p>
                     <h2
                       className="erbaum-bold space-4 pl-sm-0 pl-xl-4 pl-lg-4 animated fadeInRight slow"
@@ -97,12 +119,14 @@ const HomeBannerSlider = () => {
                         fontStyle: 'italic',
                       }}
                     >
-                      MAXIMUM
+                      {wordpressPage.acf.banner_2_title_2}
                     </h2>
-                    <h3 className="erbaum animated fadeInUp slow">SUPPORT</h3>
+                    <h3 className="erbaum animated fadeInUp slow">
+                      {wordpressPage.acf.banner_2_title_3}
+                    </h3>
                     <p className="cta mt-0 pt-sm-1 pt-lg-1 pt-xl-1 mb-sm-2 pl-0 animated fadeInLeft slow">
                       <Link
-                        to="/product/the-chirofoam™-xf-mattress-extra-firm/"
+                        to={wordpressPage.acf.banner_2_button}
                         className="btn-cta text-white erbaum-bold space-1"
                       >
                         BUY NOW

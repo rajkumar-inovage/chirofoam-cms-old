@@ -8,7 +8,8 @@ import {
   CarouselItem,
   CarouselControl,
 } from 'reactstrap'
-import { Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
+import {useStaticQuery, Link } from 'gatsby'
 import '~/assets/css/bootstrap.min.css'
 import '~/assets/css/animate.css'
 import run from '~/assets/img/only-man.webp'
@@ -33,6 +34,33 @@ const items = [
 ]
 
 const HomePageSlider2 = props => {
+   const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+            acf {
+                slider_1_title_1
+                slider_1_text_1
+                slider_1_button_1
+                slider_1_text_2
+                slider_1_button_2
+                slider_2_block_1_title
+                slider_2_block_1_text
+                slider_2_block_2_title
+                slider_2_block_2_text
+                slider_2_block_3_title
+                slider_2_block_3_text
+                slider_2_block_4_title
+                slider_2_block_4_text
+                slider_3_title
+                slider_3_text1
+                slider_3_text2
+                slider_3_text3
+              }
+          }
+      }
+    `
+    )
   const [activeIndex, setActiveIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
 
@@ -49,6 +77,7 @@ const HomePageSlider2 = props => {
   }
 
   const slides = items.map((item, index) => {
+
     const slide = [
       <section className="py-4 pt-sm-4 pb-sm-4 approved bg-image">
         <Container className="">
@@ -68,20 +97,10 @@ const HomePageSlider2 = props => {
             <Col className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
               <div className="text-white mb-4">
                 <h3 className="approved-title text-white erbaum-bold lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text">
-                  CHIROPRACTOR APPROVED
+                   {wordpressPage.acf.slider_1_title_1}
                 </h3>
                 <p className="proxima-b space-1 p-0 pt-sm-1 text-1">
-                  Chirofoam
-                  <sup
-                    style={{
-                      fontSize: '8px',
-                    }}
-                  >
-                    TM
-                  </sup>
-                  mattresses are designed by Chiropractors to improve posture,
-                  and provide incredible pressure relief. Your back will thank
-                  you.
+                  {wordpressPage.acf.slider_1_text_1}
                 </p>
                 <p className="cta mt-3 mt-sm-0 mt-lg-0 mt-xl-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
                   <button className="btn-cta bg-transparent outline-none text-white erbaum-bold space-1 border-0">
@@ -92,11 +111,10 @@ const HomePageSlider2 = props => {
 
               <div className="text-white mb-4 pt-1 pr-0 pr-sm-5">
                 <h3 className="approved-title text-white erbaum-bold pt-0 pt-sm-3 lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text">
-                  CUSTOMER APPROVED
+                  {wordpressPage.acf.slider_1_title_2}
                 </h3>
                 <p className="proxima-b space-1 p-0 pt-sm-2 text-1">
-                  Our customers have reported the following benefits after
-                  sleeping on there chirofoam mattress
+                  {wordpressPage.acf.slider_1_text_2}
                 </p>
                 <div className="ml-0 ml-sm-4 pt-0 pt-sm-0 pl-0 pr-sm-5">
                   <Media className="my-3">
@@ -191,7 +209,7 @@ const HomePageSlider2 = props => {
                 </div>
                 <p className="cta mt-3 mt-sm-3 pt-sm-4 pt-lg-4 pt-xl-4 mb-sm-2 pl-0">
                   <Link
-                    to="/reviews/"
+                    to={wordpressPage.acf.slider_1_button_2}
                     className="btn-cta text-white erbaum-bold space-1"
                   >
                     READ CUSTOMER REVIEWS
@@ -212,7 +230,7 @@ const HomePageSlider2 = props => {
                   width: '100%',
                 }}
               >
-                <h4 className="lead-text-font text-white erbaum-bold display-5 position-relative text-center pb-5 d-none">
+                <h4 className="lead-text-font text-white erbaum-bold display-5 position-relative text-center pb-5">
                   ONDIMENTUM QUISBIBENDUM SED
                 </h4>
               </div>
@@ -228,16 +246,12 @@ const HomePageSlider2 = props => {
                         fontSize: '18px',
                       }}
                     >
-                      BACKED BY SCIENCE
+                      {wordpressPage.acf.slider_2_block_1_title}
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
                     >
-                      Created by experts after testing it with data by the Sleep
-                      To Live Institute whose research is based on profiling
-                      over 10m people. Recommended by Chiropractors based on key
-                      elements of conformity, support, alignment, pressure
-                      relief and comfort.
+                      {wordpressPage.acf.slider_2_block_1_text}
                     </p>
                   </Media>
                 </Media>
@@ -254,14 +268,12 @@ const HomePageSlider2 = props => {
                         fontSize: '18px',
                       }}
                     >
-                      COMFORT GUARANTEED
+                      {wordpressPage.acf.slider_2_block_2_title}
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
                     >
-                      Made with the highest quality materials and designed to
-                      help you get a better night’s sleep. Our 97% customer
-                      satisfaction rate speaks for itself.
+                      {wordpressPage.acf.slider_2_block_2_text}
                     </p>
                   </Media>
                 </Media>
@@ -278,14 +290,12 @@ const HomePageSlider2 = props => {
                         fontSize: '18px',
                       }}
                     >
-                      5 KEY FEATURES
+                      {wordpressPage.acf.slider_2_block_3_title}
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
                     >
-                      Designed by mattress experts with 5 key features that
-                      consumers voted most important for a comfortable sleep
-                      experience.
+                      {wordpressPage.acf.slider_2_block_3_text}
                     </p>
                   </Media>
                 </Media>
@@ -302,14 +312,12 @@ const HomePageSlider2 = props => {
                         fontSize: '18px',
                       }}
                     >
-                      FREE EXPRESS DELIVERY & EASY RETURNS
+                      {wordpressPage.acf.slider_2_block_4_title}
                     </h4>
                     <p
                       className="filson-pro-reg text-1 space-1"
                     >
-                      Delivered to your door free of charge, and you may return
-                      it within 100 nights if you are not 100% satisfied with
-                      full money back.
+                      {wordpressPage.acf.slider_2_block_4_text}
                     </p>
                   </Media>
                 </Media>
@@ -331,15 +339,12 @@ const HomePageSlider2 = props => {
               <Media className="px-3 px-sm-5 mb-1 d-block d-sm-flex">
                 <Media left={true} middle={true}>
                   <h3 className="lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text text-uppercase text-white erbaum-bold pr-0 pr-lg-5 pr-xl-5 mr-0 mr-lg-5 mr-xl-5 pb-3 pb-lg-3 pb-xl-3">
-                    Manufactured with your health and the environment in mind.
+                    {wordpressPage.acf.slider_3_title}
                   </h3>
                   <p
                     className="text-white filson-pro-reg text-1 space-1"
                   >
-                    CertiPUR-US® approved foams are made without ozone
-                    depleters, made without PBDE flame retardants made without
-                    mercury, lead and other heavy metals, made without
-                    formaldehyde.
+                   {ReactHtmlParser(wordpressPage.acf.slider_3_text1)}
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-0">
@@ -351,11 +356,7 @@ const HomePageSlider2 = props => {
                   <p
                     className="text-white filson-pro-reg text-1 space-1 mb-0 pt-2 pt-lg-4 pt-xl-4"
                   >
-                    Eco institut tested for emission analysis in the test
-                    chamber according to ISO 16000. compound analyses for heavy
-                    metals. AOX/EOX, biocides, phthalates, flame retatdants
-                    etc... odour testing according to VDA, toxicological and
-                    ecological expertise.
+                    {ReactHtmlParser(wordpressPage.acf.slider_3_text2)}
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
@@ -367,12 +368,7 @@ const HomePageSlider2 = props => {
                   <p
                     className="text-white filson-pro-reg text-1 space-1"
                   >
-                    Confidence In Textile Oeko-Tex® standard 100 certified
-                    provide extensive testing on the fabrics to ensure that no
-                    substances are present that could be harmful to human.
-                    Oeko-Tex® standard 100 is an international certification
-                    that set limits for over 100 harmful chemicals, substances,
-                    and emissions in textiles.
+                    {ReactHtmlParser(wordpressPage.acf.slider_3_text3)}
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
@@ -384,6 +380,7 @@ const HomePageSlider2 = props => {
         </div>
       </section>,
     ]
+   
     return (
       <CarouselItem
         onExiting={() => setAnimating(true)}

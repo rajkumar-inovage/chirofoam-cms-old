@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery,Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
+import ReactHtmlParser from 'react-html-parser'
 import SEO from '~/components/seo'
 import sleep_child from '../assets/img/sleep-child.jpg'
 import children from '../assets/img/children.jpg'
@@ -11,25 +12,49 @@ import donate from '../assets/img/donate.jpg'
 import dream from '../assets/img/dream.jpg'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-export default props => {
+const Charity = (data) => {
+     const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 16}) {
+            acf {
+                banner_title
+                banner_subtitle
+                title1
+                description1
+                title2
+                description2
+                title3
+                description3
+                title4
+                description4
+                title5
+                description5
+                section3_title
+                section3_subtitle
+              }
+          }
+      }
+    `
+    )
   return (
     <>
       <SEO
-        title="SLEEPING CHILDREN AROUND THE WORLD"
-        description="Chirofoam™ will donate 1 Bedkit for every mattress sold."
+        title={wordpressPage.acf.banner_title}
+        description={wordpressPage.acf.banner_subtitle}
       />
       <Header />
       <section className="blue-bg charity">
         <ScrollAnimation animateIn="fadeInUp">
           <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
             <h1 className="display-5 font-weight-bold erbaum-bold text-uppercase pt-md-5 space-2 pt-sm-1">
-              Sleeping Children Around The World
+              {wordpressPage.acf.banner_title}
             </h1>
             <p
               className="space-4 proxima-r text-white m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-2 pt-sm-4"
               style={{ width: '90%', fontSize: '26px' }}
             >
-              Chirofoam™ will donate 1 Bedkit for every mattress sold.
+              {wordpressPage.acf.banner_subtitle}
             </p>
           </Jumbotron>
         </ScrollAnimation>
@@ -43,26 +68,11 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  The Charity’s Purpose
+                  {wordpressPage.acf.title1}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Since it’s founding in 1970, Sleeping Children Around The World
-                (SCAW) has raised over $40 million to provide bedkits for
-                children in 34 countries. They have helped over one million
-                children by 2009.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Their purpose is crystal clear: give every child the opportunity
-                to have a good night’s sleep. With sleep, the promise of a
-                better tomorrow is realized.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
-                The consequences of deprived sleep are well documented. It is a
-                fact that poor sleep leads to long term issues, especially in
-                young children. Sleep has tremendous effects on health, memory,
-                emotions and academic potential. No child should ever be
-                deprived of a peaceful sleep.
+                {ReactHtmlParser(wordpressPage.acf.description1)}
               </p>
               <div className="charity-image text-center w-100">
                 <img
@@ -78,37 +88,13 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  Core Values
+                 {wordpressPage.acf.title2}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Sleeping Children Around The World and their core values:
+                {ReactHtmlParser(wordpressPage.acf.description2)}
               </p>
-              <ul
-                className="filson-pro-reg color-secondary text-1"
-                style={{ listStyle: 'decimal'}}
-              >
-                <li>
-                  It is the basic right of every child to have to have a
-                  comfortable night’s sleep.
-                </li>
-                <li>
-                  100% of all bedkit donations go directly to its contents. No
-                  portion is used to pay for operating expenses.
-                </li>
-                <li>
-                  They provide hope and joy and aim to preserve the dignity of
-                  each child they help.
-                </li>
-                <li>
-                  They verify that each bedkit is received by a child in need.
-                </li>
-                <li>
-                  All donations are of “free will” giving. They will not
-                  undertake telemarketing, door to door appeals, mass mailings
-                  or use professional fundraisers to help their cause.
-                </li>
-              </ul>
+              
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
@@ -124,29 +110,13 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  What is a Bedkit?
+                 {wordpressPage.acf.title3}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Bedkits have benefited more than a million children in 34
-                developing countries around the world and are largely comprised
-                of the following items:
+               {ReactHtmlParser(wordpressPage.acf.description3)}
               </p>
-              <ul
-                className="filson-pro-reg color-secondary text-1"
-              >
-                <li>A mat or mattress/bedding</li>
-                <li>
-                  A mosquito net to combat the threat of malaria & other
-                  vector-borne diseases
-                </li>
-                <li>Schoolbag and school supplies</li>
-                <li>Clothing and footwear</li>
-              </ul>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
-                All items are sourced locally where possible, with positive
-                economic impact to the local community.
-              </p>
+              
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
@@ -162,19 +132,11 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  Volunteers
+                  {wordpressPage.acf.title4}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                Volunteerism takes on a new definition at Sleeping Children,
-                because it means more than just giving back. They believe their
-                volunteers get a lot more than they give; they actually nourish
-                their own humanity.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
-                At Sleeping Children there are three distinct kinds of
-                volunteers required to mount a global initiative such as ours.
-                More than 2000 volunteers are from all over the world.
+               {ReactHtmlParser(wordpressPage.acf.description4)}
               </p>
               <div className="charity-image text-center w-100">
                 <img
@@ -191,19 +153,11 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  1 Bedkit for Every Chirofoam Mattress
+                 {wordpressPage.acf.title5}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                With every purchase of a Chirofoam mattress, we will donate a
-                Bedkit to a child in need. A bedkit provides a child with the
-                means to go on thriving and the promise that the world holds a
-                brighter future.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
-                These Bedkits provide a child with the basic necessities for
-                sleep. This transforms the life of that child and these tools
-                have a lasting effect on the entire family.
+               {ReactHtmlParser(wordpressPage.acf.description5)}
               </p>
               <div className="charity-image text-center w-100">
                 <img
@@ -222,23 +176,14 @@ export default props => {
           <Row className="pb-0 pb-sm-5 mx-0">
             <ScrollAnimation animateIn="fadeInUp">
               <h4 className="text-center color-primary erbaum-bold text-uppercase w-100 pt-2 pt-sm-5 mt-0 mt-sm-0 mt-md-0 mt-lg-5 mt-xl-5">
-                Thank you for helping to provide a child in need with better
-                sleep.
+                {wordpressPage.acf.section3_title}
               </h4>
             </ScrollAnimation>
             <p
               className="pt-0 text-uppercase text-center w-100 pt-2 pt-md-5"
               style={{ color: '#ba2154' }}
             >
-              For more information on Sleeping Children Around The World visit
-              their website at{' '}
-              <a
-                href="https://www.scaw.org/#scawhome"
-                style={{ color: '#000' }}
-              >
-                www.scaw.org
-              </a>
-              .
+              {ReactHtmlParser(wordpressPage.acf.section3_subtitle)}
             </p>
           </Row>
         </Container>
@@ -320,3 +265,4 @@ export default props => {
     </>
   )
 }
+export default Charity
