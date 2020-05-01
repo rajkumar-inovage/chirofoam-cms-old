@@ -412,4 +412,5 @@ const HomePageSlider2 = props => {
   )
 }
 
+
 export default HomePageSlider2
