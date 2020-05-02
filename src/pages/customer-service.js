@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
@@ -46,18 +46,47 @@ export default props => {
     }
     sendFormData('https://contactform.hulkapps.com/ajaxcall/customcontact')
   }
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 240}) {
+            title
+            acf {
+              title
+              description
+              phone1
+              phone2
+              working_day
+              secondary_phone
+              address_line1
+              address_line2
+              address_line3
+              address_line4
+              address_line5
+              office_hours
+              center_address_line1
+              center_address_line2
+              center_address_line3
+              center_address_line4
+              center_address_line5
+              last_description
+            }
+          }
+      }
+    `
+    )
 
   return (
     <>
       {' '}
-      <SEO title="CUSTOMER SERVICE" /> <Header />
+      <SEO title={wordpressPage.title} /> <Header />
       <ScrollAnimation animateIn="fadeInUp">
         <section>
           <div className="container-large">
             <Row>
               <Jumbotron className="mb-0 text-center text-white bg-transparent space-1 w-100 m-auto">
                 <h1 className="font-weight-bold display-5 color-primary erbaum-bold text-uppercase pt-5 space-2">
-                  CUSTOMER SERVICE
+                 {wordpressPage.title}
                 </h1>
               </Jumbotron>
             </Row>
@@ -70,14 +99,11 @@ export default props => {
             <Col sm="6" className="mb-3 mb-sm-5">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 mb-0 text-uppercase">
-                  GET IN TOUCH
+                  {wordpressPage.acf.title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                If you have any questions, concerns, of would like to contact
-                us, simply fill out the contact form and a member of our team
-                will get back to you as soon as possible. You can also email us
-                directly: info@chirofoam.com
+                {wordpressPage.acf.description}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
                 Prefer to talk to us by phone?
@@ -85,55 +111,52 @@ export default props => {
                 Give us a call:
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                <strong>1 (888) CHIRO-31</strong>
-                <br />1 (888) 244-7631
+                <strong>{wordpressPage.acf.phone1}</strong>
+                <br />{wordpressPage.acf.phone2}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
                 Our sleep experts are on call
                 <br />
-                Mon-Fri 10am-6pm (EST)
+                {wordpressPage.acf.working_day}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 pt-sm-2 pt-lg-5 pt-xl-5 text-1">
-                You may also call our local Toronto, Ontario office at: (905)
-                766-3380
+                You may also call our local Toronto, Ontario office at: {wordpressPage.acf.secondary_phone}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 pt-sm-2 pt-lg-5 pt-xl-5 text-1">
                 Chirofoam Mattress Company, Head Office
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                130 King Street West
+                {wordpressPage.acf.address_line1}
                 <br />
-                Suite 1800
+                {wordpressPage.acf.address_line2}
                 <br />
-                Toronto, Ontario
+                {wordpressPage.acf.address_line3}
                 <br />
-                M5X 1E3
+                {wordpressPage.acf.address_line4}
                 <br />
-                Canada
+                {wordpressPage.acf.address_line5}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
                 Office hours:
                 <br />
-                Mon-Fri 10am-6pm (EST)
+                {wordpressPage.acf.office_hours}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1 pt-sm-2 pt-lg-5 pt-xl-5">
                 Distribution Center:
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1">
-                1550 Meyerside Drive
+                {wordpressPage.acf.center_address_line1}
                 <br />
-                Unit#2
+                {wordpressPage.acf.center_address_line2}
                 <br />
-                Mississauga, Ontario
+                {wordpressPage.acf.center_address_line3}
                 <br />
-                L5T 1V4
+                {wordpressPage.acf.center_address_line4}
                 <br />
-                Canada
+                {wordpressPage.acf.center_address_line5}
               </p>
               <p className="filson-pro-reg color-secondary pt-2 text-1 pt-sm-2 pt-lg-5 pt-xl-5">
-                Our manufacturing plant located in Toronto, ON is not open to
-                the public, however we may schedule a plant tour by appointment
-                for wholesale clients.
+                {wordpressPage.acf.last_description}
               </p>
             </Col>
             <Col

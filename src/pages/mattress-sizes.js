@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
@@ -13,11 +14,166 @@ import cali_king from '../assets/img/cali-king-size.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 316}) {
+            acf {
+            section1_title
+            section1_description
+            variant1_name
+            variant1_dimension
+            variant1_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            variant2_name
+            variant2_dimension
+            variant2_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            variant3_name
+            variant3_dimension
+            variant3_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            variant4_name
+            variant4_dimension
+            variant4_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            variant5_name
+            variant5_dimension
+            variant5_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            variant6_name
+            variant6_dimension
+            variant6_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            take_test_link
+            buy_now_link
+            variant1_title
+            variant1_description
+            variant1_button_text
+            varaint1_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+             variant2_title
+            variant2_description
+            variant2_button_text
+            varaint2_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+             variant3_title
+            variant3_description
+            variant3_button_text
+            varaint3_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+             variant4_title
+            variant4_description
+            variant4_button_text
+            varaint4_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+             variant5_title
+            variant5_description
+            variant5_button_text
+            varaint5_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+             variant6_title
+            variant6_description
+            variant6_button_text
+            varaint6_logo {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            section4_title
+            section4_subtitle
+            section4_button_text
+            section4_button_link
+          }
+        }
+      }
+    `
+    )
   return (
     <>
-      {' '}
       <SEO
-        title="ONE MATTRESS SIZE DOES NOT FIT ALL"
+        title={wordpressPage.acf.section1_title}
         description="Choosing a mattress online without testing it for yourself can prove challenging. Bed selection differs between buyer preference as well as space available in varying bedrooms."
       />
       <Header />
@@ -33,19 +189,11 @@ export default props => {
             <Col sm="6" className="text-center">
               <ScrollAnimation animateIn="fadeInUp">
                 <h1 className="display-5 font-weight-bold erbaum-bold text-uppercase pt-5 space-3 color-primary px-0 pb-3 text-center text-sm-left text-lg-center text-xl-center">
-                  ONE MATTRESS SIZE DOES NOT FIT ALL.
+                  {wordpressPage.acf.section1_title}
                 </h1>
               </ScrollAnimation>
               <p className="filson-pro-reg text-1 color-secondary text-center text-sm-left text-lg-center text-xl-center">
-                Choosing a mattress online without testing it for yourself can
-                prove challenging. Bed selection differs between buyer
-                preference as well as space available in varying bedrooms.
-              </p>
-              <p className="filson-pro-reg text-1 color-secondary text-center text-sm-left text-lg-center text-xl-center">
-                Below we’ve provided a comparison of the different Chirofoam™
-                mattress dimensions available to ensure you get the appropriate
-                sized bed in a box perfect for you. Don’t worry sleepyhead, We
-                Got Your Back!
+               {ReactHtmlParser(wordpressPage.acf.section1_description)}
               </p>
             </Col>
             <Col sm="6" className="m-size">
@@ -65,33 +213,33 @@ export default props => {
           <Row className="pb-2 pb-sm-5">
             <Col sm="4" className="difference-sizes text-center">
               <img src={xl_twin_size} alt="XL Twin Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">TWIN</h5>
-              <span className="color-secondary proxima-r">39” X 75” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant1_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant1_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
               <img src={xl_twin_size} alt="XL Twin Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">TWIN XL</h5>
-              <span className="color-secondary proxima-r">39” X 80” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant2_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant2_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
               <img src={full_size} alt="Full Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">FULL</h5>
-              <span className="color-secondary proxima-r">54” X 75” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant3_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant3_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
               <img src={queen_size} alt="Queen Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">QUEEN</h5>
-              <span className="color-secondary proxima-r">60” X 80” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant4_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant4_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
               <img src={king_size} alt="King Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">KING</h5>
-              <span className="color-secondary proxima-r">76” X 80” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant5_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant5_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
               <img src={cali_king} alt="Cali King Size" />
-              <h5 className="erbaum py-3 py-sm-4 m-0">CALI KING</h5>
-              <span className="color-secondary proxima-r">72” X 84” X 12”</span>
+              <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant6_name}</h5>
+              <span className="color-secondary proxima-r">{wordpressPage.acf.variant6_dimension}</span>
             </Col>
           </Row>
           <Row className="py-3 py-sm-5 mb-0 mb-sm-5">
@@ -102,7 +250,7 @@ export default props => {
               >
                 <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
                   <Link
-                    to="/take-test/"
+                    to={wordpressPage.acf.take_test_link}
                     className="btn-cta color-primary erbaum-bold space-1"
                   >
                     TAKE THE TEST
@@ -116,7 +264,7 @@ export default props => {
               >
                 <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
                   <Link
-                    to="/shop-chirofoam/"
+                    to={wordpressPage.acf.buy_now_link}
                     className="btn-cta color-primary erbaum-bold space-1 mr-3"
                   >
                     BUY NOW
@@ -140,15 +288,12 @@ export default props => {
               <img src={xl_twin_size} alt="XL Twin Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  Single/Twin Mattress
+                  {wordpressPage.acf.variant1_titile}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
                 <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                  The Chirofoam™ single/twin mattress is an ideal fit for
-                  compact living spaces and relaxing all by yourself. Perfect
-                  for one person or growing kids, the single/twin mattress
-                  measures 39 inches wide and 75 inches in length.
+                  {wordpressPage.acf.variant1_description}
                 </p>
               </ScrollAnimation>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
@@ -156,7 +301,7 @@ export default props => {
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – SINGLE/TWIN SIZE
+                  {wordpressPage.acf.variant1_button_text}
                 </Link>
               </p>
             </div>
@@ -164,17 +309,12 @@ export default props => {
               <img src={xl_twin_size} alt="XL Twin Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  Twin XL Mattress
+                  {wordpressPage.acf.variant2_titile}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
                 <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                  Spanning 39 inches wide and 80 inches in length, the twin XL
-                  mattress is perfect for those living in an apartment with a
-                  necessity to maximize a minimal amount of bedroom space. This
-                  size mattress is slightly bigger than the twin (by 5 inches in
-                  length) and is a popular size choice for teenagers or college
-                  students.
+                  {wordpressPage.acf.variant2_description}
                 </p>
               </ScrollAnimation>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
@@ -182,7 +322,7 @@ export default props => {
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – SINGLE XL/TWIN XL SIZE
+                  {wordpressPage.acf.variant2_button_text}
                 </Link>
               </p>
             </div>
@@ -190,17 +330,12 @@ export default props => {
               <img src={full_size} alt="Full Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  Double/Full Mattress
+                  {wordpressPage.acf.variant3_titile}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
                 <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                  Larger in width than the twin & twin XL mattress, the
-                  dimensions of the double/full Chirofoam™ mattress spans 75
-                  inches in length and 54 inches in width. This mattress is a
-                  great choice for a couple, a smaller guest bedroom or an owner
-                  of a few pets who enjoy cozying up on a comfortable &
-                  supportive mattress.
+                  {wordpressPage.acf.variant3_description}
                 </p>
               </ScrollAnimation>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
@@ -208,7 +343,7 @@ export default props => {
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – DOUBLE/FULL SIZE
+                  {wordpressPage.acf.variant3_button_text}
                 </Link>
               </p>
             </div>
@@ -216,17 +351,12 @@ export default props => {
               <img src={queen_size} alt="Queen Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  Queen Mattress
+                  {wordpressPage.acf.variant4_titile}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
                 <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                  Larger than a double bed and a common choice for most
-                  bedrooms, the Chirofoam Queen mattress measures out 60 inches
-                  wide and 80 inches in length. The Queen is a spacious
-                  mattress, providing more room for couples to rest than the
-                  double or individuals who enjoy an ample amount of space to
-                  get comfortable on.
+                  {wordpressPage.acf.variant4_description}
                 </p>
               </ScrollAnimation>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
@@ -234,7 +364,7 @@ export default props => {
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – QUEEN SIZE
+                  {wordpressPage.acf.variant4_button_text}
                 </Link>
               </p>
             </div>
@@ -242,18 +372,12 @@ export default props => {
               <img src={cali_king} alt="King Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  King Mattress
+                  {wordpressPage.acf.variant5_titile}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
                 <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                  The King mattress by Chirofoam™ is 16 inches wider than the
-                  queen mattress, measuring 76 inches wide by 80 inches long.
-                  The main difference between the Queen, King and Cali King
-                  mattresses are the size dimensions, the amount of space
-                  available in the bedroom and how much preferred space each
-                  sleeper needs. A King requires a more spacious bedroom to fit
-                  this size mattress.
+                  {wordpressPage.acf.variant5_description}
                 </p>
               </ScrollAnimation>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
@@ -261,7 +385,7 @@ export default props => {
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – KING SIZE
+                  {wordpressPage.acf.variant5_button_text}
                 </Link>
               </p>
             </div>
@@ -269,24 +393,18 @@ export default props => {
               <img src={cali_king} alt="Cali King Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  Cali King Mattress
+                  {wordpressPage.acf.variant6_titile}
                 </h4>
               </ScrollAnimation>
               <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">
-                The largest size mattress option available, Chirofoam’s Cali
-                King mattress measures 72 inches wide and 84 inches long. The
-                luxurious Cali King mattress offers an abundance of space for
-                sharing with multiple people, taller bodies or individuals who
-                prefer a lot of space to move around. In comparison to the King
-                mattress, the Cali King mattress is 4 inches longer while the
-                King is 4 inches wider.
+                {wordpressPage.acf.variant6_description}
               </p>
               <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
                 <Link
                   to="/shop-chirofoam/"
                   className="btn-cta color-primary erbaum-bold space-1 mr-3"
                 >
-                  SHOP – CALI KING SIZE
+                  {wordpressPage.acf.variant6_button_text}
                 </Link>
               </p>
             </div>
@@ -296,27 +414,27 @@ export default props => {
       <section className="globe parallax">
         <Container>
           <Row className="text-center">
-            <ScrollAnimation animateIn="fadeInUp">
-              <h4 className="space-1 text-white erbaum-bold text-uppercase pb-2 pb-sm-5 w-100 mb-0 display-5">
-                Cali King Mattress
+            <ScrollAnimation animateIn="fadeInUp" className="w-100">
+              <h4 className="space-1 text-white erbaum-bold text-uppercase pb-2 pb-sm-5 w-100 mb-0 display-5 text-center">
+                {wordpressPage.acf.section4_title}
               </h4>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animateIn="fadeInUp" className="w-100">
               <p
-                className="space-4 proxima-r text-white w-100 m-auto text-center px-0 pb-2 pb-sm-5"
+                className="space-4 proxima-r text-white w-100 m-auto text-center px-0 pb-2 pb-sm-5 text-center"
                 style={{
                   fontSize: '26px',
                 }}
               >
-                Increased comfort and support while you sleep.
+                {wordpressPage.acf.section4_subtitle}
               </p>
             </ScrollAnimation>
             <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2 w-100">
               <Link
-                to="/chiropractor-recommended/"
+                to={wordpressPage.acf.section4_button_link}
                 className="btn-cta text-white erbaum-bold space-1 mr-3"
               >
-                LEARN MORE
+                {wordpressPage.acf.section4_button_text}
               </Link>
             </p>
           </Row>

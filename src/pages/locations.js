@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
@@ -10,18 +10,59 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import SEO from '~/components/seo'
 
 export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 265}) {
+            acf {
+                banner_title
+                map_grid1_title
+                grid1_address_line1
+                grid1_address_line2
+                grid1_address_line3
+                grid1_address_line4
+                grid1_hours_line1
+                grid1_hours_line2
+                grid1_hours_line3
+                map1_contact
+                map_grid2_title
+                grid2_address_line1
+                grid2_address_line2
+                grid2_address_line3
+                grid2_address_line4
+                grid2_hours_line1
+                grid2_hours_line2
+                grid2_hours_line3
+                map2_contact
+                map_grid3_title
+                grid3_address_line1
+                grid3_address_line2
+                grid3_address_line3
+                grid3_address_line4
+                grid3_hours_line1
+                grid3_hours_line2
+                grid3_hours_line3
+                map3_contact
+                franchise1_link
+                franchise2_link
+                franchise3_link
+              }
+          }
+      }
+    `
+    )
   return (
     <>
       <SEO
-        title="Locations"
-        description="Chirofoam Mattresses are now available at these locations"
+        title={wordpressPage.title}
+        description={wordpressPage.acf.banner_title}
       />
       <Header />
       <section className="blue-bg">
         <ScrollAnimation animateIn="fadeInUp">
           <Jumbotron className="mb-0 text-center text-white bg-transparent space-1">
             <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-3 pt-lg-5 pt-xl-5 space-2 px-sm-5">
-              Chirofoam Mattresses are now available at the following locations:
+              {wordpressPage.acf.banner_title}
             </h1>
           </Jumbotron>
         </ScrollAnimation>
@@ -39,29 +80,29 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="text-uppercase color-primary erbaum-bold pb-4 location-title">
-                  Markham
+                  {wordpressPage.acf.map_grid1_title}
                 </h4>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary">
-                7701 Woodbine Avenue
+                {wordpressPage.acf.grid1_address_line1}
                 <br />
-                Unit#5
+                {wordpressPage.acf.grid1_address_line2}
                 <br />
-                Markham, ON
+                {wordpressPage.acf.grid1_address_line3}
                 <br />
-                L3R 2R4
+                {wordpressPage.acf.grid1_address_line4}
               </p>
               <p className="filson-pro-reg color-secondary">
                 Hours:
                 <br />
-                Monday to Friday – 10am to 8pm
+                {wordpressPage.acf.grid1_hours_line1}
                 <br />
-                Saturdays – Noon to 5pm
+                {wordpressPage.acf.grid1_hours_line2}
                 <br />
-                Sundays – Closed
+                {wordpressPage.acf.grid1_hours_line3}
                 <br />
                 <br />
-                Contact: 905-963-0890
+                Contact: {wordpressPage.acf.map1_contact}
               </p>
               <div className="g-map pt-2 pt-sm-4 px-3 px-sm-3 px-lg-0 px-xl-0">
                 <iframe
@@ -81,28 +122,28 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="text-uppercase color-primary erbaum-bold pb-4 location-title">
-                  Mississauga
+                  {wordpressPage.acf.map_grid2_title}
                 </h4>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary">
-                1550 Meyerside Drive
+                {wordpressPage.acf.grid2_address_line1}
                 <br />
-                Unit#3
+                {wordpressPage.acf.grid2_address_line2}
                 <br />
-                Mississauga, ON
+                {wordpressPage.acf.grid2_address_line3}
                 <br />
-                L5T 1V4
+                {wordpressPage.acf.grid2_address_line4}
               </p>
               <p className="filson-pro-reg color-secondary">
                 Hours:
                 <br />
-                Monday to Friday – 10am to 8pm
+                {wordpressPage.acf.grid2_hours_line1}
                 <br />
-                Saturdays – Noon to 5pm
+                {wordpressPage.acf.grid2_hours_line2}
                 <br />
-                Sundays – Closed
+                {wordpressPage.acf.grid2_hours_line3}
                 <br /> <br />
-                Contact: 905-565-0885
+                Contact: {wordpressPage.acf.map2_contact}
               </p>
               <div className="g-map pt-2 pt-sm-4 px-3 px-sm-3 px-lg-0 px-xl-0">
                 <iframe
@@ -122,29 +163,29 @@ export default props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="text-uppercase color-primary erbaum-bold pb-4 location-title">
-                  Milton/Georgetown
+                  {wordpressPage.acf.map_grid3_title}
                 </h4>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary">
-                15 Brownridge Road
+                {wordpressPage.acf.grid3_address_line1}
                 <br />
-                Unit#3
+                {wordpressPage.acf.grid3_address_line2}
                 <br />
-                Georgetown, ON
+                {wordpressPage.acf.grid3_address_line3}
                 <br />
-                L7G 0E2
+                {wordpressPage.acf.grid3_address_line4}
               </p>
               <p className="filson-pro-reg color-secondary">
                 Hours:
                 <br />
-                Monday to Friday – 10am to 8pm
+                {wordpressPage.acf.grid3_hours_line1}
                 <br />
-                Saturdays – Noon to 5pm
+                {wordpressPage.acf.grid3_hours_line2}
                 <br />
-                Sundays – Closed
+                {wordpressPage.acf.grid3_hours_line3}
                 <br />
                 <br />
-                Contact: 905-878-8444
+                Contact: {wordpressPage.acf.map3_contact}
               </p>
               <div className="g-map pt-2 pt-sm-4 px-3 px-sm-3 px-lg-0 px-xl-0">
                 <iframe
@@ -172,17 +213,17 @@ export default props => {
             </p>
             <Row>
               <Col sm="4" className="col-4 text-center">
-                <a href="https://www.amazon.ca/dp/B079Q4GX48/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1518208929&sr=1-1&keywords=chirofoam&th=1">
+                <a href={wordpressPage.acf.franchise1_link} target="_blank" rel="noopener noreferrer">
                   <img src={amazon} alt="Amazon" width="90%" />
                 </a>
               </Col>
               <Col sm="4" className="col-4 text-center">
-                <a href="https://www.bestbuy.ca/en-ca/category/mattresses-mattress-toppers/mattresses?path=category%253aHome%2BLiving%253bcategory%253aFurniture%253bcategory%253aBedroom%2BFurniture%253bcategory%253aMattresses%2B%2526%2BMattress%2BToppers%253bbrandName%253aCHIROFOAM">
+                <a href={wordpressPage.acf.franchise2_link} target="_blank" rel="noopener noreferrer">
                   <img src={best} alt="Best Buy" width="90%" />
                 </a>
               </Col>
               <Col sm="4" className="col-4 text-center">
-                <Link to="/shop-chirofoam/">
+                <Link to={wordpressPage.acf.franchise3_link} target="_blank" rel="noopener noreferrer">
                   <img src={nm} alt="National Mattress" width="90%" />
                 </Link>
               </Col>
