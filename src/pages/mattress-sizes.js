@@ -288,7 +288,7 @@ export default props => {
               <img src={xl_twin_size} alt="XL Twin Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant1_titile}
+                  {wordpressPage.acf.variant1_title}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
@@ -309,7 +309,7 @@ export default props => {
               <img src={xl_twin_size} alt="XL Twin Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant2_titile}
+                  {wordpressPage.acf.variant2_title}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
@@ -330,7 +330,7 @@ export default props => {
               <img src={full_size} alt="Full Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant3_titile}
+                  {wordpressPage.acf.variant3_title}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
@@ -351,7 +351,7 @@ export default props => {
               <img src={queen_size} alt="Queen Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant4_titile}
+                  {wordpressPage.acf.variant4_title}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
@@ -372,7 +372,7 @@ export default props => {
               <img src={cali_king} alt="King Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant5_titile}
+                  {wordpressPage.acf.variant5_title}
                 </h4>
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp">
@@ -393,7 +393,7 @@ export default props => {
               <img src={cali_king} alt="Cali King Size" />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
-                  {wordpressPage.acf.variant6_titile}
+                  {wordpressPage.acf.variant6_title}
                 </h4>
               </ScrollAnimation>
               <p className="mattress-desc space-3 proxima-r color-primary m-auto text-center px-0 pb-2 pb-sm-5">

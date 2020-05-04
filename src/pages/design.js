@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Draggable from 'react-draggable'
-import { Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
+import {useStaticQuery, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
@@ -35,9 +36,98 @@ const Design = props => {
     setRightClip(Math.floor(clipSource.offsetWidth / 2))
     window.addEventListener('resize', sizeReset)
   }, [])
+
+   const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 454}) {
+          acf {
+            top_section_title
+            top_section_subtitle
+            row1_title
+            row1_description
+            row1_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            row2_title
+            row2_description
+            row2_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            row3_title
+            row3_description
+            row3_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            row4_title
+            row4_description
+            row4_image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            section3_description
+            section3_image1 {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            section3_image2 {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            section3_image3 {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            overview_title
+            overview_content
+            technical_specification_title
+            technical_specification_content
+          }
+
+        }
+      }
+    `
+    )
   return (
     <>
-      {' '}
       <SEO title="Design" description="The highest quality materials and skilled craftsmanship in every Chirofoam™ mattress."/>
       <Header />
       <ScrollAnimation animateIn="fadeInUp">
@@ -45,7 +135,7 @@ const Design = props => {
           <Container>
             <Row className="mx-0 text-center">
               <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
-                DESIGNED FOR PERFECT SUPPORT
+                {wordpressPage.acf.top_section_title}
               </h1>
               <p
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
@@ -53,9 +143,7 @@ const Design = props => {
                   fontSize: '26px',
                 }}
               >
-                The
-                <strong>highest quality materials</strong>
-                and skilled craftsmanship in every Chirofoam™ mattress.
+                {wordpressPage.acf.top_section_subtitle}
               </p>
             </Row>
           </Container>
@@ -72,18 +160,11 @@ const Design = props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className="color-primary erbaum-bold lead-text">
-                  COOL GEL INFUSED MEMORY FOAM
+                    {wordpressPage.acf.row1_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-1 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary">
-                <span className="color-primary">
-                  Helps keep your body cool and relaxed during sleep
-                </span>
-                while the temperature sensitive foam adjusts to your body’s
-                natural shape and curves. Designed for back pain relief, this
-                foam will help to relax your joints and muscles while relieving
-                pressure and creating the ultimate comfort while your body
-                rests.
+              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-1 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
+                {ReactHtmlParser(wordpressPage.acf.row1_description)}
               </p>
             </div>
           </Col>
@@ -99,19 +180,11 @@ const Design = props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className="color-primary erbaum-bold lead-text pl-0 pl-sm-1 pl-md-3 pl-lg-5 pl-xl-5">
-                  FIRM SUPPORT CHIROFOAM™
+                  {wordpressPage.acf.row2_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pl-0 pl-sm-1 pl-md-3 pl-lg-5 pl-xl-5 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary">
-                <span className="color-primary">
-                  An extremely durable and sag resistant layer of support foam
-                </span>
-                provides an additional “pressure relief buffer” between your
-                body and the core support foam. This layer helps cradle and
-                protect your muscles, joints, and bones from excess pressure
-                during sleep. The foam creates ultra comfortable “push back”
-                support to keep your spine in an optimal natural sleeping
-                position, while relieving back pain.
+              <p className="text-left filson-pro-reg space-1 pl-0 pl-sm-1 pl-md-3 pl-lg-5 pl-xl-5 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
+                {ReactHtmlParser(wordpressPage.acf.row2_description)}
               </p>
             </div>
           </Col>
@@ -127,21 +200,11 @@ const Design = props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className="color-primary erbaum-bold lead-text">
-                  CHIROFOAM™ LUMBAR SUPPORT
+                  {wordpressPage.acf.row3_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-md-3 pt-lg-5 mb-0 text-1 color-secondary">
-                <span className="color-primary">
-                  Our specialized layer of Chirofoam™ lumbar support
-                </span>
-                provides an additional 20% of conforming support in the centre
-                third of the mattress for improved lumbar support and increased
-                life span of the mattress. The majority of your body’s weight
-                rests in the centre third of the mattress where you need the
-                most support to keep your spine in optimal alignment while
-                relieving back pain. The Pro Lumbar Support layer is also
-                designed to resist sagging and keeps your mattress comfortable
-                and more supportive even far beyond our 15 year warranty period.
+              <p className="text-left filson-pro-reg space-1 pt-0 pt-md-3 pt-lg-5 mb-0 text-1 color-secondary design-para">
+                {ReactHtmlParser(wordpressPage.acf.row3_description)}
               </p>
             </div>
           </Col>
@@ -157,19 +220,11 @@ const Design = props => {
             >
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className="pl-0 pl-sm-1 pl-md-3 pl-xl-5 pl-lg-5 color-primary erbaum-bold lead-text">
-                  BODY SUPPORT BIO FOAM CORE
+                  {wordpressPage.acf.row4_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 pl-0 pl-md-3 pl-lg-5 color-secondary">
-                <span className="color-primary">
-                  The core is made with a high density and ultra-resilient bio
-                  foam
-                </span>
-                designed to cradle the weight of your body and distribute
-                pressure evenly for many years of back pain relief and peaceful
-                sleep. The bio foam is made from soy content in a more
-                environmentally friendly and sustainable production method which
-                lessens your carbon footprint on our planet.
+              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 pl-0 pl-md-3 pl-lg-5 color-secondary design-para">
+                {ReactHtmlParser(wordpressPage.acf.row4_description)}
               </p>
             </div>
           </Col>
@@ -211,27 +266,7 @@ const Design = props => {
                   </div>
                 </div>
                 <p className="filson-pro-reg color-secondary pt-2 text-1 text-left">
-                  <span className="color-primary">CertiPUR-US®</span>
-                  approved foams are made without ozone depleters, made without
-                  PBDE flame retardants, made without mercury, lead and other
-                  heavy metals, made without formaldehyde.
-                </p>
-                <p className="filson-pro-reg color-secondary pt-2 text-1 text-left">
-                  <span className="color-primary">Eco Institut</span>
-                  tested for emission analysis in the test chamber according to
-                  ISO 16000, compound analyses for heavy metals, AOX/EOX,
-                  biocides, phthalates, flame retardants etc., odour testing
-                  according to VDA, toxicological and ecological expertise.
-                </p>
-                <p className="filson-pro-reg color-secondary pt-2 text-1 text-left">
-                  <span className="color-primary">
-                    Confidence In Textiles Oeko-Tex®
-                  </span>
-                  standard 100 certified provide extensive testing on the
-                  fabrics to ensure that no substances are present that could be
-                  harmful to humans. Oeko-Tex® Standard 100 is an international
-                  certification that sets limits for over 100 harmful chemicals,
-                  substances, and emissions in textiles.
+                  {ReactHtmlParser(wordpressPage.acf.section3_description)}
                 </p>
               </Col>
             </Row>
@@ -304,99 +339,20 @@ const Design = props => {
             <Col className="left-list col-12 col-md-6 col-lg-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-3">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  SPECIALTY FEATURES OVERVIEW
+                  {wordpressPage.acf.overview_title}
                 </h5>
               </ScrollAnimation>
-              <ul className="pl-0 list-unstyled left-list filson-pro-reg color-secondary">
-                <li>
-                  <strong>Cool Gel Infused Visco Memory Foam</strong>– Designed
-                  to reduce pressure points and motion transfer, while keeping
-                  you cool and comfortable during your sleep.
-                </li>
-                <li>
-                  <strong>Firm Support Chirofoam™</strong>– An extremely durable
-                  and sag resistant layer of support foam provides an additional
-                  “pressure relief buffer” between your body and the core
-                  support foam.
-                </li>
-                <li>
-                  <strong>Chirofoam™ Lumbar Support</strong>– Posture support
-                  layer keeps your back straight while you rest while providing
-                  additional support in the center third of the mattress for
-                  longevity and long term durability.
-                </li>
-                <li>
-                  <strong>High Density Bio-Foam Core</strong>– Core support
-                  layer further reduces pressure points while evenly
-                  distributing your body weight across the mattress. Made with
-                  natural soy content foam; reducing your carbon footprint.
-                </li>
-                <li>
-                  <strong>Soft Luxurious and Breathable Removable Cover</strong>
-                  – Easy to remove and wash, soft for sleep comfort, and
-                  breathable for a cooler night’s sleep. Made with a soft cotton
-                  top and durable denim borders.
-                </li>
-              </ul>
+              <div className="">
+                  {ReactHtmlParser(wordpressPage.acf.overview_content)}
+              </div>
             </Col>
             <Col className="right-list col-12 col-md-6 col-lg-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-3">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase">
-                  TECHNICAL SPECIFICATIONS
+                  {wordpressPage.acf.technical_specification_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-primary">Top Upholstery</p>
-              <ul className="color-secondary filson-pro-reg">
-                <li>
-                  Soft Luxurious and Breathable Removable Cover with Non-Skid
-                  Bottom.
-                </li>
-                <li>Cotton top with durable denim borders.</li>
-                <li>2″ Cool Gel Infused 4lb Visco Memory Foam</li>
-                <li>2″ Firm Support Chirofoam™</li>
-              </ul>
-              <p className="filson-pro-reg color-primary">Support System</p>
-              <ul className="color-secondary filson-pro-reg">
-                <li>Chirofoam™ Lumbar Support</li>
-                <li>8″ Optimal High Density Bio-Foam</li>
-                <li>Total Mattress Height: 12 inches (30cm).</li>
-              </ul>
-              <p className="filson-pro-reg color-primary">
-                Additional Information
-              </p>
-              <ul className="color-secondary filson-pro-reg">
-                <li>
-                  Mattress is suitable to work with any solid box spring
-                  foundation, platform bed, or slats.
-                </li>
-              </ul>
-              <p className="filson-pro-reg color-primary">Dimensions</p>
-              <ul className="color-secondary filson-pro-reg">
-                <li>
-                  <strong>Single/Twin–</strong>
-                  39″ x 75″ x 12″ (99cm x 191cm x 30cm)
-                </li>
-                <li>
-                  <strong>Twin XL–</strong>
-                  39″ x 80″ x 12″ (99cm x 203cm x 30cm)
-                </li>
-                <li>
-                  <strong>Double/Full–</strong>
-                  54″ x 75″ x 12″ (137cm x 191cm x 30cm)
-                </li>
-                <li>
-                  <strong>Queen–</strong>
-                  60″ x 80″ x 12″ (152cm x 203cm x 30cm)
-                </li>
-                <li>
-                  <strong>King–</strong>
-                  76″ x 80″ x 12″ (193cm x 203cm x 30cm)
-                </li>
-                <li>
-                  <strong>Cali King–</strong>
-                  72″ x 84″ x 12″ (183cm x 213cm x 30cm)
-                </li>
-              </ul>
+              {ReactHtmlParser(wordpressPage.acf.technical_specification_content)}
             </Col>
           </Row>
         </Container>
