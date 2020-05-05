@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
@@ -8,11 +9,26 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import SEO from '~/components/seo'
 
 export default props => {
+
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 404}) {
+            acf {
+              compare_chart_title
+              compare_chart_subtitle
+              compare_chart_description
+              chart_data
+          }
+        }
+      }
+    `
+    )
   return (
     <>
       <SEO
-        title="Chirofoam™ Vs. Others"
-        description="World-class mattresses, at the best price."
+        title={wordpressPage.acf.compare_chart_title}
+        description={wordpressPage.acf.compare_chart_subtitle}
       />
       <Header />
       <ScrollAnimation animateIn="fadeInUp">
@@ -20,13 +36,13 @@ export default props => {
           <Container>
             <Row className="mx-0 text-center">
               <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
-                Chirofoam™ Vs. Others
+                {wordpressPage.acf.compare_chart_title}
               </h1>
               <p
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}
               >
-                World-class mattresses, at the best price.
+                {wordpressPage.acf.compare_chart_subtitle}
               </p>
             </Row>
           </Container>
@@ -38,224 +54,12 @@ export default props => {
             <p
               className="text-1 filson-pro-reg color-secondary text-center"
             >
-              See how Chirofoam™ compares with the best memory foam mattresses
-              available online today.&nbsp; Chirofoam™ memory foam mattresses
-              are the only chiropractor recommended major online brand to offer
-              dual comfort layers of memory foam and Chirofoam™ support foam,
-              and a lumbar support, and a choice of comfort providing the ideal
-              balance between comfort and support. &nbsp;With{' '}
-              <strong className="color-primary">
-                all these features for less than the competition
-              </strong>
-              , we have your back! We have compared the best-selling luxury
-              online mattress brands against Chirofoam™ mattresses for you to
-              see for yourself!
+             {ReactHtmlParser(wordpressPage.acf.compare_chart_description)}
             </p>
           </Row>
           <Row className="px-0 px-sm-3 px-md-3 px-lg-0 px-xl-0 pt-5">
             <div className="table-rows">
-              <div className="row-list">
-                <ul>
-                  <li></li>
-                  <li>GEL INFUSED MEMORY FOAM</li>
-                  <li>TOTAL MEMORY FOAM</li>
-                  <li>COOLING FEATURES</li>
-                  <li>LUMBAR SUPPORT</li>
-                  <li>TOTAL THICKNESS 12&quot; OR MORE</li>
-                  <li>FIRMNESS</li>
-                  <li>CHIROPRACTOR RECOMMENDED</li>
-                  <li>FREE SHIPPING</li>
-                  <li>FULL MONEY BACK RETURNS</li>
-                  <li>SLEEP TRIAL</li>
-                  <li>WARRANTY</li>
-                  <li>
-                    <button className="p-0 bg-transparent border-0 ext-dark">
-                      HONEST MATTRESS REVIEWS RATING
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div className="row-list">
-                <ul>
-                  <li>
-                    <img src={logo} alt="Chirofoam" />
-                    <p className="v-size">Queen Size</p>
-                    <strong>C$990</strong>
-                  </li>
-                  <li>
-                    <span>✓</span>
-                  </li>
-                  <li>2 Inches</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>Luxury Firm</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>100 Nights</li>
-                  <li>15 Years</li>
-                  <li>World-Class</li>
-                </ul>
-              </div>
-              <div className="row-list">
-                <ul>
-                  <li>
-                    <img src={logo} alt="Chirofoam" />
-                    <p className="v-size">XF - Queen Size</p>
-                    <strong>C$840</strong>
-                  </li>
-                  <li>
-                    <span>✓</span>
-                  </li>
-                  <li>1 Inch</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>Extra Firm </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>100 Nights </li>
-                  <li>15 Years</li>
-                  <li>World-Class</li>
-                </ul>
-              </div>
-              <div className="row-list">
-                <ul>
-                  <li>
-                    <p className="filson-pro-reg color-secondary">
-                      Online Premium Brands (i.e. Leesa)
-                    </p>
-                    <p className="v-size">Queen Size</p>
-                    <strong>C$1190</strong>
-                  </li>
-                  <li>
-                    <span>✓</span>
-                  </li>
-                  <li>2 Inches</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>Medium</li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>100 Nights</li>
-                  <li>10 Years</li>
-                  <li>Good</li>
-                </ul>
-              </div>
-              <div className="row-list">
-                <ul>
-                  <li>
-                    <p className="filson-pro-reg color-secondary">
-                      Online Popular Brands (i.e. Casper)
-                    </p>
-                    <p className="v-size">Queen Size</p>
-                    <strong>C$1175</strong>
-                  </li>
-                  <li>
-                    <span>✓</span>
-                  </li>
-                  <li>1 Inch</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>Medium-Soft</li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>100 Nights</li>
-                  <li>10 Years</li>
-                  <li>Standard</li>
-                </ul>
-              </div>
-              <div className="row-list">
-                <ul>
-                  <li>
-                    <p className="filson-pro-reg color-secondary">
-                      Brick & Mortar Premium Brands (i.e. Tempur-pedic)
-                    </p>
-                    <p className="v-size">Queen Size</p>
-                    <strong>C$2000+</strong>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>Varies</li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="correct-ic">✓</span>
-                  </li>
-                  <li>Various Models</li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>
-                    <span className="cut">X</span>
-                  </li>
-                  <li>100 Nights</li>
-                  <li>10 Years</li>
-                  <li>Standard</li>
-                </ul>
-              </div>
+              {ReactHtmlParser(wordpressPage.acf.chart_data)}
             </div>
           </Row>
         </Container>

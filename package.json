@@ -34,7 +34,7 @@
     "gatsby-plugin-sw": "^1.0.1",
     "gatsby-source-filesystem": "^2.2.1",
     "gatsby-source-multi-api": "^1.0.3",
-    "gatsby-source-shopify": "^3.1.1",
+    "gatsby-source-shopify": "^3.2.0",
     "gatsby-source-wordpress": "^3.3.0",
     "gatsby-transformer-sharp": "^2.4.1",
     "jquery": "^3.5.0",

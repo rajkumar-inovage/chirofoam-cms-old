@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
@@ -12,24 +13,94 @@ import chirofoam_mattress_5key from '../assets/img/chirofoam-mattress-5key.jpg'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, wordpress_id: {eq: 398}) {
+            acf {
+              top_section_title
+              top_section_subtitle
+              feature1_number
+              feature1_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              feature1_title
+              feature1_description
+              feature2_number
+              feature2_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              feature2_title
+              feature2_description
+              feature3_number
+              feature3_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              feature3_title
+              feature3_description
+              feature4_number
+              feature4_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              feature4_title
+              feature4_description
+              feature5_number
+              feature5_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              feature5_title
+              feature5_description
+          }
+        }
+      }
+    `
+    )
   return (
     <>
-      <SEO title="5-key-features" description="Designed by mattress experts with 5 key features that consumers voted most important for a comfortable sleep experience.(Most mattresses don’t succeed in all 5 areas.)" />
+      <SEO title="5-key-features" description={wordpressPage.acf.top_section_subtitle} />
       <Header />
       <section className="mb-0 py-3 position-relative">
         <ScrollAnimation animateIn="fadeInUp">
           <Container>
             <Row className="mx-0 text-center">
               <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
-                AN EXTRA FIRM MATTRESS FOR MAXIMUM SUPPORT
+                {wordpressPage.acf.top_section_title}
               </h1>
               <p
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}
               >
-                Designed by mattress experts with 5 key features necessary for
-                maximum support and comfort in an extra firm mattress. (Most
-                extra firm mattresses don’t succeed in all 5 areas.)
+               {ReactHtmlParser(wordpressPage.acf.top_section_subtitle)}
               </p>
             </Row>
           </Container>
@@ -40,7 +111,7 @@ export default props => {
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
             <div className="col-12 col-sm-5 col-lg-5 col-xl-5 pt-2 mt-0 right-card d-flex mb-2 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">
               <h3 className="erbaum-bold pr-3 pr-sm-2 pr-md-4 pr-lg-5 pr-xl-5">
-                <span>1</span>
+                <span>{wordpressPage.acf.feature1_number}</span>
               </h3>
               <img
                 src={coolgel}
@@ -53,30 +124,18 @@ export default props => {
             <div className="col-12 col-sm-7 col-lg-7 col-xl-7 left-card">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-lg-3 pb-xl-3">
-                  DECOMPRESSION AND EXTENSION OF THE SPINE
+                  {wordpressPage.acf.feature1_title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The Chirofoam™ XF Extra Firm mattress is{' '}
-                <strong>designed to stretch and decompress your spine</strong>{' '}
-                while you sleep. Using the pressure of your own body weight, the
-                top layers of the extra firm mattress help to stretch the spine,
-                and decompress any pressure build up in the vertebrae, while
-                increasing blood flow between spinal discs.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The gel infused memory foam layer works together with the firm
-                support Chirofoam™ layer to relieve pressure and improve blood
-                flow throughout the spine. By relieving pressure and stretching
-                the spine during sleep, the Chirofoam™ XF mattress will ease
-                tension in the back and help alleviate back pain.
+                {ReactHtmlParser(wordpressPage.acf.feature1_description)}
               </p>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
             <div className="col-12 col-sm-5 col-lg-5 col-xl-5 pt-2 mt-0 right-card d-flex mb-2 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">
               <h3 className="erbaum-bold pr-3 pr-sm-2 pr-md-4 pr-lg-5 pr-xl-5">
-                <span>2</span>
+                <span>{wordpressPage.acf.feature2_number}</span>
               </h3>
               <img
                 src={support}
@@ -89,33 +148,18 @@ export default props => {
             <div className="col-12 col-sm-7 col-lg-7 col-xl-7 left-card">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-lg-3 pb-xl-3">
-                  MAXIMUM BACK SUPPORT
+                  {wordpressPage.acf.feature2_title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                For individuals suffering from extreme and chronic back pain,
-                even the simplest of tasks such as standing or sitting can
-                create unbearable pressure on the back and spine. This leads to
-                extreme pain and discomfort in day to day life, and one of the
-                best ways to relieve this pressure is to have maximum support on
-                the back while sleeping. Many people even resort to sleeping on
-                the floor to help alleviate this pressure during the night.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The pro lumbar support layer in your Chirofoam™ XF Extra Firm
-                mattress works together with the bio foam core to stretch your
-                body and create maximum support for your back while you rest at
-                night. We have built the extra firm mattress to provide the most
-                support, similar to sleeping on the floor, while minimizing
-                uncomfortable pressure points with a thin memory foam layer on
-                top.
+                {ReactHtmlParser(wordpressPage.acf.feature2_description)}
               </p>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
             <div className="col-12 col-sm-5 col-lg-5 col-xl-5 pt-2 mt-0 right-card d-flex mb-2 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">
               <h3 className="erbaum-bold pr-3 pr-sm-2 pr-md-4 pr-lg-5 pr-xl-5">
-                <span>3</span>
+                <span>{wordpressPage.acf.feature3_number}</span>
               </h3>
               <img
                 src={latex}
@@ -128,32 +172,18 @@ export default props => {
             <div className="col-12 col-sm-7 col-lg-7 col-xl-7 left-card">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-lg-3 pb-xl-3">
-                  BALANCED SLEEP TEMPERATURE
+                 {wordpressPage.acf.feature3_title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                Sleep temperature can have an extreme impact on comfort and
-                quality of sleep. Once you wake up from being too cold or too
-                hot, you break your sleep cycle, making if difficult to fall
-                back asleep and get a quality night’s rest. Creating an ideal
-                sleep temperature was a very critical element in the design
-                process of the Chirofoam™ XF Extra Firm mattress.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The gel infused memory foam top layer is built to whisk heat
-                away from your body and stay cool while you sleep, while helping
-                your body sleep “on” the mattress instead of “in” the mattress
-                by reducing the sinking feeling. The extra firm support
-                Chirofoam™ layer is breathable which helps to circulate air in
-                order to keep your body at a balanced sleep temperature at
-                night.
+                {ReactHtmlParser(wordpressPage.acf.feature3_description)}
               </p>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
             <div className="col-12 col-sm-5 col-lg-5 col-xl-5 pt-2 mt-0 right-card d-flex mb-2 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">
               <h3 className="erbaum-bold pr-3 pr-sm-2 pr-md-4 pr-lg-5 pr-xl-5">
-                <span>4</span>
+                <span>{wordpressPage.acf.feature4_number}</span>
               </h3>
               <img
                 src={chirofoam_mattres_angle_5key}
@@ -166,29 +196,18 @@ export default props => {
             <div className="col-12 col-sm-7 col-lg-7 col-xl-7 left-card">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-lg-3 pb-xl-3">
-                  ELIMINATES MOTION TRANSFER
+                  {wordpressPage.acf.feature4_title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                Partner movement while you sleep can be felt across a mattress
-                with traditional coils. This is caused by tossing and turning
-                during the night and can affect the sleep pattern of the person
-                sleeping as well as the partner they are sleeping with.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The Chirofoam™ XF Extra Firm mattress does not have any moving
-                components such as a coil mattress and therefore completely
-                eliminates all motion felt from a partner tossing and turning at
-                night. The mattresses extra firm qualities also greatly reduce
-                the impact depth and circumference of any movement, creating a
-                much smaller movement footprint compared to softer mattresses.
+                {ReactHtmlParser(wordpressPage.acf.feature4_description)}
               </p>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
             <div className="col-12 col-sm-5 col-lg-5 col-xl-5 pt-2 mt-0 right-card d-flex mb-2 mb-sm-5 mb-md-0 mb-lg-0 mb-xl-0">
               <h3 className="erbaum-bold pr-3 pr-sm-2 pr-md-4 pr-lg-5 pr-xl-5">
-                <span>5</span>
+                <span>{wordpressPage.acf.feature5_number}</span>
               </h3>
               <img
                 src={chirofoam_mattress_5key}
@@ -201,28 +220,11 @@ export default props => {
             <div className="col-12 col-sm-7 col-lg-7 col-xl-7 left-card">
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-lg-3 pb-xl-3">
-                  RESISTS SAGGING
+                  {wordpressPage.acf.feature5_title}
                 </h5>
               </ScrollAnimation>
               <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                One of the most common problems people have which causes them to
-                replace their mattress is sagging. These dips in the mattress
-                are caused by years of use and often lead to great discomfort
-                and irritable sleep. Softer mattresses typically experience much
-                larger body impressions compared to firmer mattresses.
-              </p>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
-                The Chirofoam™ XF Extra Firm mattress is made from the highest
-                quality components which are designed to keep their shape and
-                provide many years of comfort and support. The extra hard foams
-                make it virtually impossible for body impressions to occur over
-                time and the pro lumbar support layer provides an additional 20%
-                more support in the centre third of the mattress which is where
-                the majority of the wear and tear occurs. With the highest
-                quality materials, extra hard foams, and additional
-                reinforcement in the centre third, the Chirofoam™ XF Extra Firm
-                mattress is designed to resist sagging and remain free of body
-                impressions with many years of supportive sleep.
+                {ReactHtmlParser(wordpressPage.acf.feature5_description)}
               </p>
             </div>
           </Row>

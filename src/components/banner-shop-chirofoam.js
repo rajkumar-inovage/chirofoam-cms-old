@@ -2,16 +2,42 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import shop_banner from '../assets/img/Chirofoam_Home-jumping.png'
 import Spybutton from '../components/spybutton'
+import {useStaticQuery} from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 
 const Banner = props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(slug: {eq:"shop-chirofoam"}) {
+          acf {
+            banner_small_title
+            banner_big_title
+            banner_button_text
+            banner_button_link
+            banner_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+    )
   return (
     <section>
       <Container>
         <Row className="py-sm-5 py-4">
           <Col md="7">
-            <span className="erbaum-bold color-primary space-1">SHOP</span>
+            <span className="erbaum-bold color-primary space-1">{wordpressPage.acf.banner_small_title}</span>
             <h1 className="shop-banner-title erbaum-bold color-primary">
-              CHIROFOAM
+              {wordpressPage.acf.banner_big_title}
             </h1>
             <p className="cta mt-0 pt-sm-5 pt-lg-5 pt-xl-5">
               <Spybutton
@@ -24,12 +50,16 @@ const Banner = props => {
                 smooth={true}
                 duration={250}
               >
-                BUY NOW
+                {wordpressPage.acf.banner_button_text}
               </Spybutton>
             </p>
           </Col>
           <Col md="5">
-            <img src={shop_banner} alt="shop_banner" width="100%" />
+            <img
+                  src={wordpressPage.acf.banner_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.banner_image.alt_text}
+                  width="100%"
+                />
           </Col>
         </Row>
       </Container>

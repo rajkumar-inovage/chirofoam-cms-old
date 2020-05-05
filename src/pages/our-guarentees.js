@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
@@ -12,15 +13,87 @@ import Chirofoam_Mattress_Warranty_15_Years from '../assets/img/Chirofoam-Mattre
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(acf: {}, slug: {eq: "our-guarantees"}) {
+            acf {
+              page_title
+              page_subtitle
+              guarantee1_title
+              guarantee1_description
+              guarantee1_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+                alt_text
+              }
+              guarantee2_title
+              guarantee2_description
+              guarantee2_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+                alt_text
+              }
+              guarantee3_title
+              guarantee3_description
+              guarantee3_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+                alt_text
+              }
+              guarantee4_title
+              guarantee4_description
+              guarantee4_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+                alt_text
+              }
+              guarantee5_title
+              guarantee5_description
+              guarantee5_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+                alt_text
+              }
+          }
+        }
+      }
+    `
+    )
   return (
     <>
-      <SEO title="OUR GUARANTEES" description="We have your back!" />
+      <SEO title={wordpressPage.acf.page_title} description={wordpressPage.acf.page_subtitle} />
       <Header />
       <section className="mb-0 py-3 position-relative">
         <Container>
           <Row className="mx-0 text-center">
-            <ScrollAnimation animateIn="fadeInUp" className="w-100"><h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">OUR GUARANTEES</h1></ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp" className="w-100"><p className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100" style={{fontSize:'26px'}}>We have your back!</p></ScrollAnimation>
+            <ScrollAnimation animateIn="fadeInUp" className="w-100"><h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">{wordpressPage.acf.page_title}</h1></ScrollAnimation>
+            <ScrollAnimation animateIn="fadeInUp" className="w-100"><p className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100" style={{fontSize:'26px'}}>{wordpressPage.acf.page_subtitle}</p></ScrollAnimation>
           </Row>
 
           <Row className="py-3 mb-0 mb-sm-5 charity-inner text-center mx-0">
@@ -31,28 +104,18 @@ export default props => {
               <div className="text-center">
                 <img
                   className="img-fluid"
-                  src={Chirofoam_Mattress_Sleep_Quality}
-                  alt="Chirofoam Mattress Sleep Quality"
+                  src={wordpressPage.acf.guarantee1_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.guarantee1_image.alt_text}
                 />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5 className="erbaum-bold color-primary pb-2 pb-sm-5 text-uppercase text-center">
-                  IMPROVED COMFORT AND SLEEP QUALITY
+                  {wordpressPage.acf.guarantee1_title}
                 </h5>
               </ScrollAnimation>
-              <p
-                className="filson-pro-reg color-secondary pt-2 text-left text-1"
-              >
-                Chirofoam™ was designed and built to relieve back pain and help
-                you get a better night’s sleep. Our team of chiropractors and
-                mattress experts have designed this mattress to work with your
-                body to relieve pressure from your back, keep your spine
-                properly aligned, and improve your overall sleep quality. We
-                promise that Chirofoam™ will be the best memory foam mattress
-                you have ever owned or we will refund your money back. Give
-                Chirofoam™ a try for 100 nights and see for yourself what a
-                difference it can make.
-              </p>
+              <div className="filson-pro-reg color-secondary pt-2 text-left text-1">
+                {ReactHtmlParser(wordpressPage.acf.guarantee1_description)}
+              </div>
             </Col>
             <Col
               sm="6"
@@ -61,8 +124,8 @@ export default props => {
               <div className="text-center">
                 <img
                   className="img-fluid"
-                  src={Chirofoam_Mattress_Quality_Materials}
-                  alt="Chirofoam Mattress Quality Materials"
+                  src={wordpressPage.acf.guarantee2_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.guarantee2_image.alt_text}
                 />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
@@ -70,16 +133,9 @@ export default props => {
                   QUALITY MATERIALS AND SKILLED CRAFTSMANSHIP
                 </h5>
               </ScrollAnimation>
-              <p
-                className="filson-pro-reg color-secondary pt-2 text-left text-1"
-              >
-                Each and every Chirofoam™ mattress is built using the highest
-                quality foams and fabrics which have been sourced from the best
-                and most reputable suppliers in the industry. Our team of highly
-                skilled seamstresses and mattress builders ensure that every
-                mattress meets the toughest Chirofoam™ standards and passes our
-                thorough 18 point inspection before being shipped to your door.
-              </p>
+              <div className="filson-pro-reg color-secondary pt-2 text-left text-1">
+                {ReactHtmlParser(wordpressPage.acf.guarantee2_description)}
+              </div>
             </Col>
             <Col
               sm="6"
@@ -88,8 +144,8 @@ export default props => {
               <div className="text-center">
                 <img
                   className="img-fluid"
-                  src={Chirofoam_Mattress_In_Home_Trial}
-                  alt="Chirofoam Mattress In Home Trial"
+                  src={wordpressPage.acf.guarantee3_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.guarantee3_image.alt_text}
                 />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
@@ -97,17 +153,9 @@ export default props => {
                   100 NIGHT IN HOME SLEEP TRIAL
                 </h5>
               </ScrollAnimation>
-              <p
-                className="filson-pro-reg color-secondary pt-2 text-left text-1"
-              >
-                Try the Chirofoam™ mattress in the comfort of your home for 100
-                nights and see what a difference it could make in the quality of
-                your sleep. From back pain relief, increased muscle recovery,
-                and overall sleep comfort, we are sure Chirofoam™ is the best
-                mattress you will ever buy. If for whatever reason you do not
-                feel like the Chirofoam™ mattress is right for you, you may
-                return it and we will give you 100% of your money back.
-              </p>
+              <div className="filson-pro-reg color-secondary pt-2 text-left text-1">
+                {ReactHtmlParser(wordpressPage.acf.guarantee3_description)}
+              </div>
             </Col>
             <Col
               sm="6"
@@ -116,8 +164,8 @@ export default props => {
               <div className="text-center">
                 <img
                   className="img-fluid"
-                  src={Chirofoam_Mattress_Warranty_15_Years}
-                  alt="Chirofoam Mattress Warranty 15 Years"
+                  src={wordpressPage.acf.guarantee4_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.guarantee4_image.alt_text}
                 />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
@@ -125,28 +173,17 @@ export default props => {
                   15 YEAR TOTAL WARRANTY PROTECTION
                 </h5>
               </ScrollAnimation>
-              <p
-                className="filson-pro-reg color-secondary pt-2 text-left text-1"
-              >
-                From the moment your Chirofoam™ mattress arrives at your door,
-                you are covered by our 15 year total warranty protection
-                program. If by any chance something goes wrong with your
-                Chirofoam™ mattress due to a defect in materials or faulty
-                craftsmanship, we will repair or replace your mattress hassle
-                free.
-              </p>
+              <div className="filson-pro-reg color-secondary pt-2 text-left text-1">
+                {ReactHtmlParser(wordpressPage.acf.guarantee4_description)}
+              </div>
             </Col>
 
-            <Col
-              sm="12"
-              className="mb-3 mb-sm-5 mt-3 mt-sm-5 text-center px-0 px-sm-2 px-md-2 px-lg-4 px-xl-4"
-            >
+            <Col sm="12" className="mb-3 mb-sm-5 mt-3 mt-sm-5 text-center px-0 px-sm-2 px-md-2 px-lg-4 px-xl-4 col-lg-8">
               <div className="charity-image text-center">
                 <img
                   className="img-fluid"
-                  src={Chirofoam_Mattress_Charity_Donations}
-                  alt="Chirofoam Mattress Charity Donations"
-                  width="100%"
+                  src={wordpressPage.acf.guarantee5_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.guarantee5_image.alt_text}
                 />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
@@ -154,16 +191,9 @@ export default props => {
                   CHIROFOAM WILL DONATE 1 BEDKIT FOR EVERY MATTRESS SOLD
                 </h5>
               </ScrollAnimation>
-              <p
-                className="filson-pro-reg color-secondary pt-2 text-1 text-left"
-              >
-                At Chirofoam we strongly believe in giving back to the less
-                fortunate people in the world. Many children in underdeveloped
-                countries do not have the luxury of sleeping in a comfortable
-                bed among other things. We have partnered with the Sleeping
-                Children Around The World Charity to donate 1 bed kit to
-                children living in poverty for every Chirofoam™ mattress sold.
-              </p>
+              <div className="filson-pro-reg color-secondary pt-2 text-1 text-left">
+               {ReactHtmlParser(wordpressPage.acf.guarantee5_description)}
+              </div>
             </Col>
           </Row>
         </Container>

@@ -1,21 +1,94 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import {useStaticQuery, Link } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
 import { Element } from 'react-scroll'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Banner from '../components/banner-shop-chirofoam'
 import { Container, Row, Col, Media } from 'reactstrap'
 import SEO from '~/components/seo'
-import mattress1 from '../assets/img/mattress1.jpg'
 import run from '../assets/img/only-man.webp'
 import product1 from '../assets/img/product1.webp'
 import product2 from '../assets/img/product2.webp'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-const shopChirofoam = props => {
+export default props => {
+  const { wordpressPage } = useStaticQuery(
+    graphql`
+      query {
+        wordpressPage(slug: {eq:"shop-chirofoam"}) {
+          acf {
+            grid1_text
+            grid1_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            grid2_text
+            grid2_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            grid3_text
+            grid3_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            chiropractor_title1
+            chiropractor_text1
+            chiropractor_button1_text
+            chiropractor_button1_link
+            chiropractor_title2
+            chiropractor_text2
+            chiropractor_value1
+            chiropractor_value1_text
+            chiropractor_value2
+            chiropractor_value2_text
+            chiropractor_value3
+            chiropractor_value3_text
+            chiropractor_value4
+            chiropractor_value4_text
+            chiropractor_button2_text
+            chiropractor_button2_link
+            lumber_support_title
+            lumber_support_description
+            lumber_support_button_text
+            lumber_support_button_link
+            lumber_support_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+    )
   return (
     <>
-      <SEO title="SHOP CHIROFOAM™" description="THE COMFORT AND SUPPORT YOU NEED FOR A BETTER SLEEP We have two models to choose from. Whatever your needs are, Chirofoam has your back!" />
+      <SEO title={wordpressPage.title} description="THE COMFORT AND SUPPORT YOU NEED FOR A BETTER SLEEP We have two models to choose from. Whatever your needs are, Chirofoam has your back!" />
       <Header />
       <Banner />
       <section className="mt-4 mb py-4" style={{ backgroundColor: '#fff' }}>
@@ -23,8 +96,7 @@ const shopChirofoam = props => {
           <Row className="no-gutters">
             <Col
               sm="4"
-              className="card1 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0 m-lg-0"
-            >
+              className="card1 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0 m-lg-0" style={{backgroundImage:`url(${wordpressPage.acf.grid1_image.localFile.childImageSharp.fluid.src})`}}>
               <div className="card-layer">
                 <span
                   className="proxima-b text-center text-white"
@@ -35,14 +107,13 @@ const shopChirofoam = props => {
                     right: '0',
                   }}
                 >
-                  Developed and Manufactured in Canada
+                  {wordpressPage.acf.grid1_text}
                 </span>
               </div>
             </Col>
             <Col
               sm="4"
-              className="card2 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0"
-            >
+              className="card2 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.grid2_image.localFile.childImageSharp.fluid.src})`}}>
               <div className="card-layer">
                 <span
                   className="proxima-b text-center text-white"
@@ -53,14 +124,13 @@ const shopChirofoam = props => {
                     right: '0',
                   }}
                 >
-                  100 Night Sleep Trial
+                  {wordpressPage.acf.grid2_text}
                 </span>
               </div>
             </Col>
             <Col
               sm="4"
-              className="card3 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0"
-            >
+              className="card3 com-card bg-image mx-3 mb-2 mb-sm-0 m-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.grid3_image.localFile.childImageSharp.fluid.src})`}}>
               <div className="card-layer">
                 <span
                   className="proxima-b text-center text-white"
@@ -71,7 +141,7 @@ const shopChirofoam = props => {
                     right: '0',
                   }}
                 >
-                  Free Delivery in Canada and Continental USA
+                  {wordpressPage.acf.grid3_text}
                 </span>
               </div>
             </Col>
@@ -205,28 +275,24 @@ const shopChirofoam = props => {
               <Col className="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                 <div className="text-white mb-4">
                   <h3 className="approved-title text-white erbaum-bold lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text">
-                    CHIROPRACTOR APPROVED
+                    {wordpressPage.acf.chiropractor_title1}
                   </h3>
                   <p className="proxima-b space-1 p-0 pt-sm-1 text-1">
-                    Chirofoam<sup style={{ fontSize: '8px' }}>TM</sup>{' '}
-                    mattresses are designed by Chiropractors to improve posture,
-                    and provide incredible pressure relief. Your back will thank
-                    you.
+                    {wordpressPage.acf.chiropractor_text1}
                   </p>
                   <p className="cta mt-3 mt-sm-0 mt-lg-0 mt-xl-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
-                    <button className="btn-cta bg-transparent border-0 outline-none text-white erbaum-bold space-1">
-                      CALL TO ACTION{' '}
-                    </button>
+                    <Link to={wordpressPage.acf.chiropractor_button1_link} className="btn-cta bg-transparent border-0 outline-none text-white erbaum-bold space-1">
+                      {wordpressPage.acf.chiropractor_button1_text}
+                    </Link>
                   </p>
                 </div>
 
                 <div className="text-white mb-4 pt-1 pr-0 pr-sm-5">
                   <h3 className="approved-title text-white erbaum-bold pt-0 pt-sm-3 lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text">
-                    CUSTOMER APPROVED
+                    {wordpressPage.acf.chiropractor_title2}
                   </h3>
                   <p className="proxima-b space-1 p-0 pt-sm-2 text-1">
-                    Our customers have reported the following benefits after
-                    sleeping on there chirofoam mattress
+                   {wordpressPage.acf.chiropractor_text2}
                   </p>
                   <div className="ml-0 ml-sm-4 pt-0 pt-sm-0 pl-0 pr-sm-5">
                     <Media className="my-3">
@@ -238,14 +304,14 @@ const shopChirofoam = props => {
                           className="my-0 pr-4 h4 erbaum-bold"
                           style={{ fontSize: '32px' }}
                         >
-                          97%
+                          {wordpressPage.acf.chiropractor_value1}
                         </Media>
                         <Media
                           body
                           middle
                           className="proxima-r pl-sm-3 text-1 align-self-center"
                         >
-                          Improvement in sleep comfort and quality
+                         {wordpressPage.acf.chiropractor_value1_text}
                         </Media>
                       </div>
                     </Media>
@@ -258,14 +324,14 @@ const shopChirofoam = props => {
                           className="my-0 pr-4 h4 erbaum-bold"
                           style={{ fontSize: '32px' }}
                         >
-                          94%
+                          {wordpressPage.acf.chiropractor_value2}
                         </Media>
                         <Media
                           body
                           middle
                           className="proxima-r pl-sm-3 text-1 align-self-center"
                         >
-                          Increased energy in the morning and throughout the day
+                          {wordpressPage.acf.chiropractor_value2_text}
                         </Media>
                       </div>
                     </Media>
@@ -278,15 +344,14 @@ const shopChirofoam = props => {
                           className="my-0 pr-4 h4 erbaum-bold"
                           style={{ fontSize: '32px' }}
                         >
-                          86%
+                          {wordpressPage.acf.chiropractor_value3}
                         </Media>
                         <Media
                           body
                           middle
                           className="proxima-r pl-sm-3 pt-sm-1 text-1 align-self-center"
                         >
-                          Improved muscle recovery and/or relief in daliy
-                          experienced back pain
+                          {wordpressPage.acf.chiropractor_value3_text}
                         </Media>
                       </div>
                     </Media>
@@ -299,24 +364,24 @@ const shopChirofoam = props => {
                           className="my-0 pr-4 h4 erbaum-bold"
                           style={{ fontSize: '32px' }}
                         >
-                          82%
+                          {wordpressPage.acf.chiropractor_value4}
                         </Media>
                         <Media
                           body
                           middle
                           className="proxima-r pl-sm-3 pt-sm-2 text-1 align-self-center"
                         >
-                          Improvement in sleep comfort and quality
+                          {wordpressPage.acf.chiropractor_value4_text}
                         </Media>
                       </div>
                     </Media>
                   </div>
                   <p className="cta mt-3 mt-sm-3 pt-sm-4 pt-lg-4 pt-xl-4 mb-sm-2 pl-0">
                     <Link
-                      to="/reviews/"
+                      to={wordpressPage.acf.chiropractor_button2_link}
                       className="btn-cta text-white erbaum-bold space-1"
                     >
-                      READ CUSTOMER REVIEWS
+                      {wordpressPage.acf.chiropractor_button2_text}
                     </Link>
                   </p>
                 </div>
@@ -331,38 +396,31 @@ const shopChirofoam = props => {
             <Col sm="6" className="position-relative" style={{ zIndex: '9' }}>
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="lead-text-font color-primary erbaum-bold display-5">
-                  THE ONLY MATTRESS WITH PRO LUMBAR SUPPORT BY ChirofoamTM
+                  {wordpressPage.acf.lumber_support_title}
                 </h4>
               </ScrollAnimation>
-              <p
+              <div
                 className="mt-4 color-primary proxima-r"
                 style={{ fontSize: '0.9rem' }}
               >
-                <b className="proxima-eb">
-                  Our specilized layer of chirofoam
-                  <sup style={{ fontSize: '7px' }}>TM</sup> lumbar support
-                </b>{' '}
-                provides an additional 20% of conforming support in the centre
-                third of mattress for improved lumbar support and increased life
-                span of the mattress. The majority of your body's weight rests
-                in the centre third of the mattress where you need the most
-                support to keep your spine in optimal alignment while relieving
-                back pain. The pro Lumbar Support layer is also designed to
-                resist sagging and keeps your mattress comfortable and more
-                supportive even far boyond our 15 years warranty period.
-              </p>
+                {ReactHtmlParser(wordpressPage.acf.lumber_support_description)}
+              </div>
               <p className="cta pr-0 pt-3">
                 <Link
-                  to="/design/"
+                  to={wordpressPage.acf.lumber_support_button_link}
                   className="btn-cta color-primary erbaum-bold space-1"
                   style={{ marginRight: '1rem' }}
                 >
-                  READ MORE
+                 {wordpressPage.acf.lumber_support_button_text}
                 </Link>
               </p>
             </Col>
             <Col sm="6">
-              <img src={mattress1} alt="Mattress1" width="100%" />
+              <img          
+                  src={wordpressPage.acf.lumber_support_image.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.lumber_support_image.alt_text}
+                   width="100%"
+                />
             </Col>
           </Row>
         </Container>
@@ -372,4 +430,4 @@ const shopChirofoam = props => {
     </>
   )
 }
-export default shopChirofoam
+
