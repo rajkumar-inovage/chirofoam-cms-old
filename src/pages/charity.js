@@ -7,6 +7,7 @@ import ReactHtmlParser from 'react-html-parser'
 import SEO from '~/components/seo'
 import ScrollAnimation from 'react-animate-on-scroll'
 
+
 const Charity = (data) => {
      const { wordpressPage } = useStaticQuery(
     graphql`
@@ -82,7 +83,7 @@ const Charity = (data) => {
       }
     `
     )
-     
+
   return (
     <>
       <SEO
