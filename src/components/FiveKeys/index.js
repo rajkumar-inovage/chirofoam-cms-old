@@ -41,18 +41,63 @@ const SlickSlider = () => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+        wordpressPage(acf: {}, slug: {eq:"homepage"}) {
             acf {
                 key_features_card_1_title
                 key_features_card_1_text
+                key_features_card_1_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 key_features_card_2_title
                 key_features_card_2_text
+                key_features_card_2_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 key_features_card_3_title
                 key_features_card_3_text
+                key_features_card_3_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 key_features_card_4_title
                 key_features_card_4_text
+                key_features_card_4_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 key_features_card_5_title
                 key_features_card_5_text
+                key_features_card_5_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
               }
           }
       }
@@ -62,7 +107,7 @@ const SlickSlider = () => {
     <div>
       <Slider {...settings}>
         <div>
-          <div className="card-bg1 keys card-bg bg-image mb-4 mb-sm-0">
+          <div className="card-bg1 keys card-bg bg-image mb-4 mb-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.key_features_card_1_image.localFile.childImageSharp.fluid.src})`}}>
             <div className="card-layer">
               <h3 className="pt-0 pt-sm-3 text-right text-white pr-3 erbaum-bold">
                 01
@@ -89,7 +134,7 @@ const SlickSlider = () => {
           </div>
         </div>
         <div>
-          <div className="card-bg2 keys card-bg bg-image mb-4 mb-sm-0">
+          <div className="card-bg2 keys card-bg bg-image mb-4 mb-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.key_features_card_2_image.localFile.childImageSharp.fluid.src})`}}>
             <div className="card-layer">
               <h3 className="pt-0 pt-sm-3 text-right text-white pr-3 erbaum-bold">
                 02
@@ -116,7 +161,7 @@ const SlickSlider = () => {
           </div>
         </div>
         <div>
-          <div className="card-bg3 keys card-bg bg-image">
+          <div className="card-bg3 keys card-bg bg-image" style={{backgroundImage:`url(${wordpressPage.acf.key_features_card_3_image.localFile.childImageSharp.fluid.src})`}}>
             <div className="card-layer">
               <h3 className="pt-0 pt-sm-3 text-right text-white pr-3 erbaum-bold">
                 03
@@ -143,7 +188,7 @@ const SlickSlider = () => {
           </div>
         </div>
         <div>
-          <div className="card-bg4 keys card-bg bg-image mb-4 mb-sm-0">
+          <div className="card-bg4 keys card-bg bg-image mb-4 mb-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.key_features_card_4_image.localFile.childImageSharp.fluid.src})`}}>
             <div className="card-layer">
               <h3 className="pt-0 pt-sm-3 text-right text-white pr-3 erbaum-bold">
                 04
@@ -170,7 +215,7 @@ const SlickSlider = () => {
           </div>
         </div>
         <div>
-          <div className="card-bg5 keys card-bg bg-image mb-4 mb-sm-0">
+          <div className="card-bg5 keys card-bg bg-image mb-4 mb-sm-0" style={{backgroundImage:`url(${wordpressPage.acf.key_features_card_5_image.localFile.childImageSharp.fluid.src})`}}>
             <div className="card-layer">
               <h3 className="pt-0 pt-sm-3 text-right text-white pr-3 erbaum-bold">
                 05

@@ -3,9 +3,6 @@ import {useStaticQuery, Link } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
-import amazon from '../assets/img/amazon.jpg'
-import best from '../assets/img/best.png'
-import nm from '../assets/img/nm.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 import SEO from '~/components/seo'
 
@@ -13,7 +10,7 @@ export default props => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 265}) {
+        wordpressPage(acf: {}, slug: {eq:"locations"}) {
             acf {
                 banner_title
                 map_grid1_title
@@ -43,8 +40,38 @@ export default props => {
                 grid3_hours_line2
                 grid3_hours_line3
                 map3_contact
+                franchise1_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 franchise1_link
+                franchise2_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 franchise2_link
+                franchise3_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 franchise3_link
               }
           }
@@ -214,17 +241,17 @@ export default props => {
             <Row>
               <Col sm="4" className="col-4 text-center">
                 <a href={wordpressPage.acf.franchise1_link} target="_blank" rel="noopener noreferrer">
-                  <img src={amazon} alt="Amazon" width="90%" />
+                  <img src={wordpressPage.acf.franchise1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.franchise1_image.alt_text} width="90%" />
                 </a>
               </Col>
               <Col sm="4" className="col-4 text-center">
                 <a href={wordpressPage.acf.franchise2_link} target="_blank" rel="noopener noreferrer">
-                  <img src={best} alt="Best Buy" width="90%" />
+                  <img src={wordpressPage.acf.franchise2_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.franchise2_image.alt_text} width="90%" />
                 </a>
               </Col>
               <Col sm="4" className="col-4 text-center">
                 <Link to={wordpressPage.acf.franchise3_link} target="_blank" rel="noopener noreferrer">
-                  <img src={nm} alt="National Mattress" width="90%" />
+                  <img src={wordpressPage.acf.franchise3_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.franchise3_image.alt_text} width="90%" />
                 </Link>
               </Col>
             </Row>

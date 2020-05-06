@@ -11,7 +11,7 @@ export default props => {
     const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 390}) {
+        wordpressPage(acf: {}, slug: {eq: "terms-and-conditions"}) {
             title
             content
         }

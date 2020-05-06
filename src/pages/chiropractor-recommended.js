@@ -5,41 +5,166 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
-import confirm from '../assets/img/confirm.png'
-import support from '../assets/img/support.png'
-import alignment from '../assets/img/allignment.png'
-import presure from '../assets/img/presure.png'
-import comfort from '../assets/img/comfort.png'
-import massage from '../assets/img/message.png'
-import one from '../assets/img/one.png'
-import antizo from '../assets/img/antizo.png'
-import trillium from '../assets/img/trillium.png'
-import medical from '../assets/img/medical.png'
-import health from '../assets/img/health.png'
-import mobility from '../assets/img/mobility.png'
-import church from '../assets/img/church.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 const Chiropractor = (data) => {
      const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 198}) {
+        wordpressPage(acf: {}, slug: {eq:"chiropractor-recommended"}) {
             acf {
               banner_subtitle
               banner_title
               section1_title1
               section1_description1
+              section1_image1 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
               section1_title2
               section1_description2
+              section1_image2 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
               section1_title3
               section1_description3
+              section1_image3 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               section1_title4
               section1_description4
+              section1_image4 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               section1_title5
               section1_description5
+              section1_image5 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               section2_main_subtitle
               section2_main_title
+              section2_image1 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image1_link
+              section2_image2 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image2_link
+              section2_image3 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image3_link
+              section2_image4 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image4_link
+              section2_image5 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image5_link
+              section2_image6 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image6_link
+              section2_image7 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image7_link
+              section2_image8 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              section2_image8_link
               section3_title
               box1_text1
               box1_text2
@@ -81,7 +206,7 @@ const Chiropractor = (data) => {
               className="mb-3 mb-sm-2 mb-md-2 mb-lg-4 mb-xl-5 px-0 px-sm-2 px-md-3 px-lg-3 px-xl-3"
             >
               <div className="charity-image text-center w-100 pb-2 pb-sm-0">
-                <img className="img-fluid" src={confirm} alt="Confirmity" />
+                <img className="img-fluid" src={wordpressPage.acf.section1_image1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image1.alt_text} />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5
@@ -100,7 +225,7 @@ const Chiropractor = (data) => {
               className="mb-3 mb-sm-2 mb-md-2 mb-lg-4 mb-xl-5 px-0 px-sm-2 px-md-3 px-lg-3 px-xl-3"
             >
               <div className="charity-image text-center w-100 pb-2 pb-sm-0">
-                <img className="img-fluid" src={support} alt="Support" />
+                <img className="img-fluid" src={wordpressPage.acf.section1_image2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image2.alt_text} />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5
@@ -119,7 +244,7 @@ const Chiropractor = (data) => {
               className="mb-3 mb-sm-2 mb-md-2 mb-lg-4 mb-xl-5 px-0 px-sm-2 px-md-3 px-lg-3 px-xl-3"
             >
               <div className="charity-image text-center w-100 pb-2 pb-sm-0">
-                <img className="img-fluid" src={alignment} alt="alignment" />
+                <img className="img-fluid" src={wordpressPage.acf.section1_image3.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image3.alt_text} />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5
@@ -138,7 +263,7 @@ const Chiropractor = (data) => {
               className="mb-3 mb-sm-2 mb-md-2 mb-lg-4 mb-xl-5 px-0 px-sm-2 px-md-3 px-lg-3 px-xl-3"
             >
               <div className="charity-image text-center w-100 pb-2 pb-sm-0">
-                <img className="img-fluid" src={presure} alt="Presure Relief" />
+                <img className="img-fluid" src={wordpressPage.acf.section1_image4.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image4.alt_text} />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5
@@ -157,7 +282,7 @@ const Chiropractor = (data) => {
               className="mb-3 mb-sm-2 mb-md-2 mb-lg-4 mb-xl-5 px-0 px-sm-2 px-md-3 px-lg-3 px-xl-3"
             >
               <div className="charity-image text-center w-100 pb-2 pb-sm-0">
-                <img className="img-fluid" src={comfort} alt="Comfort" />
+                <img className="img-fluid" src={wordpressPage.acf.section1_image5.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image5.alt_text} />
               </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h5
@@ -189,84 +314,80 @@ const Chiropractor = (data) => {
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="https://massage-matters.ca/"
+                    href={wordpressPage.acf.section2_image1_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={massage} alt="Massage" />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image1.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://www.onehealthcarecentre.com/clinic-hours/"
+                    href={wordpressPage.acf.section2_image2_link}
                     className="w-100 text-center d-block"
                   >
-                    <img
-                      className="img-fluid"
-                      src={one}
-                      alt="One Healthcare Center"
-                    />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image2.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://www.santizohealthcare.ca/index.html/"
+                    href={wordpressPage.acf.section2_image3_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={antizo} alt="Antizo" />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image3.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image3.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://trillium-rehab.com/"
+                    href={wordpressPage.acf.section2_image4_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={trillium} alt="trillium" />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image4.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image4.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://www.mrcdoctors.com/"
+                    href={wordpressPage.acf.section2_image5_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={medical} alt="medical" />
+                   <img className="img-fluid" src={wordpressPage.acf.section2_image5.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image5.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://www.bodyworkx.ca/"
+                    href={wordpressPage.acf.section2_image6_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={health} alt="health" />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image6.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image6.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="https://mobilitypluschiropractic.com/"
+                    href={wordpressPage.acf.section2_image7_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={mobility} alt="mobility" />
+                   <img className="img-fluid" src={wordpressPage.acf.section2_image7.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image7.alt_text} />
                   </a>
                 </div>
               </Col>
               <Col sm="3" className="mb-5 mb-sm-5 mb-lg-3 mb-xl-3">
                 <div className="recommend-image">
                   <a
-                    href="http://ww12.churchwellesleyhealthcentre.com/"
+                    href={wordpressPage.acf.section2_image8_link}
                     className="w-100 text-center d-block"
                   >
-                    <img className="img-fluid" src={church} alt="church" />
+                    <img className="img-fluid" src={wordpressPage.acf.section2_image8.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section2_image8.alt_text} />
                   </a>
                 </div>
               </Col>

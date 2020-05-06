@@ -13,13 +13,6 @@ import {useStaticQuery, Link } from 'gatsby'
 import '~/assets/css/bootstrap.min.css'
 import '~/assets/css/animate.css'
 import run from '~/assets/img/only-man.webp'
-import icon1 from '~/assets/img/ic1.png'
-import icon2 from '~/assets/img/ic2.png'
-import icon3 from '~/assets/img/ic3.png'
-import icon4 from '~/assets/img/ic4.png'
-import us from '~/assets/img/us.png'
-import eco from '~/assets/img/eco.png'
-import confidence from '~/assets/img/confidence.png'
 
 const items = [
   {
@@ -37,7 +30,7 @@ const HomePageSlider2 = props => {
    const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+        wordpressPage(acf: {}, slug: {eq: "homepage"}) {
             acf {
                 slider_1_title_1
                 slider_1_text_1
@@ -56,6 +49,76 @@ const HomePageSlider2 = props => {
                 slider_3_text1
                 slider_3_text2
                 slider_3_text3
+                slider2_block_1_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider2_block_2_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider2_block_3_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider2_block_4_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider_3_image_1 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider_3_image_2 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                slider_3_image_3 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
               }
           }
       }
@@ -237,7 +300,7 @@ const HomePageSlider2 = props => {
               <Col sm="6">
                 <Media className="px-2 px-sm-2 px-md-3 px-lg-5 px-xl-5 pb-3 pb-sm-5">
                   <Media left={true} middle={true}>
-                    <img src={icon1} alt="icon1" width="85px" />
+                    <img src={wordpressPage.acf.slider2_block_1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider2_block_1_image.alt_text} width="85px" />
                   </Media>
                   <Media body={true} middle={true} className="pl-3 text-white">
                     <h4
@@ -259,7 +322,7 @@ const HomePageSlider2 = props => {
               <Col sm="6">
                 <Media className="px-2 px-sm-2 px-md-3 px-lg-5 px-xl-5 pb-3 pb-sm-5">
                   <Media left={true} middle={true}>
-                    <img src={icon2} alt="icon2" width="85px" />
+                    <img src={wordpressPage.acf.slider2_block_2_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider2_block_2_image.alt_text} width="85px" />
                   </Media>
                   <Media body={true} middle={true} className="pl-3 text-white">
                     <h4
@@ -281,7 +344,7 @@ const HomePageSlider2 = props => {
               <Col sm="6">
                 <Media className="px-2 px-sm-2 px-md-3 px-lg-5 px-xl-5 pb-3 pb-sm-5">
                   <Media left={true} middle={true}>
-                    <img src={icon4} alt="icon4" width="85px" />
+                    <img src={wordpressPage.acf.slider2_block_3_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider2_block_3_image.alt_text} width="85px" />
                   </Media>
                   <Media body={true} middle={true} className="pl-3 text-white">
                     <h4
@@ -303,7 +366,7 @@ const HomePageSlider2 = props => {
               <Col sm="6">
                 <Media className="px-2 px-sm-2 px-md-3 px-lg-5 px-xl-5 pb-3 pb-sm-5">
                   <Media left={true} middle={true}>
-                    <img src={icon3} alt="icon3" width="85px" />
+                    <img src={wordpressPage.acf.slider2_block_4_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider2_block_4_image.alt_text} width="85px" />
                   </Media>
                   <Media body={true} middle={true} className="pl-3 text-white">
                     <h4
@@ -348,7 +411,7 @@ const HomePageSlider2 = props => {
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-0">
-                  <img src={us} alt="us" width="150px" />
+                  <img src={wordpressPage.acf.slider_3_image_1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_1.alt_text} width="150px" />
                 </Media>
               </Media>
               <Media className="px-3 px-sm-5 mb-0 d-block d-sm-flex">
@@ -360,7 +423,7 @@ const HomePageSlider2 = props => {
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
-                  <img src={eco} alt="eco" width="150px" />
+                  <img src={wordpressPage.acf.slider_3_image_2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_2.alt_text} width="150px" />
                 </Media>
               </Media>
               <Media className="px-3 px-sm-5 mb-1 d-block d-sm-flex">
@@ -372,7 +435,7 @@ const HomePageSlider2 = props => {
                   </p>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
-                  <img src={confidence} alt="confidence" width="150px" />
+                  <img src={wordpressPage.acf.slider_3_image_3.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_3.alt_text} width="150px" />
                 </Media>
               </Media>
             </Row>

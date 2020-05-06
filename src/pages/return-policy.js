@@ -11,7 +11,7 @@ export default props => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 384}) {
+        wordpressPage(acf: {}, slug: {eq: "return-policy"}) {
             acf {
                 banner_title
                 banner_subtitle

@@ -5,36 +5,99 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
-import msize from '../assets/img/mattress-sizes.png'
-import women from '../assets/img/woman-sleeeping.jpg'
-import foam from '../assets/img/foam.jpg'
-import support from '../assets/img/support.jpg'
-import us from '../assets/img/pur.png'
-import packing from '../assets/img/unpacking-chirofoam.jpg'
-import logo from '../assets/img/logo2.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 const Ourstory = (data) => {
      const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 90}) {
+        wordpressPage(acf: {}, slug: {eq:"our-story"}) {
             acf {
               banner_title
               banner_subtitle
               section2_main_title
               title1
               description1
+              image1 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title2
               description2
+              image2 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title3
               description3
+              image3_img1 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              image3_img2 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title4
               description4
+              image4 {
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title5
               description5
+              image5{
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title6
               description6
+              image6{
+                alt_text
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
             }
           }
       }
@@ -70,12 +133,12 @@ const Ourstory = (data) => {
               </p>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
-              <img src={msize} alt="Mattress Sizes" />
+              <img src={wordpressPage.acf.image1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image1.alt_text} />
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0">
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
-              <img src={women} alt="women-sleeping" />
+              <img src={wordpressPage.acf.image2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image2.alt_text} />
             </div>
             <div className="col-12 col-sm-8 col-lg-8 col-xl-8 left-card">
               <ScrollAnimation animateIn="fadeInUp">
@@ -100,17 +163,15 @@ const Ourstory = (data) => {
               </p>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
-              <img src={foam} alt="foam" />
-              <img
-                src={support}
-                alt="support"
+              <img src={wordpressPage.acf.image3_img1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image3_img1.alt_text} />
+              <img src={wordpressPage.acf.image3_img2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image3_img2.alt_text}
                 className="mt-2 mt-sm-5 pt-0 pt-sm-3"
               />
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0">
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
-              <img src={us} alt="us" />
+              <img src={wordpressPage.acf.image4.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image4.alt_text} />
             </div>
             <div className="col-12 col-sm-8 col-lg-8 col-xl-8 left-card">
               <ScrollAnimation animateIn="fadeInUp">
@@ -135,12 +196,12 @@ const Ourstory = (data) => {
               </p>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
-              <img src={packing} alt="packing" />
+              <img src={wordpressPage.acf.image5.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image5.alt_text} />
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 mx-0">
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 py-4 py-sm-3 py-md-3 mt-0 mt-sm-5 right-card">
-              <img src={logo} alt="chirofoam" />
+              <img src={wordpressPage.acf.image6.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image6.alt_text} />
             </div>
             <div className="col-12 col-sm-8 col-lg-8 col-xl-8 left-card">
               <ScrollAnimation animateIn="fadeInUp">

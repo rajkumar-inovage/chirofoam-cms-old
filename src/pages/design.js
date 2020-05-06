@@ -40,7 +40,7 @@ const Design = props => {
    const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 454}) {
+        wordpressPage(acf: {}, slug: {eq: "original-luxury-firm-design"}) {
           acf {
             top_section_title
             top_section_subtitle

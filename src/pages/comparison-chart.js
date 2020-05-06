@@ -4,7 +4,6 @@ import ReactHtmlParser from 'react-html-parser'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
-import logo from '../assets/img/logo2.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 import SEO from '~/components/seo'
 
@@ -13,7 +12,7 @@ export default props => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 404}) {
+        wordpressPage(acf: {}, slug: {eq:"compare-chart"}) {
             acf {
               compare_chart_title
               compare_chart_subtitle

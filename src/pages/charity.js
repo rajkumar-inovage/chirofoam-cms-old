@@ -5,31 +5,76 @@ import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import ReactHtmlParser from 'react-html-parser'
 import SEO from '~/components/seo'
-import sleep_child from '../assets/img/sleep-child.jpg'
-import children from '../assets/img/children.jpg'
-import bedkit from '../assets/img/bedkit.jpg'
-import donate from '../assets/img/donate.jpg'
-import dream from '../assets/img/dream.jpg'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 const Charity = (data) => {
      const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 16}) {
+        wordpressPage(acf: {}, slug: {eq:"charity"}) {
             acf {
                 banner_title
                 banner_subtitle
                 title1
                 description1
+                image1 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 title2
                 description2
+                image2 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 title3
                 description3
+                image3 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 title4
                 description4
+                image4 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 title5
                 description5
+                image5 {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 section3_title
                 section3_subtitle
               }
@@ -37,6 +82,7 @@ const Charity = (data) => {
       }
     `
     )
+     
   return (
     <>
       <SEO
@@ -77,8 +123,8 @@ const Charity = (data) => {
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
-                  src={sleep_child}
-                  alt="Sleeping Child"
+                  src={wordpressPage.acf.image1.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.image1.alt_text}
                 />
               </div>
             </Col>
@@ -98,8 +144,8 @@ const Charity = (data) => {
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
-                  src={children}
-                  alt="Children"
+                  src={wordpressPage.acf.image2.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.image2.alt_text}
                   width="100%"
                 />
               </div>
@@ -120,8 +166,8 @@ const Charity = (data) => {
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
-                  src={bedkit}
-                  alt="Bedkit"
+                  src={wordpressPage.acf.image3.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.image3.alt_text}
                   width="100%"
                 />
               </div>
@@ -141,8 +187,8 @@ const Charity = (data) => {
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
-                  src={donate}
-                  alt="Donation"
+                  src={wordpressPage.acf.image4.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.image4.alt_text}
                   width="100%"
                 />
               </div>
@@ -162,8 +208,8 @@ const Charity = (data) => {
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
-                  src={dream}
-                  alt="Dream"
+                  src={wordpressPage.acf.image5.localFile.childImageSharp.fluid.src}
+                  alt={wordpressPage.acf.image5.alt_text}
                   width="100%"
                 />
               </div>

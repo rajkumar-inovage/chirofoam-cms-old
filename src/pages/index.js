@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
 import ReactHtmlParser from 'react-html-parser'
 import Logo from '../assets/img/logo-home.png'
-import active from '../assets/img/activelife.webp'
 import product1 from '../assets/img/product1.webp'
 import product2 from '../assets/img/product2.webp'
 import circle1 from '../assets/img/circle1.webp'
@@ -22,7 +21,7 @@ export default props => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+        wordpressPage(acf: {}, slug: {eq: "homepage"}) {
             acf {
                 section_1_title_1
                 section_1_title_2
@@ -30,6 +29,16 @@ export default props => {
                 section_1_button_1
                 section_1_button_2
                 section_1_button_3
+                section_1_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
                 key_features_title
                 key_features_sub_title
                 key_features_card_1_title
@@ -42,6 +51,15 @@ export default props => {
                 key_features_card_4_text
                 key_features_card_5_title
                 key_features_card_5_text
+                max_support_image {
+                    localFile {
+                      childImageSharp {
+                        fluid {
+                          src
+                        }
+                      }
+                    }
+                  }
                 max_support_title
                 max_support_text
                 max_support_button
@@ -91,7 +109,7 @@ export default props => {
                   sm="12"
                   className="col-md-6 col-lg-6 col-xl-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-4"
                 >
-                  <img src={active} alt="Active Life Style" width="541" height="365" className="img-fluid" />
+                  <img src={wordpressPage.acf.section_1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section_1_image.alt_text} width="541" height="365" className="img-fluid" />
                   <ul className="list-unstyled mt-3 extra-link text-center d-block text-lg-right text-xl-right text-md-right extra-link">
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link

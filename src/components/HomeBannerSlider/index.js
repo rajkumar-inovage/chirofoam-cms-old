@@ -20,17 +20,44 @@ const HomeBannerSlider = () => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 6}) {
+        wordpressPage(acf: {}, slug: {eq:"homepage"}) {
            acf {
               banner_1_title_1
               banner_1_title_2
               banner_1_title_3
+              banner_1_bg_image_1 {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               banner_2_title_1
               banner_2_title_2
               banner_2_title_3
+              banner_2_bg_image_1 {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               banner_3_title_1
               banner_3_title_2
               banner_3_title_3
+              banner_3_bg_image_1 {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               banner_2_button
               banner_3_button
               banner_1_button
@@ -42,7 +69,9 @@ const HomeBannerSlider = () => {
   return (
     <div>
       <Slider {...settings}>
-        <div className="home-banner bg-image">
+        <div className="home-banner bg-image" style={{
+                backgroundImage:`url(${wordpressPage.acf.banner_1_bg_image_1.localFile.childImageSharp.fluid.src})`
+              }}>
           <div className="container-large position-relative">
             <div
               className=""
@@ -90,7 +119,7 @@ const HomeBannerSlider = () => {
             </div>
           </div>
         </div>
-        <div className="home-banner bg-image">
+        <div className="home-banner bg-image" style={{backgroundImage:`url(${wordpressPage.acf.banner_2_bg_image_1.localFile.childImageSharp.fluid.src})`}}>
           <div className="container-large position-relative">
             <div
               className=""

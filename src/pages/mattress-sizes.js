@@ -5,25 +5,30 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
-import mattress_size from '../assets/img/mattress-size.png'
-import xl_twin_size from '../assets/img/xl-twin-size.png'
-import full_size from '../assets/img/full-size.png'
-import queen_size from '../assets/img/queen-size.png'
-import king_size from '../assets/img/size.png'
-import cali_king from '../assets/img/cali-king-size.png'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
   const { wordpressPage } = useStaticQuery(
     graphql`
       query {
-        wordpressPage(acf: {}, wordpress_id: {eq: 316}) {
+        wordpressPage(acf: {}, slug: {eq: "mattress-sizes"}) {
             acf {
             section1_title
             section1_description
+            section1_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
             variant1_name
             variant1_dimension
             variant1_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -35,6 +40,7 @@ export default props => {
             variant2_name
             variant2_dimension
             variant2_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -46,6 +52,7 @@ export default props => {
             variant3_name
             variant3_dimension
             variant3_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -57,6 +64,7 @@ export default props => {
             variant4_name
             variant4_dimension
             variant4_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -68,6 +76,7 @@ export default props => {
             variant5_name
             variant5_dimension
             variant5_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -79,6 +88,7 @@ export default props => {
             variant6_name
             variant6_dimension
             variant6_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -92,7 +102,8 @@ export default props => {
             variant1_title
             variant1_description
             variant1_button_text
-            varaint1_logo {
+            variant1_logo {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -104,7 +115,8 @@ export default props => {
              variant2_title
             variant2_description
             variant2_button_text
-            varaint2_logo {
+            variant2_logo {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -116,7 +128,8 @@ export default props => {
              variant3_title
             variant3_description
             variant3_button_text
-            varaint3_logo {
+            variant3_logo {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -128,7 +141,8 @@ export default props => {
              variant4_title
             variant4_description
             variant4_button_text
-            varaint4_logo {
+            variant4_logo {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -140,7 +154,8 @@ export default props => {
              variant5_title
             variant5_description
             variant5_button_text
-            varaint5_logo {
+            variant5_logo {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -152,7 +167,18 @@ export default props => {
              variant6_title
             variant6_description
             variant6_button_text
-            varaint6_logo {
+            variant6_logo {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            section4_bg_image {
+              alt_text
               localFile {
                 childImageSharp {
                   fluid {
@@ -197,13 +223,7 @@ export default props => {
               </p>
             </Col>
             <Col sm="6" className="m-size">
-              <img
-                src={mattress_size}
-                alt="Mattress Sizes"
-                style={{
-                  width: '100%',
-                }}
-              />
+              <img src={wordpressPage.acf.section1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image.alt_text} width="100%" />
             </Col>
           </Row>
         </Container>
@@ -212,32 +232,32 @@ export default props => {
         <Container className="py-3 py-sm-5">
           <Row className="pb-2 pb-sm-5">
             <Col sm="4" className="difference-sizes text-center">
-              <img src={xl_twin_size} alt="XL Twin Size" />
+              <img src={wordpressPage.acf.variant1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant1_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant1_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant1_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
-              <img src={xl_twin_size} alt="XL Twin Size" />
+              <img src={wordpressPage.acf.variant2_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant2_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant2_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant2_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
-              <img src={full_size} alt="Full Size" />
+              <img src={wordpressPage.acf.variant3_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant3_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant3_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant3_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
-              <img src={queen_size} alt="Queen Size" />
+              <img src={wordpressPage.acf.variant4_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant4_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant4_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant4_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
-              <img src={king_size} alt="King Size" />
+              <img src={wordpressPage.acf.variant5_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant5_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant5_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant5_dimension}</span>
             </Col>
             <Col sm="4" className="difference-sizes text-center">
-              <img src={cali_king} alt="Cali King Size" />
+              <img src={wordpressPage.acf.variant6_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant6_image.alt_text} />
               <h5 className="erbaum py-3 py-sm-4 m-0">{wordpressPage.acf.variant6_name}</h5>
               <span className="color-secondary proxima-r">{wordpressPage.acf.variant6_dimension}</span>
             </Col>
@@ -285,7 +305,7 @@ export default props => {
         <Container>
           <Row className="m-0">
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={xl_twin_size} alt="XL Twin Size" />
+              <img src={wordpressPage.acf.variant1_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant1_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant1_title}
@@ -306,7 +326,7 @@ export default props => {
               </p>
             </div>
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={xl_twin_size} alt="XL Twin Size" />
+              <img src={wordpressPage.acf.variant2_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant2_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant2_title}
@@ -327,7 +347,7 @@ export default props => {
               </p>
             </div>
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={full_size} alt="Full Size" />
+              <img src={wordpressPage.acf.variant3_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant3_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant3_title}
@@ -348,7 +368,7 @@ export default props => {
               </p>
             </div>
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={queen_size} alt="Queen Size" />
+              <img src={wordpressPage.acf.variant4_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant4_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant4_title}
@@ -369,7 +389,7 @@ export default props => {
               </p>
             </div>
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={cali_king} alt="King Size" />
+              <img src={wordpressPage.acf.variant5_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant5_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant5_title}
@@ -390,7 +410,7 @@ export default props => {
               </p>
             </div>
             <div className="all-mattress text-center mb-2 mb-sm-5 pb-0 pb-sm-5">
-              <img src={cali_king} alt="Cali King Size" />
+              <img src={wordpressPage.acf.variant6_logo.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.variant6_logo.alt_text} />
               <ScrollAnimation animateIn="fadeInUp">
                 <h4 className="space-1 color-primary erbaum-bold text-uppercase py-2 py-sm-5 mb-0">
                   {wordpressPage.acf.variant6_title}
@@ -411,7 +431,7 @@ export default props => {
           </Row>
         </Container>
       </section>
-      <section className="globe parallax">
+      <section className="globe parallax" style={{backgroundImage:`url(${wordpressPage.acf.section4_bg_image.localFile.childImageSharp.fluid.src})`}}>
         <Container>
           <Row className="text-center">
             <ScrollAnimation animateIn="fadeInUp" className="w-100">

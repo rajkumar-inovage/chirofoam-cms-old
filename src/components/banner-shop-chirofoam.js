@@ -1,9 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import shop_banner from '../assets/img/Chirofoam_Home-jumping.png'
 import Spybutton from '../components/spybutton'
 import {useStaticQuery} from 'gatsby'
-import ReactHtmlParser from 'react-html-parser'
 
 const Banner = props => {
   const { wordpressPage } = useStaticQuery(
