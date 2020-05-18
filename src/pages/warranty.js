@@ -6,6 +6,8 @@ import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import ScrollAnimation from 'react-animate-on-scroll'
 import SEO from '~/components/seo'
+import TakeTest from '../components/TaketestSection'
+import ReviewSection from '../components/ReviewSection'
 
 export default props => {
   const { wordpressPage } = useStaticQuery(
@@ -109,34 +111,7 @@ export default props => {
         <Container>
           <Row className="py-3 py-sm-5 mb-0 mb-sm-5">
             <div className="m-auto text-center d-sm-flex">
-              <Col
-                sm="6"
-                className="text-center filson-pro-reg color-secondary mb-5 mb-sm-0 px-sm-5"
-              >
-                <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
-                  <Link
-                    to="/take-test/"
-                    className="btn-cta color-primary erbaum-bold space-1"
-                  >
-                    TAKE THE TEST
-                  </Link>
-                </p>
-                See if Chirofoam™ is right for you.
-              </Col>
-              <Col
-                sm="6"
-                className="text-center filson-pro-reg color-secondary mb-5 mb-sm-0 px-sm-5"
-              >
-                <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 mb-sm-2">
-                  <Link
-                    to="/shop-chirofoam/"
-                    className="btn-cta color-primary erbaum-bold space-1 mr-3"
-                  >
-                    BUY NOW
-                  </Link>
-                </p>
-                Start your journey to a better sleep!
-              </Col>
+              <TakeTest />
             </div>
           </Row>
         </Container>
@@ -145,34 +120,7 @@ export default props => {
         <section className="rating-and-review py-3 py-sm-5">
           <Container className="pb-0 pb-sm-5">
             <Row>
-              <p className="text-center w-100 star">
-                <i className="fa fa-star star-small"></i>
-                <i className="fa fa-star star-medium ml-2"></i>
-                <i className="fa fa-star star-large mx-2"></i>
-                <i className="fa fa-star star-medium mr-2"></i>
-                <i className="fa fa-star star-small"></i>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{ fontSize: '20px' }}
-              >
-                People love their Chirofoam™ mattress and you will too!{' '}
-              </p>
-              <p className="cta mt-0 pt-sm-4 pt-lg-4 pt-xl-4 w-100 text-center">
-                <Link
-                  to="/reviews/"
-                  className="btn-cta color-primary erbaum-bold space-1"
-                >
-                  SEE REVIEWS
-                </Link>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{ fontSize: '20px' }}
-              >
-                Chirofoam™ Memory Foam Mattresses are proudly developed and
-                manufactured in Toronto, ON, Canada.
-              </p>
+              <ReviewSection />
             </Row>
           </Container>
         </section>

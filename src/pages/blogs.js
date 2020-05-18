@@ -6,6 +6,7 @@ import SEO from '~/components/seo'
 import Blogs from '../components/Blogs'
 import RecentBlogs from '../components/Blogs/RecentBlogs'
 import ScrollAnimation from 'react-animate-on-scroll'
+import ReviewSection from '../components/ReviewSection'
 
 export default props => {
   return (
@@ -44,35 +45,7 @@ export default props => {
         <section className="rating-and-review py-3 py-sm-5 mb-4 mb-sm-0">
           <div className="container-fluid pb-0 pb-sm-5">
             <Row>
-              <p className="text-center w-100 star">
-                <i className="fa fa-star star-small"></i>
-                <i className="fa fa-star star-medium ml-2"></i>
-                <i className="fa fa-star star-large mx-2"></i>
-                <i className="fa fa-star star-medium mr-2"></i>
-                <i className="fa fa-star star-small"></i>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{ fontSize: '20px' }}
-              >
-                “A great quality mattress I enjoy waking up on every day…”{' '}
-                <br /> -Mark F. from Toronto, Ontario
-              </p>
-              <p className="cta mt-0 pt-sm-4 pt-lg-4 pt-xl-4 w-100 text-center mt-4 mt-sm-0">
-                <a
-                  href="/reviews/"
-                  className="btn-cta color-primary erbaum-bold space-1"
-                >
-                  SEE REVIEWS
-                </a>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{ fontSize: '20px' }}
-              >
-                Chirofoam™ Memory Foam Mattresses are proudly developed and
-                manufactured in Toronto, ON, Canada.
-              </p>
+              <ReviewSection />
             </Row>
           </div>
         </section>

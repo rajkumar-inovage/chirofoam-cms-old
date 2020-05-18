@@ -6,6 +6,7 @@ import Footer from '../components/footer'
 import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
 import ScrollAnimation from 'react-animate-on-scroll'
+import ReviewSection from '../components/ReviewSection'
 
 export default props => {
   const { wordpressPage } = useStaticQuery(
@@ -465,40 +466,7 @@ export default props => {
         <section className="rating-and-review py-5 py-sm-5">
           <Container className="pb-0 pb-sm-5 mt-0 mt-sm-5">
             <Row className="py-0 py-sm-5">
-              <p className="text-center w-100 star">
-                <i className="fa fa-star star-small"></i>
-                <i className="fa fa-star star-medium ml-2"></i>
-                <i className="fa fa-star star-large mx-2"></i>
-                <i className="fa fa-star star-medium mr-2"></i>
-                <i className="fa fa-star star-small"></i>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{
-                  fontSize: '20px',
-                }}
-              >
-                “A great quality mattress I enjoy waking up on every day…”
-                <br />
-                -Mark F. from Toronto, Ontario
-              </p>
-              <p className="cta mt-0 pt-sm-4 pt-lg-4 pt-xl-4 w-100 text-center">
-                <Link
-                  to="/reviews/"
-                  className="btn-cta color-primary erbaum-bold space-1"
-                >
-                  SEE REVIEWS
-                </Link>
-              </p>
-              <p
-                className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
-                style={{
-                  fontSize: '20px',
-                }}
-              >
-                Chirofoam™ Memory Foam Mattresses are proudly developed and
-                manufactured in Toronto, ON, Canada.
-              </p>
+              <ReviewSection />
             </Row>
           </Container>
         </section>{' '}

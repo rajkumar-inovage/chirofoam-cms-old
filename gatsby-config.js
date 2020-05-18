@@ -113,7 +113,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "ismass.com/apps/chirofoam-cms",
+        baseUrl: "http://test.nationalmattress.ca/chirofoam",
         protocol: "http",
         hostingWPCOM: false,
         useACF: true,
