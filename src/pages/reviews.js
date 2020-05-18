@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Recaptcha from 'react-recaptcha'
 import Header from '../components/header'
 import Footer from '../components/footer'

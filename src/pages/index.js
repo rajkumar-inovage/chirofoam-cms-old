@@ -12,7 +12,7 @@ import circle2 from '../assets/img/circle2.webp'
 import circle3 from '../assets/img/circle3.webp'
 import circle4 from '../assets/img/circle4.webp'
 import circle5 from '../assets/img/circle5.webp'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, Link , graphql} from 'gatsby'
 import HomePageSlider2 from '../components/HomePageSlider2'
 import SlickSlider from '../components/FiveKeys'
 import ScrollAnimation from 'react-animate-on-scroll'
@@ -96,9 +96,9 @@ export default props => {
                   <h2 className="erbaum-bold color-primary pt-0 pt-sm-2 pt-lg-2 pt-xl-2 animated fadeInUp slow">
                     {wordpressPage.acf.section_1_title_2}
                   </h2>
-                  <p className="proxima-eb color-primary space-1 pb-0 pb-sm-3 pb-lg-3 pb-xl-3 text-1 text-justify text-md-left">
+                  <div className="proxima-eb color-primary space-1 pb-0 pb-sm-3 pb-lg-3 pb-xl-3 text-1 text-justify text-md-left">
                    {ReactHtmlParser(wordpressPage.acf.section_1_text)}
-                  </p>
+                  </div>
                   <p className="cta mt-0 pt-sm-2 pt-lg-2 pt-xl-2 d-none">
                     <button className="btn-cta bg-transparent border-0 color-primary erbaum-bold space-1">
                       CALL TO ACTION
@@ -382,12 +382,12 @@ export default props => {
                     <h5 className="filson-pro-reg color-primary pt-2 text-2">
                       {wordpressPage.acf.review_sub_title}
                     </h5>
-                    <p
+                    <div
                       className="text-left proxima-eb space-1 pt-1 mb-0 text-1"
                       style={{ color: '#808080' }}
                     >
                      {ReactHtmlParser(wordpressPage.acf.review_text)}
-                    </p>
+                    </div>
                     <p className="cta mt-3 pt-sm-4 pt-lg-4 pt-xl-4">
                       <Link
                         to="/reviews/"

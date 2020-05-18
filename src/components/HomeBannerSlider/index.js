@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, Link, graphql} from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

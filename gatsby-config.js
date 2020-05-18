@@ -117,7 +117,12 @@ module.exports = {
         protocol: "http",
         hostingWPCOM: false,
         useACF: true,
-        verboseOutput:true,
+        verboseOutput:false,
+        excludedRoutes: [
+          "**/settings",
+          "**/wp/v2/users/me",
+          "**/wp/v2/themes",
+        ],
         acfOptionPageIds: [],
       },
     },

@@ -1,7 +1,7 @@
 import React from 'react'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, Link, graphql } from 'gatsby'
 import {Col} from 'reactstrap'
-import ScrollAnimation from 'react-animate-on-scroll'
+
 
 const TakeTest = (data) => {
   const { allWordpressAcfOptions } = useStaticQuery(
@@ -22,7 +22,6 @@ const TakeTest = (data) => {
       }
     `
     )
-  console.log(allWordpressAcfOptions);
   return (
     <>
           <Col

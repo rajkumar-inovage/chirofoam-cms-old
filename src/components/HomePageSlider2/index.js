@@ -9,7 +9,7 @@ import {
   CarouselControl,
 } from 'reactstrap'
 import ReactHtmlParser from 'react-html-parser'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, Link, graphql } from 'gatsby'
 import '~/assets/css/bootstrap.min.css'
 import '~/assets/css/animate.css'
 import run from '~/assets/img/only-man.webp'
@@ -404,11 +404,11 @@ const HomePageSlider2 = props => {
                   <h3 className="lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text text-uppercase text-white erbaum-bold pr-0 pr-lg-5 pr-xl-5 mr-0 mr-lg-5 mr-xl-5 pb-3 pb-lg-3 pb-xl-3">
                     {wordpressPage.acf.slider_3_title}
                   </h3>
-                  <p
+                  <div
                     className="text-white filson-pro-reg text-1 space-1"
                   >
                    {ReactHtmlParser(wordpressPage.acf.slider_3_text1)}
-                  </p>
+                  </div>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-0">
                   <img src={wordpressPage.acf.slider_3_image_1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_1.alt_text} width="150px" />
@@ -416,11 +416,11 @@ const HomePageSlider2 = props => {
               </Media>
               <Media className="px-3 px-sm-5 mb-0 d-block d-sm-flex">
                 <Media left={true} middle={true}>
-                  <p
+                  <div
                     className="text-white filson-pro-reg text-1 space-1 mb-0 pt-2 pt-lg-4 pt-xl-4"
                   >
                     {ReactHtmlParser(wordpressPage.acf.slider_3_text2)}
-                  </p>
+                  </div>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
                   <img src={wordpressPage.acf.slider_3_image_2.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_2.alt_text} width="150px" />
@@ -428,11 +428,11 @@ const HomePageSlider2 = props => {
               </Media>
               <Media className="px-3 px-sm-5 mb-1 d-block d-sm-flex">
                 <Media left={true} middle={true}>
-                  <p
+                  <div
                     className="text-white filson-pro-reg text-1 space-1"
                   >
                     {ReactHtmlParser(wordpressPage.acf.slider_3_text3)}
-                  </p>
+                  </div>
                 </Media>
                 <Media body={true} middle={true} className="pl-sm-4 pl-0 pb-3">
                   <img src={wordpressPage.acf.slider_3_image_3.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.slider_3_image_3.alt_text} width="150px" />

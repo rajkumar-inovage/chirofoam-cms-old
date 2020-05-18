@@ -1,7 +1,5 @@
 import React from 'react'
-import {useStaticQuery, Link } from 'gatsby'
-import {Col} from 'reactstrap'
-import ScrollAnimation from 'react-animate-on-scroll'
+import {useStaticQuery, Link, graphql } from 'gatsby'
 import ReactHtmlParser from 'react-html-parser'
 
 const ReviewSection = (data) => {
@@ -21,7 +19,6 @@ const ReviewSection = (data) => {
       }
     `
     )
-  console.log(allWordpressAcfOptions);
   return (
     <>
           <p className="text-center w-100 star">

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, Link, graphql } from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Jumbotron, Row, Col } from 'reactstrap'

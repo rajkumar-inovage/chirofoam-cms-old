@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Spybutton from '../components/spybutton'
-import {useStaticQuery} from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 
 const Banner = props => {
   const { wordpressPage } = useStaticQuery(

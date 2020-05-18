@@ -3,7 +3,6 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Jumbotron, Row } from 'reactstrap'
 import SEO from '~/components/seo'
-import { Link } from 'gatsby'
 import Cart from '../components/Cart'
 import ReviewSection from '../components/ReviewSection'
 

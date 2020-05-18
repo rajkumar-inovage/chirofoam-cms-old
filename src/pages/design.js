@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Draggable from 'react-draggable'
 import ReactHtmlParser from 'react-html-parser'
-import {useStaticQuery, Link } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import TakeTest from '../components/TaketestSection'
