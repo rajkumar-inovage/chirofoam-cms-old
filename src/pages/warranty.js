@@ -73,36 +73,36 @@ export default props => {
                   {wordpressPage.acf.row1_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg text-1 color-secondary">
+              <div className="filson-pro-reg text-1 color-secondary">
                 {ReactHtmlParser(wordpressPage.acf.row1_description)}
-              </p>
+              </div>
               <h5
                 className="erbaum-bold color-primary py-2 py-sm-3 my-0"
                 style={{ fontSize: '16px' }}
               >
                 {wordpressPage.acf.row2_title}
               </h5>
-              <p className="filson-pro-reg text-1 color-secondary">
+              <div className="filson-pro-reg text-1 color-secondary">
                 {ReactHtmlParser(wordpressPage.acf.row2_description)}
-              </p>
+              </div>
               <h5
                 className="erbaum-bold color-primary py-2 py-sm-3 my-0"
                 style={{ fontSize: '16px' }}
               >
                 {wordpressPage.acf.row3_title}
               </h5>
-              <p className="filson-pro-reg text-1 color-secondary">
+              <div className="filson-pro-reg text-1 color-secondary">
                {ReactHtmlParser(wordpressPage.acf.row3_description)}
-              </p>
+              </div>
               <h5
                 className="erbaum-bold color-primary py-2 py-sm-3 my-0"
                 style={{ fontSize: '16px' }}
               >
                 {wordpressPage.acf.row4_title}
               </h5>
-              <p className="filson-pro-reg text-1 color-secondary">
+              <div className="filson-pro-reg text-1 color-secondary">
                {ReactHtmlParser(wordpressPage.acf.row4_description)}
-              </p>
+              </div>
             </div>
           </Row>
         </Container>

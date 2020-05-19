@@ -120,9 +120,9 @@ const Charity = (data) => {
                   {wordpressPage.acf.title1}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description1)}
-              </p>
+              </div>
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
@@ -140,9 +140,9 @@ const Charity = (data) => {
                  {wordpressPage.acf.title2}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description2)}
-              </p>
+              </div>
               
               <div className="charity-image text-center w-100">
                 <img
@@ -162,9 +162,9 @@ const Charity = (data) => {
                  {wordpressPage.acf.title3}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.description3)}
-              </p>
+              </div>
               
               <div className="charity-image text-center w-100">
                 <img
@@ -184,9 +184,9 @@ const Charity = (data) => {
                   {wordpressPage.acf.title4}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.description4)}
-              </p>
+              </div>
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
@@ -205,9 +205,9 @@ const Charity = (data) => {
                  {wordpressPage.acf.title5}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.description5)}
-              </p>
+              </div>
               <div className="charity-image text-center w-100">
                 <img
                   className="img-fluid"
@@ -228,12 +228,12 @@ const Charity = (data) => {
                 {wordpressPage.acf.section3_title}
               </h4>
             </ScrollAnimation>
-            <p
+            <div
               className="pt-0 text-uppercase text-center w-100 pt-2 pt-md-5"
               style={{ color: '#ba2154' }}
             >
               {ReactHtmlParser(wordpressPage.acf.section3_subtitle)}
-            </p>
+            </div>
           </Row>
         </Container>
       </section>

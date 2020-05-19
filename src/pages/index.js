@@ -109,7 +109,7 @@ export default props => {
                   sm="12"
                   className="col-md-6 col-lg-6 col-xl-6 px-0 px-sm-0 px-md-2 px-lg-3 px-xl-4"
                 >
-                  <img src={wordpressPage.acf.section_1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section_1_image.alt_text} width="541" height="365" className="img-fluid" />
+                  {(wordpressPage.acf.section_1_image !== null) && <img src={wordpressPage.acf.section_1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section_1_image.alt_text} width="541" height="365" className="img-fluid" />}
                   <ul className="list-unstyled mt-3 extra-link text-center d-block text-lg-right text-xl-right text-md-right extra-link">
                     <li className="mr-1 mr-sm-2 mr-lg-3">
                       <Link

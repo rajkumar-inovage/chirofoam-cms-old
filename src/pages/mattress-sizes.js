@@ -219,9 +219,9 @@ export default props => {
                   {wordpressPage.acf.section1_title}
                 </h1>
               </ScrollAnimation>
-              <p className="filson-pro-reg text-1 color-secondary text-center text-sm-left text-lg-center text-xl-center">
+              <div className="filson-pro-reg text-1 color-secondary text-center text-sm-left text-lg-center text-xl-center">
                {ReactHtmlParser(wordpressPage.acf.section1_description)}
-              </p>
+              </div>
             </Col>
             <Col sm="6" className="m-size">
               <img src={wordpressPage.acf.section1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.section1_image.alt_text} width="100%" />

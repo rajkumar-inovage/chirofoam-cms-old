@@ -28,12 +28,12 @@ const ReviewSection = (data) => {
                 <i className="fa fa-star star-medium mr-2"></i>
                 <i className="fa fa-star star-small"></i>
               </p>
-              <p
+              <div
                 className="filson-pro-reg color-secondary pt-3 w-75 m-auto text-center space-1"
                 style={{ fontSize: '20px' }}
               >
                 {ReactHtmlParser(allWordpressAcfOptions.nodes[0].options.review_description1)}
-              </p>
+              </div>
               <p className="cta mt-0 pt-sm-4 pt-lg-4 pt-xl-4 w-100 text-center mt-4 mt-sm-0">
                 <Link
                   to={allWordpressAcfOptions.nodes[0].options.review_button_link}

@@ -165,9 +165,9 @@ const Design = props => {
                     {wordpressPage.acf.row1_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-1 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
+              <div className="text-left filson-pro-reg space-1 pt-0 pt-sm-1 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
                 {ReactHtmlParser(wordpressPage.acf.row1_description)}
-              </p>
+              </div>
             </div>
           </Col>
           <Col className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 coolgel-img design-imgs"></Col>
@@ -185,9 +185,9 @@ const Design = props => {
                   {wordpressPage.acf.row2_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pl-0 pl-sm-1 pl-md-3 pl-lg-5 pl-xl-5 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
+              <div className="text-left filson-pro-reg space-1 pl-0 pl-sm-1 pl-md-3 pl-lg-5 pl-xl-5 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 color-secondary design-para">
                 {ReactHtmlParser(wordpressPage.acf.row2_description)}
-              </p>
+              </div>
             </div>
           </Col>
           <Col className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 latex-img design-imgs"></Col>
@@ -205,9 +205,9 @@ const Design = props => {
                   {wordpressPage.acf.row3_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-md-3 pt-lg-5 mb-0 text-1 color-secondary design-para">
+              <div className="text-left filson-pro-reg space-1 pt-0 pt-md-3 pt-lg-5 mb-0 text-1 color-secondary design-para">
                 {ReactHtmlParser(wordpressPage.acf.row3_description)}
-              </p>
+              </div>
             </div>
           </Col>
           <Col className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 design-imgs support-img"></Col>
@@ -225,9 +225,9 @@ const Design = props => {
                   {wordpressPage.acf.row4_title}
                 </h3>
               </ScrollAnimation>
-              <p className="text-left filson-pro-reg space-1 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 pl-0 pl-md-3 pl-lg-5 color-secondary design-para">
-                {ReactHtmlParser(wordpressPage.acf.row4_description)}
-              </p>
+              <div className="text-left filson-pro-reg space-1 pt-0 pt-sm-2 pt-md-3 pt-lg-5 pt-xl-5 mb-0 text-1 pl-0 pl-md-3 pl-lg-5 color-secondary design-para">
+               {ReactHtmlParser(wordpressPage.acf.row4_description)}
+              </div>
             </div>
           </Col>
           <Col className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 design-imgs foam-img"></Col>
@@ -267,9 +267,9 @@ const Design = props => {
                     />
                   </div>
                 </div>
-                <p className="filson-pro-reg color-secondary pt-2 text-1 text-left">
+                <div className="filson-pro-reg color-secondary pt-2 text-1 text-left">
                   {ReactHtmlParser(wordpressPage.acf.section3_description)}
-                </p>
+                </div>
               </Col>
             </Row>
           </Container>

@@ -63,17 +63,17 @@ export default props => {
                   {wordpressPage.acf.block1_title}
                 </h3>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-5 text-1">
+              <div className="filson-pro-reg color-secondary pt-5 text-1">
                 {ReactHtmlParser(wordpressPage.acf.block1_description)}
-              </p>
+              </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className="lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text erbaum-bold font-weight-bold color-primary space-2 text-center pt-5">
                   {wordpressPage.acf.block2_title}
                 </h3>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-5 text-1">
+              <div className="filson-pro-reg color-secondary pt-5 text-1">
                 {ReactHtmlParser(wordpressPage.acf.block2_description)}
-              </p>
+              </div>
               <ScrollAnimation animateIn="fadeInUp">
                 <h3 className=" lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text erbaum-bold font-weight-bold color-primary space-2 text-center pt-5">
                   {wordpressPage.acf.block3_title}
@@ -87,9 +87,9 @@ export default props => {
                   {wordpressPage.acf.block4_title}
                 </ScrollAnimation>
               </h3>
-              <p className="filson-pro-reg color-secondary pt-5 text-1">
+              <div className="filson-pro-reg color-secondary pt-5 text-1">
                 {ReactHtmlParser(wordpressPage.acf.block4_description)}
-              </p>
+              </div>
             </div>
           </Row>
         </Container>

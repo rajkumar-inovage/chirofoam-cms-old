@@ -36,9 +36,9 @@ export default props => {
                   {wordpressPage.title}
                 </h1>
               </ScrollAnimation>
-              <p className="filson-pro-reg text-1 color-secondary order-list-css">
+              <div className="filson-pro-reg text-1 color-secondary order-list-css">
                 {ReactHtmlParser(wordpressPage.content)}
-              </p>
+              </div>
             </div>
           </Row>
         </Container>

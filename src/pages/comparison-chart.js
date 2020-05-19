@@ -52,11 +52,11 @@ export default props => {
       <section className="py-3 py-sm-3 py-md-4 py-lg-5 py-xl-5">
         <Container>
           <Row className="mx-0">
-            <p
+            <div
               className="text-1 filson-pro-reg color-secondary text-center"
             >
              {ReactHtmlParser(wordpressPage.acf.compare_chart_description)}
-            </p>
+            </div>
           </Row>
           <Row className="px-0 px-sm-3 px-md-3 px-lg-0 px-xl-0 pt-5">
             <div className="table-rows">

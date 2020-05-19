@@ -130,9 +130,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title1}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description1)}
-              </p>
+              </div>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
               <img src={wordpressPage.acf.image1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image1.alt_text} />
@@ -148,9 +148,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title2}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.description2)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0">
@@ -160,9 +160,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title3}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.description3)}
-              </p>
+              </div>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
               <img src={wordpressPage.acf.image3_img1.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image3_img1.alt_text} />
@@ -181,9 +181,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title4}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description4)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0">
@@ -193,9 +193,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title5}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description5)}
-              </p>
+              </div>
             </div>
             <div className="col-12 col-sm-4 col-lg-4 col-xl-4 pt-2 pt-sm-5 mt-0 mt-sm-5 right-card">
               <img src={wordpressPage.acf.image5.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.image5.alt_text} />
@@ -211,9 +211,9 @@ const Ourstory = (data) => {
                   {wordpressPage.acf.title6}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.description6)}
-              </p>
+              </div>
             </div>
           </Row>
         </Container>

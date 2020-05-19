@@ -98,12 +98,12 @@ export default props => {
               <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
                 {wordpressPage.acf.top_section_title}
               </h1>
-              <p
+              <div
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}
               >
                {ReactHtmlParser(wordpressPage.acf.top_section_subtitle)}
-              </p>
+              </div>
             </Row>
           </Container>
         </ScrollAnimation>
@@ -129,9 +129,9 @@ export default props => {
                   {wordpressPage.acf.feature1_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1 space-1">
                 {ReactHtmlParser(wordpressPage.acf.feature1_description)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
@@ -153,9 +153,9 @@ export default props => {
                   {wordpressPage.acf.feature2_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1 space-1">
                 {ReactHtmlParser(wordpressPage.acf.feature2_description)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
@@ -177,9 +177,9 @@ export default props => {
                  {wordpressPage.acf.feature3_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1 space-1">
                 {ReactHtmlParser(wordpressPage.acf.feature3_description)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
@@ -201,9 +201,9 @@ export default props => {
                   {wordpressPage.acf.feature4_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1 space-1">
                 {ReactHtmlParser(wordpressPage.acf.feature4_description)}
-              </p>
+              </div>
             </div>
           </Row>
           <Row className="mb-2 mb-sm-5 pb-0 pb-sm-5 mx-0 no-gutters">
@@ -225,9 +225,9 @@ export default props => {
                   {wordpressPage.acf.feature5_title}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1 space-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1 space-1">
                 {ReactHtmlParser(wordpressPage.acf.feature5_description)}
-              </p>
+              </div>
             </div>
           </Row>
         </Container>

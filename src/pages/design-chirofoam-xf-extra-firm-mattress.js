@@ -113,22 +113,22 @@ export default props => {
               <h1 className="font-weight-bold display-5 erbaum-bold text-uppercase pt-5 space-2 pt-sm-1 pt-lg-5 pt-xl-5 color-primary w-100">
                 {wordpressPage.acf.top_section_title}
               </h1>
-              <p
+              <div
                 className="filson-pro-reg color-primary pt-2 space-4 proxima-r m-auto text-center px-0 px-sm-5 px-lg-5 px-xl-5 pt-sm-2 w-100"
                 style={{ fontSize: '26px' }}
               >
                 {ReactHtmlParser(wordpressPage.acf.top_section_subtitle)}
-              </p>
+              </div>
             </Row>
           </Container>
         </section>
       </ScrollAnimation>
-      <section className="py-4 pt-sm-5 pb-sm-4 our-customer">
+      <section className="py-4 pt-sm-5 pb-sm-4">
         <Row className="pt-3 pb-3 pb-sm-0 no-gutters">
           <Col sm="6" className="coolgel-img design-imgs"></Col>
           <Col sm="6" className="pt-5 pb-5 px-3">
             <div
-              className="pl-5 pl-sm-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
+              className="pl-0 pl-lg-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
               style={{ maxWidth: '500px' }}
             >
               <ScrollAnimation animateIn="fadeInUp">
@@ -136,32 +136,32 @@ export default props => {
                   {wordpressPage.acf.row1_title}
                 </h3>
               </ScrollAnimation>
-              <p
+              <div
                 className="text-left proxima-eb space-1 pt-5 mb-0 text-1 design-para"
-                style={{ color: '#808080' }}
+                style={{ color: '#808080', fontSize:'0.8rem' }}
               >
                 {ReactHtmlParser(wordpressPage.acf.row1_description)}
-              </p>
+              </div>
             </div>
           </Col>
         </Row>
         <Row className="pb-3 pb-sm-0 no-gutters">
           <Col sm="6" className="pt-5 pb-5 px-3">
             <div
-              className="pl-5 pl-sm-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
+              className="pl-0 pl-lg-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
               style={{ maxWidth: '600px' }}
             >
               <ScrollAnimation animateIn="fadeInUp">
-                <h3 className="color-primary erbaum-bold lead-text pl-5">
+                <h3 className="color-primary erbaum-bold lead-text pl-0 pl-lg-5">
                   {wordpressPage.acf.row2_title}
                 </h3>
               </ScrollAnimation>
-              <p
-                className="text-left proxima-eb space-1 pl-5 pt-5 mb-0 text-1 design-para"
-                style={{ color: '#808080' }}
+              <div
+                className="text-left proxima-eb space-1 pl-0 pl-lg-5 pt-5 mb-0 text-1 design-para"
+                style={{ color: '#808080',fontSize:'0.8rem' }}
               >
                 {ReactHtmlParser(wordpressPage.acf.row2_description)}
-              </p>
+              </div>
             </div>
           </Col>
           <Col sm="6" className="latex-img design-imgs"></Col>
@@ -170,7 +170,7 @@ export default props => {
           <Col sm="6" className="design-imgs support-img"></Col>
           <Col sm="6" className="pt-5 pb-5 px-3">
             <div
-              className="pl-5 pl-sm-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
+              className="pl-0 pl-lg-5 pt-2 pb-2 pt-lg-5 pb-lg-4"
               style={{ maxWidth: '500px' }}
             >
               <ScrollAnimation animateIn="fadeInUp">
@@ -178,32 +178,32 @@ export default props => {
                   {wordpressPage.acf.row3_title}
                 </h3>
               </ScrollAnimation>
-              <p
+              <div
                 className="text-left proxima-eb space-1 pt-5 mb-0 text-1 design-para"
-                style={{ color: '#808080' }}
+                style={{ color: '#808080',fontSize:'0.8rem' }}
               >
                 {ReactHtmlParser(wordpressPage.acf.row3_description)}
-              </p>
+              </div>
             </div>
           </Col>
         </Row>
         <Row className="pb-3 pb-sm-0 no-gutters">
           <Col sm="6" className="pt-5 pb-5 px-3">
             <div
-              className="pl-5 pl-sm-5 pt-2 pb-2 pt-sm-5 pb-sm-4"
+              className="pl-0 pl-lg-5 pt-2 pb-2 pt-lg-5 pb-lg-4"
               style={{ maxWidth: '500px' }}
             >
               <ScrollAnimation animateIn="fadeInUp">
-                <h3 className="pl-4 color-primary erbaum-bold lead-text">
+                <h3 className="pl-0 pl-lg-4 color-primary erbaum-bold lead-text">
                   {wordpressPage.acf.row4_title}
                 </h3>
               </ScrollAnimation>
-              <p
-                className="text-left proxima-eb space-1 pt-5 mb-0 text-1 pl-4 design-para"
-                style={{ color: '#808080' }}
+              <div
+                className="text-left proxima-eb space-1 pt-5 mb-0 text-1 pl-0 design-para pl-lg-4"
+                style={{ color: '#808080', fontSize:'0.8rem' }}
               >
                 {ReactHtmlParser(wordpressPage.acf.row4_description)}
-              </p>
+              </div>
             </div>
           </Col>
           <Col sm="6" className="design-imgs foam-img"></Col>
@@ -213,9 +213,9 @@ export default props => {
         <section className="m-auto text-center py-5 py-sm-0 py-md-2 py-lg-5 py-xl-5">
           <Container>
             <Row className="pt-3 pb-3 pb-sm-0 text-center">
-              <Col className="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8 mx-auto">
-                <div className="text-left text-sm-center text-md-left text-lg-left text-xl-left pt-5 pt-sm-2 pt-md-2 pt-lg-5 pt-xl-5 pb-5 mb-5 mb-sm-0 mb-md-0 mb-xl-5 mb-lg-5">
-                  <div className="image-box d-table-cell px-3 px-sm-2 px-md-3 px-lg-3 px-xl-3">
+              <Col className="col-12 col-md-12 col-lg-8 col-xl-8 mx-auto">
+                <div className="text-left text-sm-center text-md-left text-lg-left text-xl-left pt-5 pt-sm-2 pt-md-2 pt-lg-5 pt-xl-5 pb-5 mb-0 mb-xl-5">
+                  <div className="image-box d-table-cell px-sm-2 px-md-3 px-lg-3 px-xl-3">
                     <img
                       className="img-fluid"
                       src={Pur}
@@ -243,9 +243,9 @@ export default props => {
                     />
                   </div>
                 </div>
-                <p className="filson-pro-reg color-secondary pt-2 text-1 text-left">
+                <div className="filson-pro-reg color-secondary pt-2 text-1 text-left">
                  {ReactHtmlParser(wordpressPage.acf.section3_description)}
-                </p>
+                </div>
               </Col>
             </Row>
           </Container>

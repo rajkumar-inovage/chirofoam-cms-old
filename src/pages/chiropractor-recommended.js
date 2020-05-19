@@ -218,9 +218,9 @@ const Chiropractor = (data) => {
                   {wordpressPage.acf.section1_title1}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.section1_description1)}
-              </p>
+              </div>
             </Col>
             <Col
               sm="6"
@@ -237,9 +237,9 @@ const Chiropractor = (data) => {
                   {wordpressPage.acf.section1_title2}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                 {ReactHtmlParser(wordpressPage.acf.section1_description2)}
-              </p>
+              </div>
             </Col>
             <Col
               sm="6"
@@ -256,9 +256,9 @@ const Chiropractor = (data) => {
                   {wordpressPage.acf.section1_title3}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.section1_description3)}
-              </p>
+              </div>
             </Col>
             <Col
               sm="6"
@@ -275,9 +275,9 @@ const Chiropractor = (data) => {
                   {wordpressPage.acf.section1_title4}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.section1_description4)}
-              </p>
+              </div>
             </Col>
             <Col
               sm="6"
@@ -294,9 +294,9 @@ const Chiropractor = (data) => {
                   {wordpressPage.acf.section1_title5}
                 </h5>
               </ScrollAnimation>
-              <p className="filson-pro-reg color-secondary pt-2 text-1">
+              <div className="filson-pro-reg color-secondary pt-2 text-1">
                {ReactHtmlParser(wordpressPage.acf.section1_description5)}
-              </p>
+              </div>
             </Col>
           </Row>
         </Container>
