@@ -287,8 +287,19 @@ const BlogPage = ({ data }) => {
                               color: 'rgba(0,0,0,0.4)',
                             }}
                           >
+                          <Link
+                      to={`/blogs/${blog.url.split('/').pop()}/${url
+                        .split('/')
+                        .pop()}/`}
+                      state={{
+                        fromFeed: true,
+                      }}
+                      className="text-decoration-none"
+                      style={{color:'rgba(0,0,0,0.4)'}}
+                    >
                             <i className="fa fa-envelope"></i>
                             <span className="d-block">{comments.length}</span>
+                            </Link>
                           </div>
                           <button
                             className="bg-transparent border-0 mb-0 pr-2 pr-sm-2 pr-lg-0 pr-xl-0"
