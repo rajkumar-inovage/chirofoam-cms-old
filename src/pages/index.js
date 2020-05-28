@@ -319,7 +319,7 @@ export default props => {
 
                 <Col
                   sm="12"
-                  className="col-lg-6 col-xl-6 pl-0 pl-sm-0 pl-lg-2 pl-xl-2 position-relative mt-sm-5 mt-lg-0 mt-xl-0"
+                  className="col-lg-6 col-xl-6 pl-0 pl-sm-0 pl-lg-2 pl-xl-2 position-relative mt-5 mt-lg-0 mt-xl-0"
                 >
                   <div className="pl-0 pl-sm-0 pl-lg-5 pl-xl-5 ml-0 ml-sm-0 ml-lg-4 ml-xl-4">
                     <div className="text-center">
