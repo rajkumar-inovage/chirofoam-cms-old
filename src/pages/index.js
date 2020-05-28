@@ -5,8 +5,6 @@ import { Container, Row, Col } from 'reactstrap'
 import SEO from '~/components/seo'
 import ReactHtmlParser from 'react-html-parser'
 import Logo from '../assets/img/logo-home.png'
-import product1 from '../assets/img/product1.webp'
-import product2 from '../assets/img/product2.webp'
 import circle1 from '../assets/img/circle1.webp'
 import circle2 from '../assets/img/circle2.webp'
 import circle3 from '../assets/img/circle3.webp'
@@ -69,6 +67,34 @@ export default props => {
                 review_sub_title
                 review_text
                 review_button
+                product1_title
+                product1_description
+                product1_features
+                product1_button_link
+                product1_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
+                product2_title
+                product2_description
+                product2_features
+                product2_button_link
+                product2_image {
+                  alt_text
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        src
+                      }
+                    }
+                  }
+                }
               }
           }
       }
@@ -164,7 +190,7 @@ export default props => {
             </Container>
           </ScrollAnimation>
         </section>
-        <section className="my-4 py-5 max-support position-relative">
+        <section className="py-5 max-support position-relative">
           <ScrollAnimation animateIn="fadeInUp">
             <div className="container-large p-0">
               <Row className="mx-0">
@@ -266,50 +292,39 @@ export default props => {
           </ScrollAnimation>
         </section>
 
-        <section className="py-4 pt-sm-4 pt-lg-4 pt-xl-4 pb-sm-4 pb-lg-4 pb-xl-4 mb-0 mb-sm-3 mb-lg-3 mb-xl-3 mattresses">
+        <section className="py-5 mattresses">
           <ScrollAnimation animateIn="fadeInUp">
-            <div className="pt-0 pt-sm-5 container-large">
+            <div className="container-large">
               <h3 className="text-center lead-text lead-sm-text lead-md-text lead-lg-text lead-xl-text color-primary erbaum-bold display-5 w-100">
                 {wordpressPage.acf.product_showcase_title}
               </h3>
               <p className="col-12 col-sm-7 text-center pb-4 pb-sm-5 px-0 px-sm-2 pt-1 mb-5 color-primary proxima-b space-1 m-auto sub-text sub-sm-text sub-md-text sub-xl-text">
                 {wordpressPage.acf.product_showcase_sub_title}
               </p>
-              <Row className="no-gutters row-eq-height pb-5 m-0 px-0 px-sm-2 px-lg-0">
+              <Row className="no-gutters row-eq-height pb-0 pb-lg-5 m-0 px-0 px-sm-2 px-lg-0">
                 <Col
                   sm="12"
                   className="col-lg-6 col-xl-6 product-border-right pr-0 pr-sm-2 position-relative"
                 >
                   <div className="pr-0 pr-lg-5 pr-xl-5 mr-0 mr-sm-4">
                     <div className="text-center">
-                      <img src={product1} alt="Product1" className="img-fluid" width="524" height="285" />
+                      {wordpressPage.acf.product1_image && wordpressPage.acf.product1_image.localFile && (<img src={wordpressPage.acf.product1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.product1_image.alt_text} className="img-fluid" width="524" height="285" />)}
                     </div>
-                    <Link to="/product/the-original-chirofoam™-mattress-luxury-firm/">
+                    <Link to={wordpressPage.acf.product1_button_link}>
                       <h3 className="text-left text-sm-left text-lg-right text-xl-right color-primary erbaum-bold pl-0">
-                        THE ORIGINAL CHIROFOAM™ MATTRESS - LUXURY FIRM
+                        {wordpressPage.acf.product1_title}
                       </h3>
                     </Link>
                     <p className="text-justify text-md-left text-lg-right text-xl-right color-primary proxima-eb space-1 pt-1 mb-4 text-1">
-                      The Original Chirofoam Memory Foam Mattress is designed to
-                      increase muscle recovery to help keep you performing at
-                      your best. Made in Toronto, ON.
+                      {wordpressPage.acf.product1_description}
                     </p>
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
-                      Upgrade your sleep today!
-                    </p>
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
-                      Ideal for all sleeping positions.
-                    </p>
-                    <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
-                      Firmness sacle: 7.5/10-Luxury Firm
-                    </p>
-                    <p className="text-left text-sm-left text-lg-right mb-4 color-primary proxima-eb space-1 mb-4 text-1">
-                      Profile: 12 inches
-                    </p>
+                    <div className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-4 text-1">
+                        {ReactHtmlParser(wordpressPage.acf.product1_features)}
+                    </div>
                   </div>
                   <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute left-btn">
                     <Link
-                      to="/product/the-original-chirofoam™-mattress-luxury-firm/"
+                      to={wordpressPage.acf.product1_button_link}
                       className="btn-cta color-primary erbaum-bold space-1"
                     >
                       BUY NOW
@@ -323,36 +338,23 @@ export default props => {
                 >
                   <div className="pl-0 pl-sm-0 pl-lg-5 pl-xl-5 ml-0 ml-sm-0 ml-lg-4 ml-xl-4">
                     <div className="text-center">
-                      <img src={product2} alt="Product2" className="img-fluid" width="524" height="270" />
+                     {wordpressPage.acf.product2_image && wordpressPage.acf.product2_image.localFile && (<img src={wordpressPage.acf.product2_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.product2_image.alt_text} className="img-fluid" width="524" height="285" />)}
                     </div>
-                    <Link to="/product/the-chirofoam™-xf-mattress-extra-firm/">
+                    <Link to={wordpressPage.acf.product2_button_link}>
                       <h3 className="color-primary erbaum-bold pr-0">
-                        THE CHIROFOAM™ XF MATTRESS - EXTRA FIRM
+                        {wordpressPage.acf.product2_title}
                       </h3>
                     </Link>
                     <p className="text-justify text-md-left color-primary proxima-eb space-1 pt-1 mb-4 text-1">
-                      The Chirofoam XF Memory Foam Mattress is an extra firm
-                      mattress designed maximum back support. Developed for
-                      individuals and atheletes who suffer from back pain and
-                      require the greatest amount of stiffness for efficient
-                      recovery.
+                      {wordpressPage.acf.product2_description}
                     </p>
-                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
-                      Upgrade your sleep today!
-                    </p>
-                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
-                      Ideal for back and stomach sleepers.
-                    </p>
-                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
-                      Firmness sacle: 10/10-Extra Firm
-                    </p>
-                    <p className="text-left color-primary proxima-eb space-1 mb-4 text-1">
-                      Profile: 10 inches
-                    </p>
+                    <div className="text-left color-primary proxima-eb space-1 mb-4 text-1">
+                      {ReactHtmlParser(wordpressPage.acf.product2_features)}
+                    </div>
                   </div>
                   <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute right-btn">
                     <Link
-                      to="/product/the-chirofoam™-xf-mattress-extra-firm/"
+                      to={wordpressPage.acf.product2_button_link}
                       className="btn-cta color-primary erbaum-bold space-1"
                     >
                       BUY NOW
