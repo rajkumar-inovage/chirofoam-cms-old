@@ -67,7 +67,7 @@ const Footer = props => {
             </ul>
             <div className="payment-gateway">
               <p>
-                <img src="~/../payment.webp" alt="Payment Gateway" width="264" height="40" className="img-fluid" />
+                <img src="../../payment.webp" alt="Payment Gateway" width="264" height="40" className="img-fluid" />
               </p>
               <p>
                 <img src={bbb} alt="Payment" width="264" height="100" className="img-fluid" />
@@ -264,6 +264,5 @@ const Footer = props => {
     </footer>
   )
 }
-
 
 export default Footer
