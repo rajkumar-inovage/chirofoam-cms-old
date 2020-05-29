@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap'
 import Stickytest from '../components/Stickytest'
-import payment from '../assets/img/payment.webp'
+
 import bbb from '../assets/img/bbb.webp'
 
 const Footer = props => {
@@ -67,7 +67,7 @@ const Footer = props => {
             </ul>
             <div className="payment-gateway">
               <p>
-                <img src={payment} alt="Payment Gateway" width="264" height="40" className="img-fluid" />
+                <img src="~/../payment.webp" alt="Payment Gateway" width="264" height="40" className="img-fluid" />
               </p>
               <p>
                 <img src={bbb} alt="Payment" width="264" height="100" className="img-fluid" />

@@ -8,8 +8,6 @@ import Banner from '../components/banner-shop-chirofoam'
 import { Container, Row, Col, Media } from 'reactstrap'
 import SEO from '~/components/seo'
 import run from '../assets/img/only-man.webp'
-import product1 from '../assets/img/product1.webp'
-import product2 from '../assets/img/product2.webp'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 export default props => {
@@ -72,6 +70,34 @@ export default props => {
             lumber_support_button_text
             lumber_support_button_link
             lumber_support_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            product1_title
+            product1_description
+            product1_features
+            product1_button_link
+            product1_image {
+              alt_text
+              localFile {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            product2_title
+            product2_description
+            product2_features
+            product2_button_link
+            product2_image {
               alt_text
               localFile {
                 childImageSharp {
@@ -169,38 +195,24 @@ export default props => {
                 className="col-lg-6 col-xl-6 product-border-right pr-0 pr-sm-2 position-relative"
               >
                 <div className="pr-0 pr-lg-5 pr-xl-5 mr-0 mr-sm-4">
-                  <img src={product1} alt="Product1" width="100%" />
-                  <Link to="/product/the-original-chirofoam™-mattress-luxury-firm/">
+                  {wordpressPage.acf.product1_image && wordpressPage.acf.product1_image.localFile && (<img src={wordpressPage.acf.product1_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.product1_image.alt_text} width="100%"/>)}
+                  <Link to={wordpressPage.acf.product1_button_link}>
                     <h3 className="text-left text-sm-left text-lg-right text-xl-right color-primary erbaum-bold pl-0">
-                      THE ORIGINAL CHIROFOAM™ MATTRESS - LUXURY FIRM
+                      {wordpressPage.acf.product1_title}
                     </h3>
                   </Link>
                   <p className="text-left text-sm-left text-lg-right text-xl-right color-primary proxima-eb space-1 pt-1 mb-0 text-1">
-                    The Original Chirofoam Memory Foam Mattress is designed to
-                    increase muscle recovery to help keep you performing at your
-                    best. Made in Toronto, ON.
+                    {wordpressPage.acf.product1_description}
                   </p>
                   <br />
-                  <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
-                    Upgrade your sleep today!
-                  </p>
-                  <br />
-                  <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
-                    Ideal for all sleeping positions.
-                  </p>
-                  <br />
-                  <p className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
-                    Firmness sacle: 7.5/10-Luxury Firm
-                  </p>
-                  <br />
-                  <p className="text-left text-sm-left text-lg-right mb-4 color-primary proxima-eb space-1 mb-0 text-1">
-                    Profile: 12 inches
-                  </p>
-                  <br />
+                  <div className="text-left text-sm-left text-lg-right color-primary proxima-eb space-1 mb-0 text-1">
+                    {ReactHtmlParser(wordpressPage.acf.product1_features)}
+                  </div>
+                  
                 </div>
                 <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute left-btn">
                   <Link
-                    to="/product/the-original-chirofoam™-mattress-luxury-firm/"
+                    to={wordpressPage.acf.product1_button_link}
                     className="btn-cta color-primary erbaum-bold space-1"
                   >
                     BUY NOW
@@ -213,40 +225,24 @@ export default props => {
                 className="col-lg-6 col-xl-6 pl-0 pl-sm-0 pl-lg-2 pl-xl-2 position-relative mt-sm-5 mt-lg-0 mt-xl-0"
               >
                 <div className="pl-0 pl-sm-0 pl-lg-5 pl-xl-5 ml-0 ml-sm-0 ml-lg-4 ml-xl-4">
-                  <img src={product2} alt="Product2" width="100%" />
-                  <Link to="/product/the-chirofoam™-xf-mattress-extra-firm/">
+                   {wordpressPage.acf.product2_image && wordpressPage.acf.product2_image.localFile && (<img src={wordpressPage.acf.product2_image.localFile.childImageSharp.fluid.src} alt={wordpressPage.acf.product2_image.alt_text} width="100%"/>)}
+                  <Link to={wordpressPage.acf.product2_button_link}>
                     <h3 className="color-primary erbaum-bold pr-0">
-                      THE CHIROFOAM™ XF MATTRESS - EXTRA FIRM
+                      {wordpressPage.acf.product2_title}
                     </h3>
                   </Link>
                   <p className="text-left color-primary proxima-eb space-1 pt-1 mb-0 text-1">
-                    The Chirofoam XF Memory Foam Mattress is an extra firm
-                    mattress designed maximum back support. Developed for
-                    individuals and atheletes who suffer from back pain and
-                    require the greatest amount of stiffness for efficient
-                    recovery.
+                    {wordpressPage.acf.product2_description}
                   </p>
                   <br />
-                  <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
-                    Upgrade your sleep today!
-                  </p>
-                  <br />
-                  <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
-                    Ideal for back and stomach sleepers.
-                  </p>
-                  <br />
-                  <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
-                    Firmness sacle: 10/10-Extra Firm
-                  </p>
-                  <br />
-                  <p className="text-left color-primary proxima-eb space-1 mb-0 text-1">
-                    Profile: 10 inches
-                  </p>
-                  <br />
+                  <div className="text-left color-primary proxima-eb space-1 mb-0 text-1">
+                    {ReactHtmlParser(wordpressPage.acf.product2_features)}
+                  </div>
+                 
                 </div>
                 <p className="cta mt-0 pt-sm-0 pt-lg-0 pt-xl-0 position-absolute right-btn">
                   <Link
-                    to="/product/the-chirofoam™-xf-mattress-extra-firm/"
+                    to={wordpressPage.acf.product2_button_link}
                     className="btn-cta color-primary erbaum-bold space-1"
                   >
                     BUY NOW
